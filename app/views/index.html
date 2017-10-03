@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  GOV.UK prototype kit
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="grid-row">
+    <div class="column-two-thirds">
+        
+      <h1 class="heading-xlarge">
+        ATCM Make a plea design demo
+        <span class="heading-secondary">using the GOV.UK prototype kit {{releaseVersion}}</span>
+      </h1>{{releaseVersion | log }}
+      
+      <a class="button button-start" href="start-page.html" role="button">Start now</a>
+        
+    </div>
+  </div>
+</main>
+
+{% endblock %}
+
+

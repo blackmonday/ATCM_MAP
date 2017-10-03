@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Start page example
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="breadcrumbs">
+    <ol>
+      <li><a href="https://www.gov.uk">Home</a></li>
+      <li><a href="">Crime, Justice and the law</a></li>
+      <li>Courts, sentencing and tribunals</li>
+    </ol>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <h1 class="heading-xlarge">
+          Make a plea for an offence
+      </h1>
+        
+        <p class="lede">Use this service to plead guilty or not guilty online.</p>
+
+        
+      <p>You must be either:</p>
+
+      <ul class="list list-bullet">
+        <li>the person charged with the offence</li>
+        <li>an official representative of the company charged with the offence</li>
+      </uL>
+
+        
+        
+        
+        
+<form>
+  <div class="form-group">
+    <fieldset>
+
+      <legend>
+        <h1 class="heading-medium">Who sent you the notice?</h1>
+      </legend>
+
+      <div class="multiple-choice">
+        <input id="radio-1" type="radio" name="radio-group" value="The police">
+        <label for="radio-1">The police (traffic offence)</label>
+      </div>
+      <div class="multiple-choice">
+        <input id="radio-2" type="radio" name="radio-group" value="Transport for London">
+        <label for="radio-2">Transport for London</label>
+      </div>
+
+    </fieldset>
+  </div>
+</form>
+
+      <p>
+        <a class="button button-start" href="find-your-case.html" role="button">Start now</a>
+      </p>
+
+      <h2 class="heading-medium">Before you start</h2>
+        <p class="bottom_0">To use this service you need:</p>
+            <ul class="list list-bullet">
+              <li>the Single Justice Procedure notice sent to you</li>
+              <li>your National Insurance number</li>
+              <li>details of your income</li>
+            </ul>
+
+    </div>
+    <div class="column-third">
+
+      <aside class="govuk-related-items" role="complementary">
+        <h2 class="heading-medium" id="subsection-title">Further links</h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="font-xsmall">
+            <li><a href="#">Help and advice</a></li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+
+</main>
+
+{% endblock %}

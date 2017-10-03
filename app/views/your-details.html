@@ -1,0 +1,116 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Blank page
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    
+    <div class="breadcrumbs">
+        <ol>
+          <li><a href="find-your-case.html">Back</a></li>
+        </ol>
+    </div>
+
+    <h1 class="heading-xlarge">Your details</h1>
+    
+    <h2 class="heading-medium">Check your name and address</h2>
+    
+    <div class="panel panel-border-wide">
+        <p class="heading-small">Sam Smith</p>
+        <p class="top_0 bottom_0">38A Baker Street</p>
+        <p class="top_0 bottom_0">London</p>
+        <p class="top_0 bottom_0">W1 7SX</p>
+    </div>
+    
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <form class="form" action="" method="post">
+                <div class="form-group">
+                    
+                    <fieldset class="inline">
+                        <legend>
+                            <p class="heading-small">Are these details correct?</p>
+                        </legend>
+                        <div class="multiple-choice">
+                            <input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+                            <label for="radio-inline-1">Yes</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+                            <label for="radio-inline-2">No</label>
+                        </div>
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>
+                            <h3 class="heading-medium">Enter other details</h3>
+                        </legend>
+                        
+                        <label class="form-label" for="ni-number">
+                            <span class="heading-small">Contact numbers (optional)</span>
+                            <span class="form-hint">The court may need to contact you so they can resolve your case quickly</span>
+                        </label>
+                        <label class="form-label top_10" for="home-telephone">Home telephone</label>
+                        <input class="form-control" id="home-telephone" type="text" name="home-telephone">
+                        <label class="form-label top_10" for="mobile">Mobile</label>
+                        <input class="form-control" id="mobile" name="mobile" type="text">
+
+                        <label class="form-label top_30" for="ni-number">
+                            <span class="heading-small">Email address</span>
+                            <span class="form-hint">We'll automatically email you a copy of your plea</span>
+                        </label>
+                        <input class="form-control" id="email" type="text" name="email">
+                        
+                        <legend>
+                            <span class="form-label-bold top_30">
+                            Your date of birth
+                            </span>
+                            <span class="form-hint">For example, 31 3 1980</span>
+                        </legend>
+                        <div class="form-date">
+                            <div class="form-group form-group-day">
+                                <label class="form-label" for="dob-day">Day</label>
+                                <input class="form-control" id="dob-day" name="dob-day" type="number" pattern="[0-9]*" min="0" max="31">
+                            </div>
+                            <div class="form-group form-group-month">
+                                <label class="form-label" for="dob-month">Month</label>
+                                <input class="form-control" id="dob-month" name="dob-month" type="number" pattern="[0-9]*" min="0" max="12">
+                            </div>
+                            <div class="form-group form-group-year">
+                                <label class="form-label" for="dob-year">Year</label>
+                                <input class="form-control" id="dob-year" name="dob-year" type="number" pattern="[0-9]*" min="0" max="2016">
+                            </div>
+                        </div>
+                        
+<fieldset class="inline">
+<legend>
+<p class="heading-small top_30">Do you have a National Insurance number?</p>
+</legend>
+<div class="multiple-choice">
+<input id="radio-inline-1" type="radio" name="radio-inline-group" value="Yes">
+<label for="radio-inline-1">Yes</label>
+</div>
+<div class="multiple-choice">
+<input id="radio-inline-2" type="radio" name="radio-inline-group" value="No">
+<label for="radio-inline-2">No</label>
+</div>
+</fieldset>
+                    
+
+                        
+                    </fieldset>
+                    
+                </div>
+                <div class="form-group">
+                    <input class="button" type="submit" value="Continue">
+                </div>
+            </form>
+        </div>
+    </div>
+    
+</main>
+
+{% endblock %}
