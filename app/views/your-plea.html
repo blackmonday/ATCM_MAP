@@ -44,24 +44,29 @@
                             <h3 class="heading-small">How do you plead?</h3>
                         </legend>
                         <div class="multiple-choice">
-                            <input id="radio-1" type="radio" name="radio-group" value="Yes">
+                            <input id="radio-1" type="radio" name="how-do-you-plea" value="1">
                             <label for="radio-1">Guilty</label>
-                            <div class="column-full reveal-if-active">
-                                <div class="panel panel-border-wide">
-                                    <p>You’re declaring you committed the offence.</p>
-                                </div>
-                            </div>
                         </div>
-                        <div class="multiple-choice">
-                            <input id="radio-2" type="radio" name="radio-group" value="No">
-                            <label for="radio-2">Not guilty</label>
-                            <div class="column-full reveal-if-active">
-                                <div class="panel panel-border-wide">
-                                    <p>You’re declaring you didn’t commit the offence so you’ll need to attend court if you want to present your evidence.</p>
-                                </div>
+                    </fieldset>
+                    <fieldset>
+                        <div class="guilty-plea-fields top_15">
+                            <div class="panel panel-border-wide">
+                                You’re declaring you committed the offence
                             </div>
                         </div>
                     </fieldset>
+                    <fieldset>
+                        <div class="multiple-choice top_15">
+                            <input id="radio-2" type="radio" name="how-do-you-plea" value="2">
+                            <label for="radio-2">Not guilty</label>
+                        </div>
+                    </fieldset>
+                        <div class="not-guilty-plea-fields top_15">
+                            <div class="panel panel-border-wide">
+                                You’re declaring you didn’t commit the offence so you’ll need to attend court if you want to present your evidence
+                            </div>
+                        </div>
+
                     
                 </div>
                 <div class="form-group">
