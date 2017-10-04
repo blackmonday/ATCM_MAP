@@ -30,6 +30,31 @@ $path: "/public/images/";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
+// Horizontal rules
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid $border-colour;
+    margin: 0;
+    padding: 0;
+}
+
+// Advanced form elements
+
+.reveal-if-active {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+}
+input[type="radio"]:checked ~ .reveal-if-active,
+input[type="checkbox"]:checked ~ .reveal-if-active {
+  opacity: 1;
+  max-height: 1000px;
+  overflow: visible;
+}
+
 // Spacings
 
 .top_60 {

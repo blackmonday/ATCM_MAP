@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Blank page
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    
+    <div class="breadcrumbs">
+        <ol>
+          <li><a href="your-details.html">Back</a></li>
+        </ol>
+    </div>
+    <div class="grid-row">
+        <div class="column-two-thirds">
+ 
+            <h1 class="heading-xlarge">Your plea</h1>
+            <div class="panel panel-border-wide">
+                <p>This is your chance to respond. Please note:</p>
+                <ul class="list list-bullet">
+                    <li>you're being charged with a criminal offence and you may wish to take legal advice before making your plea</li>
+                    <li>all evidence is in the notice sent to you</li>
+                    <li>if you plead guilty, we will reduce your fine by up to 33%</li>
+                </ul>
+            </div>
+            
+            <hr class="top_60 bottom_60">
+            
+            <h2 class="heading-medium">What you've been charged with</h2>
+            <h3 class="heading-small">Passenger failing to produce a ticket</h3>
+            <p>On 17 Feb 2017 At Mill Mead Road N17. Being a passenger on a Public service Vehicle operated on behalf of London Bus Services Limited being used for the carriage of passengers at separate fares where the vehicle was being operated by a Driver without a Conductor did not as directed by the Driver an Inspector or a Notice displayed on the vehicle pay the fare for the journey in accordance with the direction.</p>
+            
+            <hr class="top_60 bottom_60">
+            
+            <h2 class="heading-medium">Enter your plea</h2>
+        
+            <form class="form" action="" method="post">
+                <div class="form-group">
+                    
+                    <fieldset>
+                        <legend>
+                            <h3 class="heading-small">How do you plead?</h3>
+                        </legend>
+                        <div class="multiple-choice">
+                            <input id="radio-1" type="radio" name="radio-group" value="Yes">
+                            <label for="radio-1">Guilty</label>
+                            <div class="column-full reveal-if-active">
+                                <div class="panel panel-border-wide">
+                                    <p>You’re declaring you committed the offence.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="radio-2" type="radio" name="radio-group" value="No">
+                            <label for="radio-2">Not guilty</label>
+                            <div class="column-full reveal-if-active">
+                                <div class="panel panel-border-wide">
+                                    <p>You’re declaring you didn’t commit the offence so you’ll need to attend court if you want to present your evidence.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    
+                </div>
+                <div class="form-group">
+                    <input class="button" type="submit" value="Continue">
+                </div>
+            </form>
+        </div>
+    </div>
+    
+</main>
+
+{% endblock %}
