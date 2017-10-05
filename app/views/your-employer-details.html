@@ -10,14 +10,14 @@
     
     <div class="breadcrumbs">
         <ol>
-          <li><a href="/your-employer">Back</a></li>
+            <li><a href="javascript:history.go(-1);">Back</a></li>
         </ol>
     </div>
 
     <div class="grid-row">
         <div class="column-two-thirds">
             
-            <form class="form" action="" method="post">
+            <form class="form" action="/your-outgoings" method="post">
                 <div class="form-group">
                     <fieldset class="inline">
                         <legend>
@@ -42,17 +42,17 @@
                         </fieldset>
                         
                         <fieldset class="bottom_15">
-                            <label class="form-label" for="city-name">Town or city</label>
-                            <input class="form-control width_75" id="city-name" type="text" name="city-name">
+                            <label class="form-label" for="employer-city-name">Town or city</label>
+                            <input class="form-control width_75" id="employer-city-name" type="text" name="employer-city-name">
                         </fieldset>
                         
                         <fieldset class="bottom_15">
-                            <label class="form-label" for="postcode">Postcode</label>
-                            <input class="form-control width_postcode" id="postcode" type="text" name="postcode">
+                            <label class="form-label" for="employer-postcode">Postcode</label>
+                            <input class="form-control width_postcode" id="employer-postcode" type="text" name="employer-postcode">
                         </fieldset>
                         
                         <fieldset>
-                            <label class="form-label" for="employer-telephone">Empoyer telephone (optional)</label>
+                            <label class="form-label" for="employer-telephone">Employer telephone (optional)</label>
                             <input class="form-control" id="employer-telephone" type="text" name="employer-telephone">
                         </fieldset>
                     </fieldset>
@@ -60,11 +60,23 @@
                 
                 <div class="form-group">
                     <input class="button" type="submit" value="Continue">
-                    <p class="top_15"><a href="/your-employer">Back</a></p>
+                    <p class="top_15"><a href="javascript:history.go(-1);">Back</a></p>
                 </div>
                 
             </form>
         </div>
+        
+        <div class="column-third">
+            <aside class="govuk-related-items" role="complementary">
+                <h2 class="heading-medium" id="subsection-title">Further links</h2>
+                <nav role="navigation" aria-labelledby="subsection-title">
+                <ul class="font-xsmall">
+                    <li><a href="/help-and-advice">Help and advice</a></li>
+                </ul>
+                </nav>
+            </aside>
+        </div>
+        
     </div>
     
 </main>

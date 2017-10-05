@@ -10,7 +10,7 @@
     
     <div class="breadcrumbs">
         <ol>
-          <li><a href="your-plea.html">Back</a></li>
+            <li><a href="javascript:history.go(-1);">Back</a></li>
         </ol>
     </div>
     <div class="grid-row">
@@ -19,7 +19,7 @@
             <h1 class="heading-xlarge">Not guilty plea</h1>
             <p>Provide information for magistrates ahead of your court hearing.</p>
                                 
-            <form class="form" action="" method="post">
+            <form class="form" action="/your-finances" method="post">
                 <div class="form-group">
                     
                     <fieldset>
@@ -28,33 +28,119 @@
                         </label>
                         <textarea class="form-control form-control-3-4" name="notguilty-textarea" id="notguilty-textarea" rows="5"></textarea>
                     </fieldset>
-
-                    <!--
-                    <fieldset>
+                    
+                    <fieldset class="inline">
                         <legend>
-                            <h3 class="heading-medium bottom_15">Why do you believe you're not guilty?</h3>
+                            <h2 class="heading-small">Do you need an interpreter in court?</h2>
                         </legend>
                         <div class="multiple-choice">
-                            <input id="radio-1" type="radio" name="guilty-come-to-court" value="1">
-                            <label for="radio-1">No, I don't want to come to court</label>
+                            <input id="radio-1" type="radio" name="interpreter" value="1">
+                            <label for="radio-1">Yes</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="radio-2" type="radio" name="interpreter" value="2">
+                            <label for="radio-2">No</label>
                         </div>
                     </fieldset>
                     
-                    <fieldset>
-                        <div class="multiple-choice top_15">
-                            <input id="radio-2" type="radio" name="guilty-come-to-court" value="2">
-                            <label for="radio-2">Yes, I want to come to court</label>
+                    <div class="interpreter-fields top_15">
+                        <div class="panel panel-border-wide">
+                            <p class="heading-small">Which language?</p>
+                            <span class="form-hint">You can include sign language</span>
+                            <input class="form-control" id="interpreter" type="text" name="interpreter-language">
+                        </div>
+                    </div>
+                    
+                    <h2 class="heading-medium top_60 bottom_0">Witnesses</h2>
+                    
+                    <fieldset class="inline">
+                        <legend>
+                            <h2 class="heading-small">Do you agree with the witness statement sent in your notice?</h2>
+                        </legend>
+                        <div class="multiple-choice">
+                            <input id="radio-1" type="radio" name="witness-statement-group" value="1">
+                            <label for="radio-1">Yes</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="radio-2" type="radio" name="witness-statement-group" value="2">
+                            <label for="radio-2">No</label>
                         </div>
                     </fieldset>
-                    -->                                        
                     
+                    <div class="witness-statement-fields top_15">
+                        <div class="panel panel-border-wide">
+                            <p class="bottom_5">Enter the name of the witness and what you disagree with</p>
+                            <textarea class="form-control form-control-3-4" name="witness-statement-textarea" id="witness-statement-textarea" rows="5"></textarea>
+                        </div>
+                    </div>
+
+                    <fieldset class="inline">
+                        <legend>
+                            <h2 class="heading-small">Do you want to bring your own witness?</h2>
+                            <span class="form-hint">Someone who can give evidence in court supporting your case</span>
+                        </legend>
+                        <div class="multiple-choice">
+                            <input id="radio-1" type="radio" name="own-witness-group" value="1">
+                            <label for="radio-1">Yes</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="radio-2" type="radio" name="own-witness-group" value="2">
+                            <label for="radio-2">No</label>
+                        </div>
+                    </fieldset>
+                    
+                    <div class="own-witness-fields top_15">
+                        <div class="panel panel-border-wide">
+                            <p class="bottom_5">Enter the name and address of your witness and their age if under 18</p>
+                            <textarea class="form-control form-control-3-4" name="own-witness-textarea" id="own-witness-textarea" rows="5"></textarea>
+                            <p class="top_30 bottom_5">If your witness needs an interpreter, which language? (optional)</p>
+                            <span class="form-hint">You can include sign language</span>
+                            <input class="form-control" id="own-witness-interpreter" type="text" name="own-witness-interpreter-language">
+                        </div>
+                    </div>
+
+                    <h2 class="heading-medium top_60 bottom_0">Attending court</h2>
+                    
+                    <fieldset class="inline">
+                        <legend>
+                            <h2 class="heading-small">Are there any dates you can’t attend court?</h2>
+                        </legend>
+                        <div class="multiple-choice">
+                            <input id="radio-1" type="radio" name="nogo-dates-group" value="1">
+                            <label for="radio-1">Yes</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="radio-2" type="radio" name="nogo-dates-group" value="2">
+                            <label for="radio-2">No</label>
+                        </div>
+                    </fieldset>
+                    
+                    <div class="nogo-dates-fields top_15">
+                        <div class="panel panel-border-wide">
+                            <p class="bottom_5">Enter the dates you can’t attend court</p>
+                            <textarea class="form-control form-control-3-4" name="nogo-dates-textarea" id="nogo-dates-textarea" rows="5"></textarea>
+                        </div>
+                    </div>
+
                 </div>
                 <div class="form-group">
                     <input class="button" type="submit" value="Continue">
-                    <p class="top_15"><a href="/your-plea">Back</a></p>
+                    <p class="top_15"><a href="javascript:history.go(-1);">Back</a></p>
                 </div>
             </form>
         </div>
+        
+        <div class="column-third">
+            <aside class="govuk-related-items" role="complementary">
+                <h2 class="heading-medium" id="subsection-title">Further links</h2>
+                <nav role="navigation" aria-labelledby="subsection-title">
+                <ul class="font-xsmall">
+                    <li><a href="/help-and-advice">Help and advice</a></li>
+                </ul>
+                </nav>
+            </aside>
+        </div>
+        
     </div>
     
 </main>

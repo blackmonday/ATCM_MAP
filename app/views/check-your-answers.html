@@ -7,9 +7,15 @@
 {% block content %}
 
 <main id="content" role="main">
+    
+    <div class="breadcrumbs">
+        <ol>
+            <li><a href="javascript:history.go(-1);">Back</a></li>
+        </ol>
+    </div>
+
     <div class="grid-row">
         <div class="column-full">
-            <a href="#" class="link-back">Back</a>
 
             <h1 class="heading-large">Check your answers</h1>
 
@@ -26,7 +32,7 @@
                         &nbsp;
                     </dd>
                     <dd class="cya-change">
-                        <a href="#">Change<span class="visually-hidden"> name</span></a>
+                        <a href="/your-details">Change<span class="visually-hidden"> name</span></a>
                     </dd>
                 </div>
 
@@ -126,7 +132,7 @@
                         &nbsp;
                     </dd>
                     <dd class="cya-change">
-                        <a href="#">Change<span class="visually-hidden"> name</span></a>
+                        <a href="/your-plea">Change<span class="visually-hidden"> name</span></a>
                     </dd>
                 </div>
 
@@ -176,7 +182,7 @@
                         &nbsp;
                     </dd>
                     <dd class="cya-change">
-                        <a href="#">Change<span class="visually-hidden"> name</span></a>
+                        <a href="/your-finances">Change<span class="visually-hidden"> name</span></a>
                     </dd>
                 </div>
 
@@ -238,7 +244,7 @@
                         &nbsp;
                     </dd>
                     <dd class="cya-change">
-                        <a href="#">Change<span class="visually-hidden"> name</span></a>
+                        <a href="your-outgoings">Change<span class="visually-hidden"> name</span></a>
                     </dd>
                 </div>
 
@@ -257,10 +263,10 @@
 
             <div class="form-group top_30">
                 <a href="declaration" class="button">Confirm and continue</a>
-                <p class="top_15"><a href="">Back</a></p>
+                <p class="top_15"><a href="javascript:history.go(-1);">Back</a></p>
             </div>
 
-        </div>
+        </div>        
     </div>
 </main>
 

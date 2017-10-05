@@ -20,17 +20,9 @@ $(document).ready(function () {
 
 // ATCM MAP
 
-// select the relevant <input> elements, and using on() to bind a change event-handler:
-$('input[name="radio-group"]').on('change', function() {
-  // this, in the anonymous function, refers to the changed-<input>:
-  // select the element(s) you want to show/hide:
+$('input[name="name-address-group"]').on('change', function() {
   $('.name-address-fields')
-      // pass a Boolean to the method, if the numeric-value of the changed-<input>
-      // is exactly equal to 2 and that <input> is checked, the .business-fields
-      // will be shown:
       .toggle(+this.value === 2 && this.checked);
-// trigger the change event, to show/hide the .business-fields element(s) on
-// page-load:
 }).change();
 
 $('input[name="NIN-radio-inline-group"]').on('change', function() {
@@ -51,12 +43,27 @@ $('input[name="interpreter"]').on('change', function() {
       .toggle(+this.value === 1 && this.checked);
 }).change();
 
-$('input[name="employment-status"]').on('change', function() {
+$('input[name="witness-statement-group"]').on('change', function() {
+  $('.witness-statement-fields')
+      .toggle(+this.value === 2 && this.checked);
+}).change();
+
+$('input[name="nogo-dates-group"]').on('change', function() {
+  $('.nogo-dates-fields')
+      .toggle(+this.value === 2 && this.checked);
+}).change();
+
+$('input[name="own-witness-group"]').on('change', function() {
+  $('.own-witness-fields')
+      .toggle(+this.value === 2 && this.checked);
+}).change();
+
+$('input[name="employment-status-group"]').on('change', function() {
   $('.other-employment-status')
       .toggle(+this.value === 4 && this.checked);
 }).change();
 
-$('input[name="claiming-benefits"]').on('change', function() {
+$('input[name="claiming-benefits-group"]').on('change', function() {
   $('.claiming-benefits-status')
       .toggle(+this.value === 1 && this.checked);
 }).change();

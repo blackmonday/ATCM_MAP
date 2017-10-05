@@ -10,7 +10,7 @@
     
     <div class="breadcrumbs">
         <ol>
-          <li><a href="find-your-case.html">Back</a></li>
+            <li><a href="javascript:history.go(-1);">Back</a></li>
         </ol>
     </div>
 
@@ -36,15 +36,15 @@
                             <p class="heading-small">Are these details correct?</p>
                         </legend>
                         <div class="multiple-choice">
-                            <input id="radio-1" type="radio" name="guilty-plea-group" value="Yes">
-                            <label for="radio-1">Yes</label>
+                            <input id="name-address-1" type="radio" name="name-address-group" value="1">
+                            <label for="name-address-1">Yes</label>
                         </div>
                         <div class="multiple-choice">
-                            <input id="radio-2" type="radio" name="radio-group" value="2">
-                            <label for="radio-2">No</label>
+                            <input id="name-address-2" type="radio" name="name-address-group" value="2">
+                            <label for="name-address-2">No</label>
                         </div>
                     </fieldset>
-                                           
+                    
                     <div class="name-address-fields">
                         <div class="panel panel-border-wide top_15">
                             <p class="heading-small">Changes to name</p>
@@ -125,9 +125,8 @@
                                 <input id="radio-inline-2" type="radio" name="NIN-radio-inline-group" value="2">
                                 <label for="radio-inline-2">No</label>
                             </div>
-                            
                         </fieldset>
-                        
+
                         <div class="NIN-fields">
                             <div class="panel panel-border-wide top_15">
                                 <p class="heading-small">National Insurance number</p>
@@ -141,11 +140,24 @@
                 
                 <div class="form-group">
                     <input class="button" type="submit" value="Continue">
-                    <p class="top_15"><a href="/start-page">Back</a></p>
+                    <p class="top_15"><a href="javascript:history.go(-1);">Back</a></p>
+                    <a href="/your-plea">your plea</a>
                 </div>
                 
             </form>
         </div>
+        
+        <div class="column-third">
+            <aside class="govuk-related-items" role="complementary">
+                <h2 class="heading-medium" id="subsection-title">Further links</h2>
+                <nav role="navigation" aria-labelledby="subsection-title">
+                <ul class="font-xsmall">
+                    <li><a href="/help-and-advice">Help and advice</a></li>
+                </ul>
+                </nav>
+            </aside>
+        </div>
+        
     </div>
     
 </main>

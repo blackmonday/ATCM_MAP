@@ -10,7 +10,7 @@
     
     <div class="breadcrumbs">
         <ol>
-          <li><a href="/your-finances">Back</a></li>
+        <li><a href="javascript:history.go(-1);">Back</a></li>
         </ol>
     </div>
     <div class="grid-row">
@@ -18,12 +18,12 @@
  
             <h1 class="heading-xlarge">Your income</h1>
 
-            <form  action="/your-employer" method="post">
+            <form  action="" method="post">
                 <div class="form-group">
                     
                     <fieldset class="inline">
                         <legend>
-                            <h2 class="heading-small bottom_15">Frequecy of income and outgoings</h2>
+                            <h2 class="heading-small bottom_15">Frequency of income and outgoings</h2>
                         </legend>
 
                         <div class="multiple-choice">
@@ -55,19 +55,19 @@
                             <h2 class="heading-small">Your employment status</h2>
                         </legend>
                         <div class="multiple-choice">
-                            <input id="radio-1" type="radio" name="employment-status" value="1">
+                            <input id="radio-1" type="radio" name="employment-status-group" value="1">
                             <label for="radio-1">Employed (full or part-time)</label>
                         </div>
                             <div class="multiple-choice">
-                            <input id="radio-2" type="radio" name="employment-status" value="2">
+                            <input id="radio-2" type="radio" name="employment-status-group" value="2">
                             <label for="radio-2">Self-employed</label>
                         </div>
                         <div class="multiple-choice">
-                            <input id="radio-3" type="radio" name="employment-status" value="3">
+                            <input id="radio-3" type="radio" name="employment-status-group" value="3">
                             <label for="radio-3">Unemployed</label>
                         </div>
                         <div class="multiple-choice">
-                            <input id="radio-4" type="radio" name="employment-status" value="4">
+                            <input id="radio-4" type="radio" name="employment-status-group" value="4">
                             <label for="radio-4">Other</label>
                         </div>
                         
@@ -85,11 +85,11 @@
                             <h2 class="heading-small">Are you claiming any benefits?</h2>
                         </legend>
                         <div class="multiple-choice">
-                            <input id="radio-1" type="radio" name="claiming-benefits" value="1">
+                            <input id="radio-1" type="radio" name="claiming-benefits-group" value="1">
                             <label for="radio-1">Yes</label>
                         </div>
                             <div class="multiple-choice">
-                            <input id="radio-2" type="radio" name="claiming-benefits" value="2">
+                            <input id="radio-2" type="radio" name="claiming-benefits-group" value="2">
                             <label for="radio-2">No</label>
                         </div>
                     </fieldset>
@@ -109,12 +109,24 @@
                 
                 <div class="form-group">
                     <input class="button" type="submit" value="Continue">
-                    <p class="top_15"><a href="/your-finances">Back</a></p>
+                    <p class="top_15"><a href="javascript:history.go(-1);">Back</a></p>
                 </div>
                 
             </form>
             
         </div>
+        
+        <div class="column-third">
+            <aside class="govuk-related-items" role="complementary">
+                <h2 class="heading-medium" id="subsection-title">Further links</h2>
+                <nav role="navigation" aria-labelledby="subsection-title">
+                <ul class="font-xsmall">
+                    <li><a href="/help-and-advice">Help and advice</a></li>
+                </ul>
+                </nav>
+            </aside>
+        </div>
+        
     </div>
     
 </main>
