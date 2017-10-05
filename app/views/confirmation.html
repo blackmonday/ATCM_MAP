@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Confirmation page example
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <div class="govuk-box-highlight">
+                <h1 class="heading-xlarge">Your plea has been submitted</h1>
+                <p class="font-small bottom_5"><strong class="bold">Your case reference number is</strong></p>
+                <p class="font-medium"><strong class="bold">HDJ2123F</strong></p>
+                <p class="font-small"><strong class="bold">You will need to quote this if you contact the court</strong></p>
+            </div>
+
+            <h2 class="heading-medium">What happens next?</h2>
+            <p>We’ll send a confirmation of your plea to the email address you gave.</p>
+            <p class="bottom_10">Depending on how you pleaded, we’ll:</p>
+            <ul class="list list-bullet">
+                <li>send you a letter with the magistrate’s decision</li>
+                <li>tell you if or when you need to attend court</li>
+            </ul>
+
+            <h2 class="heading-medium">Need to change your plea or correct information?</h2>
+            <p>Contact the court by email or post quoting your case reference number as soon as possible.</p>
+            <h3 class="heading-small">By post</h3>
+            <p>Lavender Hill Magistrates Court<br />
+            176a Lavender Hill<br />
+            Clapham Junction<br />
+            London SW11 1JU</p>
+            <h3 class="heading-small">By email</h3>
+            <p><a href="mailto:swglondonmc@hmcts.gsi.gov.uk">swglondonmc@hmcts.gsi.gov.uk</a></p>
+            
+            <a class="button button-start" href="/give_feedback" role="button">Finish</a>
+
+        </div>
+    </div>
+</main>
+
+{% endblock %}

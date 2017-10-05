@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Your employer details
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    
+    <div class="breadcrumbs">
+        <ol>
+          <li><a href="/your-employer">Back</a></li>
+        </ol>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            
+            <form class="form" action="" method="post">
+                <div class="form-group">
+                    <fieldset class="inline">
+                        <legend>
+                            <h1 class="heading-xlarge">Your employer</h1>
+                        </legend>
+                        
+                        <fieldset class="bottom_15">
+                            <label class="form-label" for="employer-number">Employer number (optional)</label>
+                            <input class="form-control" id="employer-number" type="text" name="employer-number">
+                        </fieldset>
+                        
+                        <fieldset class="bottom_15">
+                            <label class="form-label" for="employer-name">Employer name</label>
+                            <input class="form-control width_75" id="employer-name" type="text" name="employer-name">
+                        </fieldset>
+                        
+                        <fieldset class="bottom_15">
+                            <label class="form-label" for="employer-address">Building and street</label>
+                            <input class="form-control bottom_10 width_75" id="employer-address-1" type="text" name="employer-address-1">
+                            <input class="form-control bottom_10 width_75" id="employer-address-2" type="text" name="employer-address-2">
+                            <input class="form-control width_75" id="employer-address-3" type="text" name="employer-address-3">
+                        </fieldset>
+                        
+                        <fieldset class="bottom_15">
+                            <label class="form-label" for="city-name">Town or city</label>
+                            <input class="form-control width_75" id="city-name" type="text" name="city-name">
+                        </fieldset>
+                        
+                        <fieldset class="bottom_15">
+                            <label class="form-label" for="postcode">Postcode</label>
+                            <input class="form-control width_postcode" id="postcode" type="text" name="postcode">
+                        </fieldset>
+                        
+                        <fieldset>
+                            <label class="form-label" for="employer-telephone">Empoyer telephone (optional)</label>
+                            <input class="form-control" id="employer-telephone" type="text" name="employer-telephone">
+                        </fieldset>
+                    </fieldset>
+                </div>
+                
+                <div class="form-group">
+                    <input class="button" type="submit" value="Continue">
+                    <p class="top_15"><a href="/your-employer">Back</a></p>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+    
+</main>
+
+{% endblock %}

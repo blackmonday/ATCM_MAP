@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Your finances
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    
+    <div class="breadcrumbs">
+        <ol>
+          <li><a href="">Back</a></li>
+        </ol>
+    </div>
+    <div class="grid-row">
+        <div class="column-two-thirds">
+ 
+            <h1 class="heading-xlarge">Your finances</h1>
+            <p class="lede">You must provide details of your finances.</p>
+
+            <p class="bottom_15">If you need to pay a penalty, then the court will decide the amount based on:</p>
+            <ul class="list list-bullet">
+                <li>your finances</li>
+                <li>the seriousness of the offence</li>
+            </ul>
+
+            <div class="notice top_30 bottom_30">
+                <i class="icon icon-important">
+                    <span class="visually-hidden">Warning</span>
+                </i>
+                <strong class="bold-medium">
+                    It is an offence to give false or misleading information
+                </strong>
+            </div>
+            
+            <p>Your financial details will be kept securely and only used by court staff.</p>
+
+            <a class="button" href="/your-income" role="button">Continue</a>
+            <p class="top_15"><a href="">Back</a></p>
+
+        </div>
+    </div>
+    
+</main>
+
+{% endblock %}

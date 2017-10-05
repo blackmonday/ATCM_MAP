@@ -1,0 +1,267 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Check your answers
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-full">
+            <a href="#" class="link-back">Back</a>
+
+            <h1 class="heading-large">Check your answers</h1>
+
+            <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
+            <!--   * `cya-questions-short` for short questions -->
+            <!--   * `cya-questions-long` for long questions -->
+            <!--   * none for single group of q&a -->
+            <dl class="govuk-check-your-answers cya-questions-short">
+                <div>
+                    <dt class="cya-question">
+                        <h2 class="heading-medium">Your details</h2>
+                    </dt>
+                    <dd class="cya-answer">
+                        &nbsp;
+                    </dd>
+                    <dd class="cya-change">
+                        <a href="#">Change<span class="visually-hidden"> name</span></a>
+                    </dd>
+                </div>
+
+                <div>
+                    <dt class="cya-question">
+                        Name
+                    </dt>
+                    <dd class="cya-answer">
+                        Sam Smith
+                    </dd>
+                    <dd class="cya-change">
+                        &nbsp;
+                    </dd>
+                </div>
+
+                <div>
+                    <dt class="cya-question">
+                        Address
+                    </dt>
+                    <dd class="cya-answer">
+                        38A Baker Street<br />
+                        London<br />
+                        W1 7SX
+                    </dd>
+                    <dd class="cya-change">
+                        &nbsp;
+                    </dd>
+                </div>
+
+                <div>
+                    <dt class="cya-question">
+                        Home telephone
+                    </dt>
+                    <dd class="cya-answer">
+                        0203 123 555
+                    </dd>
+                    <dd class="cya-change">
+                        &nbsp;
+                    </dd>
+                </div>
+
+                <div>
+                    <dt class="cya-question">
+                        Mobile phone
+                    </dt>
+                    <dd class="cya-answer">
+                        07700 900457
+                    </dd>
+                    <dd class="cya-change">
+                        &nbsp;
+                    </dd>
+                </div>
+
+                <div>
+                    <dt class="cya-question">
+                        Email
+                    </dt>
+                    <dd class="cya-answer">
+                        sam.smith@gmail.com
+                    </dd>
+                    <dd class="cya-change">
+                        &nbsp;
+                    </dd>
+                </div>
+
+                <div>
+                    <dt class="cya-question">
+                        Date of birth
+                    </dt>
+                    <dd class="cya-answer">
+                        18 May 1987
+                    </dd>
+                    <dd class="cya-change">
+                        &nbsp;
+                    </dd>
+                </div>
+
+                <div>
+                    <dt class="cya-question">
+                        National Insurance number
+                    </dt>
+                    <dd class="cya-answer">
+                        QQ 12 34 56 C
+                    </dd>
+                    <dd class="cya-change">
+                        &nbsp;
+                    </dd>
+                </div>
+            </dl>
+
+            <dl class="govuk-check-your-answers cya-questions-short top_60">
+                <div>
+                    <dt class="cya-question">
+                        <h2 class="heading-medium">Your plea</h2>
+                    </dt>
+                    <dd class="cya-answer">
+                        &nbsp;
+                    </dd>
+                    <dd class="cya-change">
+                        <a href="#">Change<span class="visually-hidden"> name</span></a>
+                    </dd>
+                </div>
+
+                <div>
+                    <dt class="cya-question">
+                        Plea
+                    </dt>
+                    <dd class="cya-answer">
+                        Guilty
+                    </dd>
+                    <dd class="cya-change">
+                        &nbsp;
+                    </dd>
+                </div>
+
+                <div>
+                    <dt class="cya-question">
+                        How would you like magistrates to consider your case?
+                    </dt>
+                    <dd class="cya-answer">
+                        Online
+                    </dd>
+                    <dd class="cya-change">
+                        &nbsp;
+                    </dd>
+                </div>
+
+                <div>
+                    <dt class="cya-question">
+                        Information for magistrates
+                    </dt>
+                    <dd class="cya-answer">
+                        I’d accidentally picked up my partner’s oyster card instead of mine for a few days in a row. It was a genuine mistake.
+                    </dd>
+                    <dd class="cya-change">
+                        &nbsp;
+                    </dd>
+                </div>
+            </dl>
+
+            <dl class="govuk-check-your-answers cya-questions-short top_60">
+                <div>
+                    <dt class="cya-question">
+                        <h2 class="heading-medium">Your finances</h2>
+                    </dt>
+                    <dd class="cya-answer">
+                        &nbsp;
+                    </dd>
+                    <dd class="cya-change">
+                        <a href="#">Change<span class="visually-hidden"> name</span></a>
+                    </dd>
+                </div>
+
+                <div>
+                    <dt class="cya-question">
+                        Monthly income (after tax)
+                    </dt>
+                    <dd class="cya-answer">
+                        £615
+                    </dd>
+                    <dd class="cya-change">
+                        &nbsp;
+                    </dd>
+                </div>
+
+                <div>
+                    <dt class="cya-question">
+                        Employmentr status
+                    </dt>
+                    <dd class="cya-answer">
+                        Employed
+                    </dd>
+                    <dd class="cya-change">
+                        &nbsp;
+                    </dd>
+                </div>
+
+                <div>
+                    <dt class="cya-question">
+                        Your employer
+                    </dt>
+                    <dd class="cya-answer">
+                        ABC Company Ltd
+                    </dd>
+                    <dd class="cya-change">
+                        &nbsp;
+                    </dd>
+                </div>
+
+                <div>
+                    <dt class="cya-question">
+                        Claiming benefits?
+                    </dt>
+                    <dd class="cya-answer">
+                        No
+                    </dd>
+                    <dd class="cya-change">
+                        &nbsp;
+                    </dd>
+                </div>
+            </dl>
+
+            <dl class="govuk-check-your-answers cya-questions-short top_60">
+                <div>
+                    <dt class="cya-question">
+                        <h2 class="heading-medium top_30">Your outgoings</h2>
+                    </dt>
+                    <dd class="cya-answer">
+                        &nbsp;
+                    </dd>
+                    <dd class="cya-change">
+                        <a href="#">Change<span class="visually-hidden"> name</span></a>
+                    </dd>
+                </div>
+
+                <div>
+                    <dt class="cya-question">
+                        Monthly amount
+                    </dt>
+                    <dd class="cya-answer">
+                        £850
+                    </dd>
+                    <dd class="cya-change">
+                        &nbsp;
+                    </dd>
+                </div>
+            </dl>
+
+            <div class="form-group top_30">
+                <a href="declaration" class="button">Confirm and continue</a>
+                <p class="top_15"><a href="">Back</a></p>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+{% endblock %}

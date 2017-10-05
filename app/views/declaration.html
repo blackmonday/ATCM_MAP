@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Check your answers
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <a href="#" class="link-back">Back</a>
+
+            <form class="form" action="confirmation" method="post">
+                <div class="form-group">
+                  <fieldset>
+
+                    <legend>
+                      <h4 class="heading-xlarge">Declaration</h4>
+                    </legend>
+                      
+                      <p>I confirm that:</p>
+
+                    <div class="multiple-choice">
+                      <input id="waste-type-1" name="waste-types" type="checkbox" value="waste-animal">
+                      <label for="waste-type-1">I confirm</label>
+                    </div>
+                      
+                  </fieldset>
+                </div>
+                
+                <div class="form-group top_30">
+                        <input class="button" type="submit" value="Confirm and continue">
+                    <p class="top_15"><a href="">Back</a></p>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</main>
+
+{% endblock %}

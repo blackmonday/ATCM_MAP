@@ -1,24 +1,34 @@
 {% extends "layout.html" %}
 
 {% block page_title %}
-  GOV.UK prototype kit
+  ATCM Make a plea design demo
 {% endblock %}
 
 {% block content %}
 
 <main id="content" role="main">
-  <div class="grid-row">
-    <div class="column-two-thirds">
-        
-      <h1 class="heading-xlarge">
-        ATCM Make a plea design demo
-        <span class="heading-secondary">Using the GOV.UK prototype kit {{releaseVersion}}</span>
-      </h1>{{releaseVersion | log }}
-      
-      <a class="button button-start" href="start-page.html" role="button">Start now</a>
-        
+    <div class="grid-row">
+        <div class="column-two-thirds">
+
+            <h1 class="heading-xlarge">
+                ATCM Make a plea design demo
+                <span class="heading-secondary">Using the GOV.UK prototype kit {{releaseVersion}}</span>
+            </h1>{{releaseVersion | log }}
+
+            <div class="notice">
+                <i class="icon icon-important">
+                    <span class="visually-hidden">Warning</span>
+                </i>
+                <strong class="bold-small top_60 bottom_60">
+                    <p class="bold bottom_5">DO NOT USE AS A DEVELOPMENT REFERENCE.</p>
+                    <p class="top_5">This demo is for user testing and basic demo purposes only and may not represent the final approved designs.</p>
+                </strong>
+            </div>
+
+            <a class="button button-start" href="start-page.html" role="button">Start now</a>
+
+        </div>
     </div>
-  </div>
 </main>
 
 {% endblock %}

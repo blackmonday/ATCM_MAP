@@ -46,4 +46,27 @@ $('input[name="how-do-you-plea"]').on('change', function() {
 
 }).change();
 
+$('input[name="interpreter"]').on('change', function() {
+  $('.interpreter-fields')
+      .toggle(+this.value === 1 && this.checked);
+}).change();
 
+$('input[name="employment-status"]').on('change', function() {
+  $('.other-employment-status')
+      .toggle(+this.value === 4 && this.checked);
+}).change();
+
+$('input[name="claiming-benefits"]').on('change', function() {
+  $('.claiming-benefits-status')
+      .toggle(+this.value === 1 && this.checked);
+}).change();
+
+$('input[name="deduct-from-benefits-group"]').on('change', function() {
+  $('.deduct-from-benefits-no')
+      .toggle(+this.value === 1 && this.checked);
+}).change();
+
+$('input[name="your-outgoings-group"]').on('change', function() {
+  $('.your-outgoings-yes')
+      .toggle(+this.value === 1 && this.checked);
+}).change();
