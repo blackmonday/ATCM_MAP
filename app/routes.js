@@ -34,6 +34,17 @@ router.post('/your-details', function (req, res) {
 
 })
 
+// Find your case
+router.post('/find-your-case', function (req, res) {
+
+  var caseFound = "1"
+
+  if (caseFound == "1"){
+    res.redirect('/your-details')
+  }
+
+})
+
 // Your plea
 router.post('/your-plea', function (req, res) {
 
@@ -61,6 +72,7 @@ router.post('/guilty-plea', function (req, res) {
 
 })
 
+// Your income
 router.post('/your-income', function (req, res) {
 
   var employmentStatus = req.session.data['employment-status-group']
@@ -76,6 +88,7 @@ router.post('/your-income', function (req, res) {
 
 })
 
+//Your employer
 router.post('/your-employer', function (req, res) {
 
   var areYouEmployed = req.session.data['are-you-employed-group']
@@ -88,7 +101,7 @@ router.post('/your-employer', function (req, res) {
 
 })
 
-/* Declaration */
+// Declaration
 router.post('/declaration', function (req, res) {
 
   var declarationTicked = req.session.data['confirmation-group']
