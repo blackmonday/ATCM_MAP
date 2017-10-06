@@ -17,7 +17,7 @@
     <div class="grid-row">
         <div class="column-two-thirds">
             
-            <form class="form" action="" method="post">
+            <form class="form" action="" method="post" onsubmit="InsertDefaultValues()">
                 <div class="form-group">
                     <fieldset class="inline">
                         <legend>
@@ -47,29 +47,29 @@
                                     <span class="heading-small">Accommodation</span>
                                     <span class="form-hint">For example, rent, mortgage or lodgings</span>
                                 </label>
-                                <input class="form-control" id="accomodation" type="text" name="accomodation">
+                                <input class="form-control" id="accomodation" type="number" name="accomodation">
                                 
                                 <label class="form-label top_15" for="council-tax">
                                     <span class="heading-small">Council tax</span>
                                 </label>
-                                <input class="form-control" id="council-tax" type="text" name="council-tax">
+                                <input class="form-control" id="council-tax" type="number" name="council-tax">
                                 
                                 <label class="form-label top_15" for="household-bills">
                                     <span class="heading-small">Household bills</span>
                                     <span class="form-hint">For example, gas, electricity, water, insurance</span>
                                 </label>
-                                <input class="form-control" id="household-bills" type="text" name="household-bills">
+                                <input class="form-control" id="household-bills" type="number" name="household-bills">
                                 
                                 <label class="form-label top_15" for="travel-expeneses">
                                     <span class="heading-small">Travel expenses</span>
                                     <span class="form-hint">For example, rent, mortgage or lodgings</span>
                                 </label>
-                                <input class="form-control" id="travel-expeneses" type="text" name="travel-expeneses">
+                                <input class="form-control" id="travel-expeneses" type="number" name="travel-expeneses">
                                  
                                 <label class="form-label top_15" for="child-maintenance">
                                     <span class="heading-small">Child maintenance</span>
                                 </label>
-                                <input class="form-control" id="child-maintenance" type="text" name="child-maintenance">
+                                <input class="form-control" id="child-maintenance" type="number" name="child-maintenance">
                                  
                                 <label class="form-label top_15" for="child-maintenance">
                                     <span class="heading-small">Any other significant expeneses not listed?</span>
@@ -82,7 +82,7 @@
                     
                     </fieldset>
                 </div>
-
+   
                 <div class="form-group">
                     <input class="button" type="submit" value="Continue">
                     <p class="top_15"><a href="javascript:history.go(-1);">Back</a></p>
@@ -105,5 +105,36 @@
     </div>
     
 </main>
+
+<script type="text/javascript">
+    function InsertDefaultValues()
+    {
+       // Leave this line as is. Customization follows.
+       var FieldsAndDefault = new Array();
+
+       // Customization:
+       // For each field that will have custom information is 
+       //   submitted blank, use this format:
+       //     FieldsAndDefault.push("FieldIDvalue Default value");
+
+       FieldsAndDefault.push("accomodation 0");
+       FieldsAndDefault.push("council-tax 0");
+       FieldsAndDefault.push("household-bills 0");
+       FieldsAndDefault.push("travel-expeneses 0");
+       FieldsAndDefault.push("child-maintenance 0");
+
+       // End of customization.
+       ///////////////////////////////////////
+       for( var i=0; i<FieldsAndDefault.length; i++ )
+       {
+          FieldsAndDefault[i] = FieldsAndDefault[i].replace(/^\s*/,"");
+          var pieces = FieldsAndDefault[i].split(" ");
+          var field = pieces.shift();
+          var f = document.getElementById(field);
+          if( f.value.length < 1 ) { f.value = pieces.join(" "); }
+       }
+       return true;
+    }
+</script>
 
 {% endblock %}
