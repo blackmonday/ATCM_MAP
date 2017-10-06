@@ -60,6 +60,7 @@ router.post('/your-plea', function (req, res) {
 
 })
 
+// Guilty plea
 router.post('/guilty-plea', function (req, res) {
 
   var guiltyComeToCourt = req.session.data['guilty-come-to-court']
@@ -92,11 +93,38 @@ router.post('/your-income', function (req, res) {
 router.post('/your-employer', function (req, res) {
 
   var areYouEmployed = req.session.data['are-you-employed-group']
+  var benefitsStatus = req.session.data['claiming-benefits-group']
 
   if (areYouEmployed == "1"){
     res.redirect('/your-employer-details')
+  } else if (benefitsStatus == "1") {
+      res.redirect('/your-benefits')
   } else {
       res.redirect('/your-outgoings')
+  }
+
+})
+
+//Your employer details
+router.post('/your-employer-details', function (req, res) {
+
+  var benefitsStatus = req.session.data['claiming-benefits-group']
+
+  if (benefitsStatus == "1") {
+      res.redirect('/your-benefits')
+  } else {
+      res.redirect('/your-outgoings')
+  }
+
+})
+
+// Your outgoings
+router.post('/your-outgoings', function (req, res) {
+
+  var yourOutgoings = "1"
+
+  if (yourOutgoings == "1"){
+    res.redirect('/check-your-answers')
   }
 
 })

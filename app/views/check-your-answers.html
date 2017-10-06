@@ -41,7 +41,7 @@
                         Name
                     </dt>
                     <dd class="cya-answer">
-                        Sam Smith
+                        {{ data['first-name'] }} {{ data['last-name'] }}
                     </dd>
                     <dd class="cya-change">
                         &nbsp;
@@ -53,9 +53,12 @@
                         Address
                     </dt>
                     <dd class="cya-answer">
-                        38A Baker Street<br />
-                        London<br />
-                        W1 7SX
+                        <p class="top_0 bottom_0">{{ data['address-line-1'] }}</p>
+                        <p class="top_0 bottom_0">{{ data['address-line-2'] }}</p>
+                        <p class="top_0 bottom_0">{{ data['address-line-3'] }}</p>
+                        <p class="top_0 bottom_0">{{ data['town-or-city'] }}</p>
+                        <p class="top_0 bottom_0">{{ data['county'] }}</p>
+                        <p class="top_0 bottom_0">{{ data['postcode'] }}</p>
                     </dd>
                     <dd class="cya-change">
                         &nbsp;
@@ -67,7 +70,7 @@
                         Home telephone
                     </dt>
                     <dd class="cya-answer">
-                        0203 123 555
+                        {{ data['home-telephone'] }}
                     </dd>
                     <dd class="cya-change">
                         &nbsp;
@@ -79,7 +82,7 @@
                         Mobile phone
                     </dt>
                     <dd class="cya-answer">
-                        07700 900457
+                        {{ data['mobile'] }}
                     </dd>
                     <dd class="cya-change">
                         &nbsp;
@@ -91,7 +94,7 @@
                         Email
                     </dt>
                     <dd class="cya-answer">
-                        sam.smith@gmail.com
+                        {{ data['email'] }}
                     </dd>
                     <dd class="cya-change">
                         &nbsp;
@@ -103,7 +106,7 @@
                         Date of birth
                     </dt>
                     <dd class="cya-answer">
-                        18 May 1987
+                        {{ data['dob-day'] }} {{ data['dob-month'] }} {{ data['dob-year'] }}
                     </dd>
                     <dd class="cya-change">
                         &nbsp;
@@ -115,7 +118,7 @@
                         National Insurance number
                     </dt>
                     <dd class="cya-answer">
-                        QQ 12 34 56 C
+                        {{ data['NIN'] }}
                     </dd>
                     <dd class="cya-change">
                         &nbsp;
@@ -141,7 +144,7 @@
                         Plea
                     </dt>
                     <dd class="cya-answer">
-                        Guilty
+                        {{ data['how-do-you-plea'] }} - ADDITIONAL CODE LOGIC NEEDED
                     </dd>
                     <dd class="cya-change">
                         &nbsp;
@@ -153,7 +156,7 @@
                         How would you like magistrates to consider your case?
                     </dt>
                     <dd class="cya-answer">
-                        Online
+                        {{ data['how-do-you-plea'] }} - ADDITIONAL CODE LOGIC NEEDED
                     </dd>
                     <dd class="cya-change">
                         &nbsp;
@@ -165,7 +168,7 @@
                         Information for magistrates
                     </dt>
                     <dd class="cya-answer">
-                        I’d accidentally picked up my partner’s oyster card instead of mine for a few days in a row. It was a genuine mistake.
+                        {{ data['notguilty-textarea'] }}                        
                     </dd>
                     <dd class="cya-change">
                         &nbsp;
@@ -191,7 +194,7 @@
                         Monthly income (after tax)
                     </dt>
                     <dd class="cya-answer">
-                        £615
+                        {{ data['average-monthly-income'] }} - ADDITIONAL CODE LOGIC NEEDED                       
                     </dd>
                     <dd class="cya-change">
                         &nbsp;
@@ -203,7 +206,7 @@
                         Employmentr status
                     </dt>
                     <dd class="cya-answer">
-                        Employed
+                        {{ data['employment-status-group'] }} {{ '- ' + data['other-employment-status'] }} - ADDITIONAL CODE LOGIC NEEDED                       
                     </dd>
                     <dd class="cya-change">
                         &nbsp;
@@ -215,7 +218,7 @@
                         Your employer
                     </dt>
                     <dd class="cya-answer">
-                        ABC Company Ltd
+                        {{ data['employer-name'] }}
                     </dd>
                     <dd class="cya-change">
                         &nbsp;
@@ -227,7 +230,7 @@
                         Claiming benefits?
                     </dt>
                     <dd class="cya-answer">
-                        No
+                        {{ data['claiming-benefits-group'] }} - ADDITIONAL CODE LOGIC NEEDED
                     </dd>
                     <dd class="cya-change">
                         &nbsp;
@@ -253,7 +256,7 @@
                         Monthly amount
                     </dt>
                     <dd class="cya-answer">
-                        £850
+                        {{ data['accomodation'] + data['council-tax'] + data['household-bills'] + data['travel-expeneses'] + data['child-maintenance'] + data['council-tax'] }} - ADDITIONAL CODE LOGIC NEEDED
                     </dd>
                     <dd class="cya-change">
                         &nbsp;
