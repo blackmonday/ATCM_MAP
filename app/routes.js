@@ -10,18 +10,31 @@ router.get('/', function (req, res) {
 
 module.exports = router
 
+// Start page
 router.post('/start-page', function (req, res) {
 
   var startGroup = req.session.data['start-group']
 
   if (startGroup == "2"){
     res.redirect('/find-your-case')
-  } else if (startGroup == "1") {
-      res.redirect('index')
+  } else {
+      res.redirect('/start-page')
   }
 
 })
 
+// Your details
+router.post('/your-details', function (req, res) {
+
+  var youDetails = "1"
+
+  if (youDetails == "1"){
+    res.redirect('/your-plea')
+  }
+
+})
+
+// Your plea
 router.post('/your-plea', function (req, res) {
 
   var howDoYouPlea = req.session.data['how-do-you-plea']
@@ -30,6 +43,8 @@ router.post('/your-plea', function (req, res) {
     res.redirect('/guilty-plea')
   } else if (howDoYouPlea == "2") {
     res.redirect('/not-guilty-plea')
+  } else {
+      res.redirect('your-plea')
   }
 
 })
@@ -69,6 +84,19 @@ router.post('/your-employer', function (req, res) {
     res.redirect('/your-employer-details')
   } else {
       res.redirect('/your-outgoings')
+  }
+
+})
+
+/* Declaration */
+router.post('/declaration', function (req, res) {
+
+  var declarationTicked = req.session.data['confirmation-group']
+
+  if (declarationTicked == "1"){
+    res.redirect('/confirmation')
+  } else {
+      res.redirect('/declaration')
   }
 
 })

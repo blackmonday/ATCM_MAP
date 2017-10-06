@@ -20,6 +20,7 @@ $(document).ready(function () {
 
 // ATCM MAP
 
+// Your details
 $('input[name="name-address-group"]').on('change', function() {
   $('.name-address-fields')
       .toggle(+this.value === 2 && this.checked);
@@ -30,14 +31,15 @@ $('input[name="NIN-radio-inline-group"]').on('change', function() {
       .toggle(+this.value === 1 && this.checked);
 }).change();
 
+// Your plea
 $('input[name="how-do-you-plea"]').on('change', function() {
   $('.guilty-plea-fields')
       .toggle(+this.value === 1 && this.checked);
   $('.not-guilty-plea-fields')
       .toggle(+this.value === 2 && this.checked);
-
 }).change();
 
+// Not guilty plea
 $('input[name="interpreter"]').on('change', function() {
   $('.interpreter-fields')
       .toggle(+this.value === 1 && this.checked);
@@ -48,16 +50,17 @@ $('input[name="witness-statement-group"]').on('change', function() {
       .toggle(+this.value === 2 && this.checked);
 }).change();
 
-$('input[name="nogo-dates-group"]').on('change', function() {
-  $('.nogo-dates-fields')
-      .toggle(+this.value === 2 && this.checked);
-}).change();
-
 $('input[name="own-witness-group"]').on('change', function() {
   $('.own-witness-fields')
-      .toggle(+this.value === 2 && this.checked);
+      .toggle(+this.value === 1 && this.checked);
 }).change();
 
+$('input[name="nogo-dates-group"]').on('change', function() {
+  $('.nogo-dates-fields')
+      .toggle(+this.value === 1 && this.checked);
+}).change();
+
+// Your income
 $('input[name="employment-status-group"]').on('change', function() {
   $('.other-employment-status')
       .toggle(+this.value === 4 && this.checked);
@@ -68,11 +71,13 @@ $('input[name="claiming-benefits-group"]').on('change', function() {
       .toggle(+this.value === 1 && this.checked);
 }).change();
 
+// Your benefits
 $('input[name="deduct-from-benefits-group"]').on('change', function() {
   $('.deduct-from-benefits-no')
       .toggle(+this.value === 1 && this.checked);
 }).change();
 
+// Your outgoings
 $('input[name="your-outgoings-group"]').on('change', function() {
   $('.your-outgoings-yes')
       .toggle(+this.value === 1 && this.checked);
