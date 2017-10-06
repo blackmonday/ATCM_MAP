@@ -51,8 +51,10 @@ router.post('/your-plea', function (req, res) {
   var howDoYouPlea = req.session.data['how-do-you-plea']
 
   if (howDoYouPlea == "1"){
+    req.session.data['how-do-you-plea'] = "Guilty";
     res.redirect('/guilty-plea')
   } else if (howDoYouPlea == "2") {
+    req.session.data['how-do-you-plea'] = "Not guilty";
     res.redirect('/not-guilty-plea')
   } else {
       res.redirect('your-plea')
@@ -66,8 +68,10 @@ router.post('/guilty-plea', function (req, res) {
   var guiltyComeToCourt = req.session.data['guilty-come-to-court']
 
   if (guiltyComeToCourt == "1"){
+    req.session.data['how-do-you-plea-2'] = "Online";
     res.redirect('/your-finances')
   } else if (guiltyComeToCourt == "2") {
+    req.session.data['how-do-you-plea-2'] = "In court";
     res.redirect('/your-court-hearing')
   }
 
@@ -80,11 +84,30 @@ router.post('/your-income', function (req, res) {
   var benefitsStatus = req.session.data['claiming-benefits-group']
 
   if (employmentStatus == "1"){
+    req.session.data['employment-status-group'] = "Employed (full or part-time)"
     res.redirect('/your-employer')
   } else if (benefitsStatus == "1") {
+      req.session.data['claiming-benefits-group'] = "Yes"
+      if (employmentStatus == "1"){
+          req.session.data['employment-status-group'] = "Employed (full or part-time)"
+      } else if (employmentStatus == "2"){
+          req.session.data['employment-status-group'] = "Self-eemployed"
+      } else if (employmentStatus == "3"){
+          req.session.data['employment-status-group'] = "Unemployed"
+       } else if (employmentStatus == "4"){
+          req.session.data['employment-status-group'] = "Other"
+     }
     res.redirect('/your-benefits')
   } else {
-      res.redirect('/your-outgoings')
+      req.session.data['claiming-benefits-group'] = "No"
+       if (employmentStatus == "2"){
+          req.session.data['employment-status-group'] = "Self-eemployed"
+      } else if (employmentStatus == "3"){
+          req.session.data['employment-status-group'] = "Unemployed"
+       } else if (employmentStatus == "4"){
+          req.session.data['employment-status-group'] = "Other"
+     }
+     res.redirect('/your-outgoings')
   }
 
 })
@@ -114,6 +137,19 @@ router.post('/your-employer-details', function (req, res) {
       res.redirect('/your-benefits')
   } else {
       res.redirect('/your-outgoings')
+  }
+
+})
+
+// Your benefits
+router.post('/your-benefits', function (req, res) {
+
+  var yourBenefits = req.session.data['claiming-benefits-group']
+
+  if (yourBenefits == "1"){
+    res.redirect('/your-outgoings')
+  } else if (yourBenefits = "2"){
+    res.redirect('/your-outgoings')
   }
 
 })

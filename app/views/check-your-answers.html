@@ -144,7 +144,7 @@
                         Plea
                     </dt>
                     <dd class="cya-answer">
-                        {{ data['how-do-you-plea'] }} - ADDITIONAL CODE LOGIC NEEDED
+                        {{ data['how-do-you-plea'] }}
                     </dd>
                     <dd class="cya-change">
                         &nbsp;
@@ -156,7 +156,7 @@
                         How would you like magistrates to consider your case?
                     </dt>
                     <dd class="cya-answer">
-                        {{ data['how-do-you-plea'] }} - ADDITIONAL CODE LOGIC NEEDED
+                        {{ data['how-do-you-plea-2'] }}
                     </dd>
                     <dd class="cya-change">
                         &nbsp;
@@ -168,7 +168,7 @@
                         Information for magistrates
                     </dt>
                     <dd class="cya-answer">
-                        {{ data['notguilty-textarea'] }}                        
+                        {{ data['notguilty-textarea'] }}{{ data['guilty-textarea'] }}
                     </dd>
                     <dd class="cya-change">
                         &nbsp;
@@ -194,7 +194,7 @@
                         Monthly income (after tax)
                     </dt>
                     <dd class="cya-answer">
-                        {{ data['average-monthly-income'] }} - ADDITIONAL CODE LOGIC NEEDED                       
+                        £ {{ data['average-monthly-income'] }}                       
                     </dd>
                     <dd class="cya-change">
                         &nbsp;
@@ -203,10 +203,10 @@
 
                 <div>
                     <dt class="cya-question">
-                        Employmentr status
+                        Employment status
                     </dt>
                     <dd class="cya-answer">
-                        {{ data['employment-status-group'] }} {{ '- ' + data['other-employment-status'] }} - ADDITIONAL CODE LOGIC NEEDED                       
+                        {{ data['employment-status-group'] }}{{ " - " + data['other-employment-status'] }}                       
                     </dd>
                     <dd class="cya-change">
                         &nbsp;
@@ -230,7 +230,7 @@
                         Claiming benefits?
                     </dt>
                     <dd class="cya-answer">
-                        {{ data['claiming-benefits-group'] }} - ADDITIONAL CODE LOGIC NEEDED
+                        {{ data['claiming-benefits-group'] }}
                     </dd>
                     <dd class="cya-change">
                         &nbsp;
@@ -256,7 +256,7 @@
                         Monthly amount
                     </dt>
                     <dd class="cya-answer">
-                        {{ data['accomodation'] | int + data['council-tax'] | int + data['household-bills'] | int + data['travel-expeneses'] | int + data['child-maintenance'] | int }}
+                        £ {{ data['accomodation'] | int + data['council-tax'] | int + data['household-bills'] | int + data['travel-expeneses'] | int + data['child-maintenance'] | int }}
                     </dd>
                     <dd class="cya-change">
                         &nbsp;
