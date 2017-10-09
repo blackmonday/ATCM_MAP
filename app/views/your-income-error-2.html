@@ -1,0 +1,144 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Your income
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    
+    <div class="breadcrumbs">
+        <ol>
+        <li><a href="javascript:history.go(-1);">Back</a></li>
+        </ol>
+    </div>
+    <div class="grid-row">
+        <div class="column-two-thirds">
+ 
+            <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+                <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+                Fix the following
+                </h2>
+                <ul class="error-summary-list">
+                    <li><a href="#example-personal-details">Enter your average monthly income (after tax)</a></li>
+                </ul>
+            </div>
+            
+            <h1 class="heading-xlarge">Your income</h1>
+
+            <form  action="" method="post">
+                <div class="form-group">
+                    
+                    <fieldset class="inline">
+                        <legend>
+                            <span class="heading-small bottom_15">Frequency of income and outgoings</span>
+                        </legend>
+
+                        <div class="multiple-choice">
+                            <input id="radio-inline-1" type="radio" name="frequency-group" value="1">
+                            <label for="radio-inline-1">Weekly</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="radio-inline-2" type="radio" name="frequency-group" value="2">
+                            <label for="radio-inline-2">Fortnightly</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="radio-inline-3" type="radio" name="frequency-group" value="3">
+                            <label for="radio-inline-3">Monthly</label>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-group form-group-error top_30">
+                        <fieldset>
+                            <label class="form-label" for="average-monthly-income">
+                                <h2 class="heading-small top_0">Enter your average monthly income (after tax)</h2>
+                                <span class="form-hint">Include earnings, pension, benefits and any other income</span>
+                                <span class="error-message bottom_5">You need to enter your average monthly income in british pounds sterling.</span>
+                            </label>
+                            <input class="form-control" id="average-monthly-income" type="text" name="average-monthly-income">
+                        </fieldset>
+                    </div>
+                    
+                    <fieldset class="your-employment-status stop_15">
+                        <legend>
+                            <h2 class="heading-small">Your employment status</h2>
+                        </legend>
+                        <div class="multiple-choice">
+                            <input id="radio-1" type="radio" name="employment-status-group" value="1">
+                            <label for="radio-1">Employed (full or part-time)</label>
+                        </div>
+                            <div class="multiple-choice">
+                            <input id="radio-2" type="radio" name="employment-status-group" value="2">
+                            <label for="radio-2">Self-employed</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="radio-3" type="radio" name="employment-status-group" value="3">
+                            <label for="radio-3">Unemployed</label>
+                        </div>
+                        <div class="multiple-choice">
+                            <input id="radio-4" type="radio" name="employment-status-group" value="4">
+                            <label for="radio-4">Other</label>
+                        </div>
+                        
+                        <div class="other-employment-status top_15">
+                            <div class="panel panel-border-wide">
+                                <p class="heading-small">Enter details (optional)</p>
+                                <input class="form-control" id="other-employment-status" type="text" name="other-employment-status">
+                            </div>
+                        </div>
+
+                    </fieldset>
+
+                    <fieldset class="claiming-benefits-group inline stop_15">
+                        <legend>
+                            <h2 class="heading-small">Are you claiming any benefits?</h2>
+                        </legend>
+                        <div class="multiple-choice">
+                            <input id="radio-1" type="radio" name="claiming-benefits-group" value="1">
+                            <label for="radio-1">Yes</label>
+                        </div>
+                            <div class="multiple-choice">
+                            <input id="radio-2" type="radio" name="claiming-benefits-group" value="2">
+                            <label for="radio-2">No</label>
+                        </div>
+                    </fieldset>
+                    
+                    <fieldset>
+                        <div class="claiming-benefits-status top_15">
+                            <div class="panel panel-border-wide">
+                                <label class="form-label top_0 bottom_5" for="textarea">
+                                    <p class="heading-small">Which benefits are you claiming?</p>
+                                </label>
+                                <textarea class="form-control form-control-3-4" name="textarea" id="benefits-claimed" rows="5"></textarea>
+                            </div>
+                        </div>
+                    </fieldset>
+                    
+                </div>
+                
+                <div class="form-group">
+                    <input class="button" type="submit" value="Continue">
+                    <p class="top_15"><a href="javascript:history.go(-1);">Back</a></p>
+                </div>
+                
+            </form>
+            
+        </div>
+        
+        <div class="column-third">
+            <aside class="govuk-related-items" role="complementary">
+                <h2 class="heading-medium" id="subsection-title">Further links</h2>
+                <nav role="navigation" aria-labelledby="subsection-title">
+                <ul class="font-xsmall">
+                    <li><a href="/help-and-advice">Help and advice</a></li>
+                </ul>
+                </nav>
+            </aside>
+        </div>
+        
+    </div>
+    
+</main>
+
+{% endblock %}

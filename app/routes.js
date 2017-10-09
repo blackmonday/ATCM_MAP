@@ -452,6 +452,27 @@ router.post('/guilty-plea', function (req, res) {
   } else if (guiltyComeToCourt == "2") {
     req.session.data['how-do-you-plea-2'] = "Yes";
     res.redirect('/your-court-hearing')
+  } else {
+      res.redirect('guilty-plea-error')
+  }
+
+})
+router.post('/guilty-plea-error', function (req, res) {
+
+  var guiltyComeToCourt = req.session.data['guilty-come-to-court']
+
+    if (req.session.data['mitigation-textarea'] == "") {
+        req.session.data['mitigation-textarea'] = "–"
+    }
+        
+  if (guiltyComeToCourt == "1"){
+    req.session.data['how-do-you-plea-2'] = "No";
+    res.redirect('/your-finances')
+  } else if (guiltyComeToCourt == "2") {
+    req.session.data['how-do-you-plea-2'] = "Yes";
+    res.redirect('/your-court-hearing')
+  } else {
+      res.redirect('guilty-plea-error')
   }
 
 })
@@ -474,10 +495,36 @@ router.post('/your-income', function (req, res) {
   var employmentStatus = req.session.data['employment-status-group']
   var benefitsStatus = req.session.data['claiming-benefits-group']
   
-  if (req.session.data['average-monthly-income'] == "") {
-      req.session.data['average-monthly-income'] = "–"
-  }
+    if (req.session.data['frequency-group'] !== "1") {
+        if (req.session.data['frequency-group'] !== "2") {
+            if (req.session.data['frequency-group'] !== "3") {
+                res.redirect('/your-income-error-1')
+            }
+        }
+    }
+  
+    if (req.session.data['average-monthly-income'] == "") {
+        res.redirect('/your-income-error-2')
+    }
+    
+    if (employmentStatus !== "1") {
+        if (employmentStatus !== "2") {
+            if (employmentStatus !== "3") {
+                if (employmentStatus !== "4") {
+                    res.redirect('/your-income-error-3')
+                }
+            }
+        }
+    }
+    
+    if (benefitsStatus !== "1") {
+        if (benefitsStatus !== "2") {
+            res.redirect('/your-income-error-4')
+        }
+    }
+  
 
+  
   if (employmentStatus == "1"){
     req.session.data['employment-status-group'] = "Employed (full or part-time)"
     res.redirect('/your-employer')

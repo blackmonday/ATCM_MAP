@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Guilty plea
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    
+    <div class="breadcrumbs">
+        <ol>
+            <li><a href="javascript:history.go(-1);">Back</a></li>
+        </ol>
+    </div>
+    <div class="grid-row">
+        <div class="column-two-thirds">
+ 
+            <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+                <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+                Fix the following
+                </h2>
+                <ul class="error-summary-list">
+                    <li><a href="#example-personal-details">Would you like to come to court?</a></li>
+                </ul>
+            </div>
+            
+
+            <h1 class="heading-xlarge">Guilty plea</h1>
+            <div class="panel panel-border-wide">
+                <p>You have the right to attend an open court hearing but don’t have to. The magistrate can also consider your case without you and send you their decision by post.</p>
+                <p>If you are needed to attend court we will write to you.</p>
+                <p>Magistrates follow the same guidelines either way.</p>
+            </div>
+                                
+            <form class="form" action="" method="post">
+                <div class="form-group">
+                    
+                    <div class="form-group form-group-error top_60">
+                        <fieldset>
+                            <legend>
+                                <span class="heading-medium top_0 bottom_15">Would you like to come to court?</span>
+                                <span class="error-message bottom_5">You need to let us know if you would like to come to court.</span>
+                            </legend>
+                            <div class="multiple-choice">
+                                <input id="radio-1" type="radio" name="guilty-come-to-court" value="1">
+                                <label for="radio-1">No, I don't want to come to court</label>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <div class="multiple-choice top_15">
+                                <input id="radio-2" type="radio" name="guilty-come-to-court" value="2">
+                                <label for="radio-2">Yes, I want to come to court</label>
+                            </div>
+                        </fieldset>
+                    </div>
+                    
+                    <hr class="top_60 bottom_60">
+                                        
+                    <label class="form-label" for="textarea">
+                        <p class="heading-medium bottom_10">Enter information for the magistrates (optional)</p>
+                        <p class="form-hint top_10 bottom_10">This is also known as mitigation. You can explain why you committed the offence or tell magistrates relevant personal circumstances. They’ll take what you say into account when deciding on your sentence.</p>
+
+                    </label>
+
+                    <textarea class="form-control form-control-3-4" name="mitigation-textarea" id="mitigation-textarea" rows="5"></textarea>
+                    
+                </div>
+                <div class="form-group">
+                    <input class="button" type="submit" value="Continue">
+                    <p class="top_15"><a href="javascript:history.go(-1);">Back</a></p>
+                </div>
+            </form>
+        </div>
+        
+        <div class="column-third">
+            <aside class="govuk-related-items" role="complementary">
+                <h2 class="heading-medium" id="subsection-title">Further links</h2>
+                <nav role="navigation" aria-labelledby="subsection-title">
+                <ul class="font-xsmall">
+                    <li><a href="/help-and-advice">Help and advice</a></li>
+                </ul>
+                </nav>
+            </aside>
+        </div>
+        
+    </div>
+    
+</main>
+
+{% endblock %}
