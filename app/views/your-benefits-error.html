@@ -1,0 +1,90 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Your benefits
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    
+    <div class="breadcrumbs">
+        <ol>
+            <li><a href="javascript:history.go(-1);">Back</a></li>
+        </ol>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            
+            <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+                <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+                Fix the following
+                </h2>
+                <ul class="error-summary-list">
+                    <li><a href="#example-personal-details">If you need to pay a penalty, would you like us to deduct it from your benefits?</a></li>
+                </ul>
+            </div>
+
+            <form class="form" action="" method="post">
+                <div class="form-group">
+                    
+                    <fieldset class="inline">
+                        <legend>
+                            <h1 class="heading-xlarge">Your benefits</h1>
+                        </legend>
+
+                        <div class="form-group form-group-error">
+                        <fieldset>
+                            <p class="heading-small top_0">If you need to pay a penalty, would you like us to deduct it from your benefits?</p>
+                            <span class="error-message bottom_5">You need to confirm if you woudl like us to deduct any penalty from your benefits</span>
+
+                            <div class="multiple-choice ">
+                                <input id="radio-1" type="radio" name="deduct-from-benefits-group" value="1">
+                                <label for="radio-1">Yes</label>
+                            </div>
+                            <div class="multiple-choice">
+                                <input id="radio-2" type="radio" name="deduct-from-benefits-group" value="2">
+                                <label for="radio-2">No</label>
+                            </div>
+                        </fieldset>
+                        
+                        <div class="deduct-from-benefits-no top_15">
+                            <div class="panel panel-border-wide">
+                                <p class="bottom_10">Please note we can deduct without your agreement if:</p>
+                                <ul class="list list-bullet">
+                                    <li>you’ve failed to pay a penalty in the past</li>
+                                    <li>the court orders you to pay compensation</li>
+                                </ul>
+                            </div>
+                        </div>
+                    
+                        </div>
+                    </fieldset>
+        
+                </div>
+
+                <div class="form-group">
+                    <input class="button" type="submit" value="Continue">
+                    <p class="top_15"><a href="javascript:history.go(-1);">Back</a></p>
+                </div>
+                
+            </form>
+        </div>
+        
+        <div class="column-third">
+            <aside class="govuk-related-items" role="complementary">
+                <h2 class="heading-medium" id="subsection-title">Further links</h2>
+                <nav role="navigation" aria-labelledby="subsection-title">
+                <ul class="font-xsmall">
+                    <li><a href="/help-and-advice">Help and advice</a></li>
+                </ul>
+                </nav>
+            </aside>
+        </div>
+        
+    </div>
+    
+</main>
+
+{% endblock %}

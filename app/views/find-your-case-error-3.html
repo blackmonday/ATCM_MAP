@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Find your case
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    
+    <div class="breadcrumbs">
+        <ol>
+            <li><a href="javascript:history.go(-1);">Back</a></li>
+        </ol>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            
+  
+            <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+                <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+                Fix the following
+                </h2>
+                <ul class="error-summary-list">
+                    <li><a href="#example-personal-details">Your postcode, as shown on your notice</a></li>
+                </ul>
+            </div>
+            
+            <form class="form" action="" method="post">
+                <div class="form-group">
+                    <fieldset>
+                        <legend>
+                            <h1 class="heading-xlarge">Find your case</h1>
+                        </legend>
+
+                        <label class="form-label" for="case-urn-number">
+                            <span class="heading-small">Case or Unique Reference Number</span>
+                        </label>
+                        <input class="form-control" id="case-urn-number" type="number" name="case-urn-number">
+
+                        <details class="top_15">
+                            <summary>
+                                <span class="summary">Where to find this on your notice</span>
+                            </summary>
+                            <div class="panel panel-border-narrow">
+                                <p>
+                                    <img src="/public/images/Where-to-find-large-2x.png" width="100%">
+                                </p>
+                            </div>
+                        </details>
+
+                        <div class="form-group form-group-error">
+                            <label class="form-label top_15" for="your-postcode">
+                                <span class="heading-small">Your postcode, as shown on your notice</span>
+                                <span class="error-message bottom_5">You need to enter a valid post code.</span>
+                            </label>
+                            <input class="form-control" id="your-postcode" type="text" name="your-postcode">
+                        </div>
+                        
+                    </fieldset>
+                </div>
+                <div class="form-group">
+                    <input class="button" type="submit" value="Continue">
+                    <p class="top_15"><a href="javascript:history.go(-1);">Back</a></p>
+                </div>
+            </form>
+        </div>
+
+        <div class="column-third">
+            <aside class="govuk-related-items" role="complementary">
+                <h2 class="heading-medium" id="subsection-title">Further links</h2>
+                <nav role="navigation" aria-labelledby="subsection-title">
+                    <ul class="font-xsmall">
+                        <li><a href="/help-and-advice">Help and advice</a></li>
+                    </ul>
+                </nav>
+            </aside>      
+        </div>
+        
+    </div>
+
+</main>
+
+{% endblock %}

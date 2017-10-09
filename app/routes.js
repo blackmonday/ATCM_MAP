@@ -10,6 +10,7 @@ router.get('/', function (req, res) {
 
 module.exports = router
 
+// **********
 // Start page
 router.post('/start-page', function (req, res) {
 
@@ -23,50 +24,78 @@ router.post('/start-page', function (req, res) {
 
 })
 
+// **************
 // Find your case
 router.post('/find-your-case', function (req, res) {
 
-  var caseFound = "1"
+  //var caseFound = "1"
   var caseURNValidation  = req.session.data['case-urn-number']
+  var yourPostcode  = req.session.data['your-postcode']
   
-  if (caseFound == "1" && caseURNValidation == "123"){
+  if (caseURNValidation == "123"){
       res.redirect('/find-your-case-error-1')
-  } else if (caseFound == "1" && caseURNValidation == "456"){
+  } else if (caseURNValidation == "456"){
       res.redirect('/find-your-case-error-2')
+  } else if (yourPostcode == ""){
+      res.redirect('/find-your-case-error-3')
   } else {
       res.redirect('/your-details')
   }
-
+    
 })
 router.post('/find-your-case-error-1', function (req, res) {
 
-  var caseFound = "1"
+  //var caseFound = "1"
   var caseURNValidation  = req.session.data['case-urn-number']
+  var yourPostcode  = req.session.data['your-postcode']
   
-  if (caseFound == "1" && caseURNValidation == "123"){
+  if (caseURNValidation == "123"){
       res.redirect('/find-your-case-error-1')
-  } else if (caseFound == "1" && caseURNValidation == "456"){
+  } else if (caseURNValidation == "456"){
       res.redirect('/find-your-case-error-2')
+  } else if (yourPostcode == ""){
+      res.redirect('/find-your-case-error-3')
   } else {
       res.redirect('/your-details')
   }
-
+    
 })
 router.post('/find-your-case-error-2', function (req, res) {
 
-  var caseFound = "1"
-  var caseURNValidation = req.session.data['case-urn-number']
+  //var caseFound = "1"
+  var caseURNValidation  = req.session.data['case-urn-number']
+  var yourPostcode  = req.session.data['your-postcode']
   
-  if (caseFound == "1" && caseURNValidation == "123"){
+  if (caseURNValidation == "123"){
       res.redirect('/find-your-case-error-1')
-  } else if (caseFound == "1" && caseURNValidation == "456"){
+  } else if (caseURNValidation == "456"){
       res.redirect('/find-your-case-error-2')
+  } else if (yourPostcode == ""){
+      res.redirect('/find-your-case-error-3')
   } else {
       res.redirect('/your-details')
   }
+    
+})
+router.post('/find-your-case-error-3', function (req, res) {
 
+  //var caseFound = "1"
+  var caseURNValidation  = req.session.data['case-urn-number']
+  var yourPostcode  = req.session.data['your-postcode']
+  
+  if (caseURNValidation == "123"){
+      res.redirect('/find-your-case-error-1')
+  } else if (caseURNValidation == "456"){
+      res.redirect('/find-your-case-error-2')
+  } else if (yourPostcode == ""){
+      res.redirect('/find-your-case-error-3')
+  } else {
+      res.redirect('/your-details')
+  }
+    
 })
 
+// ************
 // Your details
 router.post('/your-details', function (req, res) {
 
@@ -123,9 +152,11 @@ router.post('/your-details', function (req, res) {
   if (req.session.data['dob-year'] == "") {
       res.redirect('/your-details-error-2')
   }
-  if (req.session.data['NIN'] == "") {
-      res.redirect('/your-details-error-3')
-  }
+if (req.session.data['NIN-radio-inline-group'] == "1") {
+    if (req.session.data['NIN'] == "") {
+        res.redirect('/your-details-error-3')
+    }
+}
 
   if (youDetails == "1"){
     res.redirect('/your-plea')
@@ -186,7 +217,7 @@ router.post('/your-details-error-0', function (req, res) {
   if (req.session.data['dob-year'] == "") {
       res.redirect('/your-details-error-2')
   }
-  if (req.session.data['NIN'] == "") {
+  if ((req.session.data['NIN-radio-inline-group'] == "1") && (req.session.data['NIN'] == "")) {
       res.redirect('/your-details-error-3')
   }
 
@@ -197,7 +228,6 @@ router.post('/your-details-error-0', function (req, res) {
 router.post('/your-details-error-1', function (req, res) {
 
   var youDetails = "1"
-  req.session.data['name-address-group'] = ""
   var nameAddressGroup = req.session.data['name-address-group']
 
   if (nameAddressGroup !== "1") {
@@ -250,7 +280,7 @@ router.post('/your-details-error-1', function (req, res) {
   if (req.session.data['dob-year'] == "") {
       res.redirect('/your-details-error-2')
   }
-  if (req.session.data['NIN'] == "") {
+  if ((req.session.data['NIN-radio-inline-group'] == "1") && (req.session.data['NIN'] == "")) {
       res.redirect('/your-details-error-3')
   }
 
@@ -261,7 +291,6 @@ router.post('/your-details-error-1', function (req, res) {
 router.post('/your-details-error-2', function (req, res) {
 
   var youDetails = "1"
-  req.session.data['name-address-group'] = ""
   var nameAddressGroup = req.session.data['name-address-group']
 
   if (nameAddressGroup !== "1") {
@@ -314,7 +343,7 @@ router.post('/your-details-error-2', function (req, res) {
   if (req.session.data['dob-year'] == "") {
       res.redirect('/your-details-error-2')
   }
-  if (req.session.data['NIN'] == "") {
+  if ((req.session.data['NIN-radio-inline-group'] == "1") && (req.session.data['NIN'] == "")) {
       res.redirect('/your-details-error-3')
   }
 
@@ -325,7 +354,6 @@ router.post('/your-details-error-2', function (req, res) {
 router.post('/your-details-error-3', function (req, res) {
 
   var youDetails = "1"
-  req.session.data['name-address-group'] = ""
   var nameAddressGroup = req.session.data['name-address-group']
 
   if (nameAddressGroup !== "1") {
@@ -378,7 +406,70 @@ router.post('/your-details-error-3', function (req, res) {
   if (req.session.data['dob-year'] == "") {
       res.redirect('/your-details-error-2')
   }
-  if (req.session.data['NIN'] == "") {
+  if ((req.session.data['NIN-radio-inline-group'] == "1") && (req.session.data['NIN'] == "")) {
+      res.redirect('/your-details-error-3')
+  }
+
+  if (youDetails == "1"){
+    res.redirect('/your-plea')
+  }
+})
+router.post('/your-details-error-4', function (req, res) {
+
+  var youDetails = "1"
+  var nameAddressGroup = req.session.data['name-address-group']
+
+  if (nameAddressGroup !== "1") {
+    if (nameAddressGroup !== "2") {
+        res.redirect('/your-details-error-0')
+    }
+  }
+    
+  if (req.session.data['home-telephone'] == "") {
+      req.session.data['home-telephone'] = "–"
+  }
+  if (req.session.data['mobile'] == "") {
+      req.session.data['mobile'] = "–"
+  }
+  if (req.session.data['email'] == "") {
+      res.redirect('/your-details-error-1')
+  }
+  if (req.session.data['dob-day'] == "") {
+      res.redirect('/your-details-error-2')
+  }
+    
+  if (req.session.data['dob-month'] == "") {
+      res.redirect('/your-details-error-2')
+  } else if ((req.session.data['dob-month'] == "1") || (req.session.data['dob-month'] == "01")) {
+      req.session.data['dob-month'] = "January"
+  } else if ((req.session.data['dob-month'] == "2") || (req.session.data['dob-month'] == "02")) {
+      req.session.data['dob-month'] = "Februrary"
+  } else if ((req.session.data['dob-month'] == "3") || (req.session.data['dob-month'] == "03")) {
+      req.session.data['dob-month'] = "March"
+  } else if ((req.session.data['dob-month'] == "4") || (req.session.data['dob-month'] == "04")) {
+      req.session.data['dob-month'] = "April"
+  } else if ((req.session.data['dob-month'] == "5") || (req.session.data['dob-month'] == "05")) {
+      req.session.data['dob-month'] = "May"
+  } else if ((req.session.data['dob-month'] == "6") || (req.session.data['dob-month'] == "06")) {
+      req.session.data['dob-month'] = "June"
+  } else if ((req.session.data['dob-month'] == "7") || (req.session.data['dob-month'] == "07")) {
+      req.session.data['dob-month'] = "July"
+  } else if ((req.session.data['dob-month'] == "8") || (req.session.data['dob-month'] == "08")) {
+      req.session.data['dob-month'] = "August"
+  } else if ((req.session.data['dob-month'] == "9") || (req.session.data['dob-month'] == "09")) {
+      req.session.data['dob-month'] = "September"
+  } else if (req.session.data['dob-month'] == "10") {
+      req.session.data['dob-month'] = "October"
+  } else if (req.session.data['dob-month'] == "11") {
+      req.session.data['dob-month'] = "November"
+  } else if (req.session.data['dob-month'] == "12") {
+      req.session.data['dob-month'] = "December"
+ }
+    
+  if (req.session.data['dob-year'] == "") {
+      res.redirect('/your-details-error-2')
+  }
+  if ((req.session.data['NIN-radio-inline-group'] == "1") && (req.session.data['NIN'] == "")) {
       res.redirect('/your-details-error-3')
   }
 
@@ -387,6 +478,7 @@ router.post('/your-details-error-3', function (req, res) {
   }
 })
 
+// *********
 // Your plea
 router.post('/your-plea', function (req, res) {
 
@@ -437,6 +529,7 @@ router.post('/your-plea-error', function (req, res) {
 
 })
 
+// ***********
 // Guilty plea
 router.post('/guilty-plea', function (req, res) {
 
@@ -477,6 +570,19 @@ router.post('/guilty-plea-error', function (req, res) {
 
 })
 
+// ******************
+// Your court hearing
+router.post('/your-court-hearing', function (req, res) {
+
+    if ((req.session.data['interpreter'] == "1") || (req.session.data['interpreter'] == "2")) {
+        res.redirect('your-finances')
+    } else {
+        res.redirect('your-court-hearing-error')
+    }
+        
+})
+
+// ***************
 // Not guilty plea
 router.post('/not-guilty-plea', function (req, res) {
     
@@ -489,6 +595,7 @@ router.post('/not-guilty-plea', function (req, res) {
     res.redirect('/your-finances')
 })
 
+// ***********
 // Your income
 router.post('/your-income', function (req, res) {
 
@@ -523,7 +630,72 @@ router.post('/your-income', function (req, res) {
         }
     }
   
+  if (employmentStatus == "1"){
+    req.session.data['employment-status-group'] = "Employed (full or part-time)"
+    res.redirect('/your-employer')
+  } else if (benefitsStatus == "1") {
+      req.session.data['claiming-benefits-group'] = "Yes"
+      if (employmentStatus == "1"){
+          req.session.data['employment-status-group'] = "Employed (full or part-time)"
+      } else if (employmentStatus == "2"){
+          req.session.data['employer-name'] = "–"
+          req.session.data['employment-status-group'] = "Self-employed"
+      } else if (employmentStatus == "3"){
+          req.session.data['employer-name'] = "–"
+          req.session.data['employment-status-group'] = "Unemployed"
+       } else if (employmentStatus == "4"){
+          req.session.data['employer-name'] = "–"
+          req.session.data['employment-status-group'] = "Other"
+     }
+    res.redirect('/your-benefits')
+  } else {
+      req.session.data['claiming-benefits-group'] = "No"
+       if (employmentStatus == "2"){
+           req.session.data['employer-name'] = "–"
+         req.session.data['employment-status-group'] = "Self-eemployed"
+      } else if (employmentStatus == "3"){
+          req.session.data['employer-name'] = "–"
+          req.session.data['employment-status-group'] = "Unemployed"
+       } else if (employmentStatus == "4"){
+          req.session.data['employer-name'] = "–"
+          req.session.data['employment-status-group'] = "Other"
+     }
+     res.redirect('/your-outgoings')
+  }
 
+})
+router.post('/your-income-error', function (req, res) {
+
+  var employmentStatus = req.session.data['employment-status-group']
+  var benefitsStatus = req.session.data['claiming-benefits-group']
+  
+    if (req.session.data['frequency-group'] !== "1") {
+        if (req.session.data['frequency-group'] !== "2") {
+            if (req.session.data['frequency-group'] !== "3") {
+                res.redirect('/your-income-error-1')
+            }
+        }
+    }
+  
+    if (req.session.data['average-monthly-income'] == "") {
+        res.redirect('/your-income-error-2')
+    }
+    
+    if (employmentStatus !== "1") {
+        if (employmentStatus !== "2") {
+            if (employmentStatus !== "3") {
+                if (employmentStatus !== "4") {
+                    res.redirect('/your-income-error-3')
+                }
+            }
+        }
+    }
+    
+    if (benefitsStatus !== "1") {
+        if (benefitsStatus !== "2") {
+            res.redirect('/your-income-error-4')
+        }
+    }
   
   if (employmentStatus == "1"){
     req.session.data['employment-status-group'] = "Employed (full or part-time)"
@@ -560,6 +732,7 @@ router.post('/your-income', function (req, res) {
 
 })
 
+// ************
 //Your employer
 router.post('/your-employer', function (req, res) {
 
@@ -579,6 +752,7 @@ router.post('/your-employer', function (req, res) {
 
 })
 
+// ********************
 //Your employer details
 router.post('/your-employer-details', function (req, res) {
 
@@ -596,30 +770,65 @@ router.post('/your-employer-details', function (req, res) {
 
 })
 
+// *************
 // Your benefits
 router.post('/your-benefits', function (req, res) {
 
-  var yourBenefits = req.session.data['claiming-benefits-group']
+  var deductFromYourBenefits = req.session.data['deduct-from-benefits-group']
 
-  if (yourBenefits == "1"){
+  if (deductFromYourBenefits == "1"){
     res.redirect('/your-outgoings')
-  } else if (yourBenefits = "2"){
+  } else if (deductFromYourBenefits == "2"){
     res.redirect('/your-outgoings')
+  } else {
+    res.redirect('/your-benefits-error')
+  }
+
+})
+router.post('/your-benefits-error', function (req, res) {
+
+  var deductFromYourBenefits = req.session.data['deduct-from-benefits-group']
+
+  if (deductFromYourBenefits == "1"){
+    res.redirect('/your-outgoings')
+  } else if (deductFromYourBenefits == "2"){
+    res.redirect('/your-outgoings')
+  } else {
+    res.redirect('/your-benefits-error')
   }
 
 })
 
+// **************
 // Your outgoings
 router.post('/your-outgoings', function (req, res) {
 
-  var yourOutgoings = "1"
+  var yourOutgoings = req.session.data['your-outgoings-group']
 
   if (yourOutgoings == "1"){
     res.redirect('/check-your-answers')
+  } else if (yourOutgoings == "2"){
+    res.redirect('/check-your-answers')
+  } else {
+    res.redirect('/your-outgoings-error')
+  }
+
+})
+router.post('/your-outgoings-error', function (req, res) {
+
+  var yourOutgoings = req.session.data['your-outgoings-group']
+
+  if (yourOutgoings == "1"){
+    res.redirect('/check-your-answers')
+  } else if (yourOutgoings == "2"){
+    res.redirect('/check-your-answers')
+  } else {
+    res.redirect('/your-outgoings-error')
   }
 
 })
 
+// ***********
 // Declaration
 router.post('/declaration', function (req, res) {
 
@@ -632,7 +841,6 @@ router.post('/declaration', function (req, res) {
   }
 
 })
-
 router.post('/declaration-error', function (req, res) {
 
   var declarationTicked = req.session.data['confirmation-group']

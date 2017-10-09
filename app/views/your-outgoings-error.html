@@ -1,0 +1,153 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Your outgoings
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    
+    <div class="breadcrumbs">
+        <ol>
+        <li><a href="javascript:history.go(-1);">Back</a></li>
+        </ol>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            
+            <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+                <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+                Fix the following
+                </h2>
+                <ul class="error-summary-list">
+                    <li><a href="#example-personal-details">Would you like to give deails of your monthly bills?</a></li>
+                </ul>
+            </div>
+            
+         <form class="form" action="" method="post" onsubmit="InsertDefaultValues()">
+                <div class="form-group">
+                    <fieldset class="inline">
+                        <legend>
+                            <h1 class="heading-xlarge">Your outgoings</h1>
+                        </legend>
+
+                        <div class="form-group form-group-error">
+                        <fieldset>
+                            <h2 class="heading-small top_0 bottom_10">Would you like to give deails of your monthly bills?</h2>
+                            <span class="form-hint">Magistrates can take your outgoings into account when deciding how long you should get to pay a penalty</span>
+                            <span class="error-message bottom_5">You need confirm if you woudl like to give deals of your monthly outgoings</span>
+
+                        </fieldset>
+                        <fieldset>
+                            <div class="multiple-choice ">
+                                <input id="radio-1" type="radio" name="your-outgoings-group" value="1">
+                                <label for="radio-1">Yes</label>
+                            </div>
+                            <div class="multiple-choice">
+                                <input id="radio-2" type="radio" name="your-outgoings-group" value="2">
+                                <label for="radio-2">No</label>
+                            </div>
+                        </fieldset>
+                        
+                        <div class="your-outgoings-yes top_15">
+                            <div class="panel panel-border-wide">
+                                <p>What are your monthly bills for the following?</p>
+                                
+                                <label class="form-label" for="accomodation">
+                                    <span class="heading-small">Accommodation</span>
+                                    <span class="form-hint">For example, rent, mortgage or lodgings</span>
+                                </label>
+                                <input class="form-control" id="accomodation" type="number" name="accomodation">
+                                
+                                <label class="form-label top_15" for="council-tax">
+                                    <span class="heading-small">Council tax</span>
+                                </label>
+                                <input class="form-control" id="council-tax" type="number" name="council-tax">
+                                
+                                <label class="form-label top_15" for="household-bills">
+                                    <span class="heading-small">Household bills</span>
+                                    <span class="form-hint">For example, gas, electricity, water, insurance</span>
+                                </label>
+                                <input class="form-control" id="household-bills" type="number" name="household-bills">
+                                
+                                <label class="form-label top_15" for="travel-expeneses">
+                                    <span class="heading-small">Travel expenses</span>
+                                    <span class="form-hint">For example, rent, mortgage or lodgings</span>
+                                </label>
+                                <input class="form-control" id="travel-expeneses" type="number" name="travel-expeneses">
+                                 
+                                <label class="form-label top_15" for="child-maintenance">
+                                    <span class="heading-small">Child maintenance</span>
+                                </label>
+                                <input class="form-control" id="child-maintenance" type="number" name="child-maintenance">
+                                 
+                                <label class="form-label top_15" for="child-maintenance">
+                                    <span class="heading-small">Any other significant expeneses not listed?</span>
+                                    <span class="form-hint">List any other outgoings or information you believe the court should know about.</span>
+                                </label>
+                                <textarea class="form-control form-control-3-4" name="child-maintenance" id="child-maintenance" rows="5"></textarea>
+                               
+                            </div>
+                        </div>
+                        </div>
+
+                    </fieldset>
+                </div>
+   
+                <div class="form-group">
+                    <input class="button" type="submit" value="Continue">
+                    <p class="top_15"><a href="javascript:history.go(-1);">Back</a></p>
+                </div>
+                
+            </form>
+        </div>
+        
+        <div class="column-third">
+            <aside class="govuk-related-items" role="complementary">
+                <h2 class="heading-medium" id="subsection-title">Further links</h2>
+                <nav role="navigation" aria-labelledby="subsection-title">
+                <ul class="font-xsmall">
+                    <li><a href="/help-and-advice">Help and advice</a></li>
+                </ul>
+                </nav>
+            </aside>
+        </div>
+        
+    </div>
+    
+</main>
+
+<script type="text/javascript">
+    function InsertDefaultValues()
+    {
+       // Leave this line as is. Customization follows.
+       var FieldsAndDefault = new Array();
+
+       // Customization:
+       // For each field that will have custom information is 
+       //   submitted blank, use this format:
+       //     FieldsAndDefault.push("FieldIDvalue Default value");
+
+       FieldsAndDefault.push("accomodation 0");
+       FieldsAndDefault.push("council-tax 0");
+       FieldsAndDefault.push("household-bills 0");
+       FieldsAndDefault.push("travel-expeneses 0");
+       FieldsAndDefault.push("child-maintenance 0");
+
+       // End of customization.
+       ///////////////////////////////////////
+       for( var i=0; i<FieldsAndDefault.length; i++ )
+       {
+          FieldsAndDefault[i] = FieldsAndDefault[i].replace(/^\s*/,"");
+          var pieces = FieldsAndDefault[i].split(" ");
+          var field = pieces.shift();
+          var f = document.getElementById(field);
+          if( f.value.length < 1 ) { f.value = pieces.join(" "); }
+       }
+       return true;
+    }
+</script>
+
+{% endblock %}
