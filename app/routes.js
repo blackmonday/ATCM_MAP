@@ -53,6 +53,44 @@ router.post('/find-your-case', function (req, res) {
   }
 
 })
+router.post('/find-your-case-error-1', function (req, res) {
+
+  var caseFound = "1"
+  var validation  = req.session.data['case-urn-number']
+  /*
+  var validation1 = "1234567890"
+  var validation2 = "0987654321"
+  */
+  
+  if (caseFound == "1" && validation == "123"){
+      res.redirect('/find-your-case-error-1')
+  } else if (caseFound == "1" && validation == "456"){
+      res.redirect('/find-your-case-error-2')
+  } else {
+      res.redirect('/your-details')
+  }
+
+})
+router.post('/find-your-case-error-2', function (req, res) {
+
+  var caseFound = "1"
+  var validation  = req.session.data['case-urn-number']
+  /*
+  var validation1 = "1234567890"
+  var validation2 = "0987654321"
+  */
+  
+  if (caseFound == "1" && validation == "123"){
+      res.redirect('/find-your-case-error-1')
+  } else if (caseFound == "1" && validation == "456"){
+      res.redirect('/find-your-case-error-2')
+  } else {
+      res.redirect('/your-details')
+  }
+
+})
+
+
 
 // Your plea
 router.post('/your-plea', function (req, res) {
