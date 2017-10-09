@@ -135,10 +135,10 @@ router.post('/guilty-plea', function (req, res) {
   var guiltyComeToCourt = req.session.data['guilty-come-to-court']
 
   if (guiltyComeToCourt == "1"){
-    req.session.data['how-do-you-plea-2'] = "Online";
+    req.session.data['how-do-you-plea-2'] = "No";
     res.redirect('/your-finances')
   } else if (guiltyComeToCourt == "2") {
-    req.session.data['how-do-you-plea-2'] = "In court";
+    req.session.data['how-do-you-plea-2'] = "Yes";
     res.redirect('/your-court-hearing')
   }
 
