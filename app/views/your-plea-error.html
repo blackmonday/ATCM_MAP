@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Your plea
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    
+    <div class="breadcrumbs">
+        <ol>
+        <li><a href="javascript:history.go(-1);">Back</a></li>
+        </ol>
+    </div>
+    <div class="grid-row">
+        <div class="column-two-thirds">
+ 
+            <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+                <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+                Fix the following
+                </h2>
+                <ul class="error-summary-list">
+                    <li><a href="#example-personal-details">How do you plead?</a></li>
+                </ul>
+            </div>
+
+            <h1 class="heading-xlarge">Your plea</h1>
+            <div class="panel panel-border-wide">
+                <p>This is your chance to respond. Please note:</p>
+                <ul class="list list-bullet">
+                    <li>you're being charged with a criminal offence and you may wish to take legal advice before making your plea</li>
+                    <li>all evidence is in the notice sent to you</li>
+                    <li>if you plead guilty, we will reduce your fine by up to 33%</li>
+                </ul>
+            </div>
+            
+            <hr class="top_60 bottom_60">
+            
+            <h2 class="heading-medium">What you've been charged with</h2>
+            <h3 class="heading-small">Passenger failing to produce a ticket</h3>
+            <p>On 17 Feb 2017 At Mill Mead Road N17. Being a passenger on a Public service Vehicle operated on behalf of London Bus Services Limited being used for the carriage of passengers at separate fares where the vehicle was being operated by a Driver without a Conductor did not as directed by the Driver an Inspector or a Notice displayed on the vehicle pay the fare for the journey in accordance with the direction.</p>
+            
+            <hr class="top_60 bottom_60">
+            
+            <h2 class="heading-medium">Enter your plea</h2>
+        
+            <form class="form" action="" method="post">
+                <div class="form-group">
+                    
+                    <div class="form-group form-group-error">
+                        <fieldset>
+                            <legend>
+                                <h3 class="heading-small">How do you plead?</h3>
+                                <span class="error-message bottom_5">You need to enter a plea</span>
+                            </legend>
+                            <div class="multiple-choice">
+                                <input id="radio-1" type="radio" name="how-do-you-plea" value="1">
+                                <label for="radio-1">Guilty</label>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <div class="guilty-plea-fields top_15">
+                                <div class="panel panel-border-wide">
+                                    You’re declaring you committed the offence
+                                </div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <div class="multiple-choice top_15">
+                                <input id="radio-2" type="radio" name="how-do-you-plea" value="2">
+                                <label for="radio-2">Not guilty</label>
+                            </div>
+                        </fieldset>
+                        <div class="not-guilty-plea-fields top_15">
+                            <div class="panel panel-border-wide">
+                                You’re declaring you didn’t commit the offence so you’ll need to attend court if you want to present your evidence
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="form-group">
+                    <input class="button" type="submit" value="Continue">
+                    <p class="top_15"><a href="javascript:history.go(-1);">Back</a></p>
+                </div>
+            </form>
+        </div>
+        
+        <div class="column-third">
+            <aside class="govuk-related-items" role="complementary">
+                <h2 class="heading-medium" id="subsection-title">Further links</h2>
+                <nav role="navigation" aria-labelledby="subsection-title">
+                <ul class="font-xsmall">
+                    <li><a href="/help-and-advice">Help and advice</a></li>
+                </ul>
+                </nav>
+            </aside>
+        </div>
+
+    </div>
+    
+</main>
+
+{% endblock %}

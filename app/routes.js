@@ -38,15 +38,11 @@ router.post('/your-details', function (req, res) {
 router.post('/find-your-case', function (req, res) {
 
   var caseFound = "1"
-  var validation  = req.session.data['case-urn-number']
-  /*
-  var validation1 = "1234567890"
-  var validation2 = "0987654321"
-  */
+  var caseURNValidation  = req.session.data['case-urn-number']
   
-  if (caseFound == "1" && validation == "123"){
+  if (caseFound == "1" && caseURNValidation == "123"){
       res.redirect('/find-your-case-error-1')
-  } else if (caseFound == "1" && validation == "456"){
+  } else if (caseFound == "1" && caseURNValidation == "456"){
       res.redirect('/find-your-case-error-2')
   } else {
       res.redirect('/your-details')
@@ -56,15 +52,11 @@ router.post('/find-your-case', function (req, res) {
 router.post('/find-your-case-error-1', function (req, res) {
 
   var caseFound = "1"
-  var validation  = req.session.data['case-urn-number']
-  /*
-  var validation1 = "1234567890"
-  var validation2 = "0987654321"
-  */
+  var caseURNValidation  = req.session.data['case-urn-number']
   
-  if (caseFound == "1" && validation == "123"){
+  if (caseFound == "1" && caseURNValidation == "123"){
       res.redirect('/find-your-case-error-1')
-  } else if (caseFound == "1" && validation == "456"){
+  } else if (caseFound == "1" && caseURNValidation == "456"){
       res.redirect('/find-your-case-error-2')
   } else {
       res.redirect('/your-details')
@@ -74,15 +66,11 @@ router.post('/find-your-case-error-1', function (req, res) {
 router.post('/find-your-case-error-2', function (req, res) {
 
   var caseFound = "1"
-  var validation  = req.session.data['case-urn-number']
-  /*
-  var validation1 = "1234567890"
-  var validation2 = "0987654321"
-  */
+  var caseURNValidation  = req.session.data['case-urn-number']
   
-  if (caseFound == "1" && validation == "123"){
+  if (caseFound == "1" && caseURNValidation == "123"){
       res.redirect('/find-your-case-error-1')
-  } else if (caseFound == "1" && validation == "456"){
+  } else if (caseFound == "1" && caseURNValidation == "456"){
       res.redirect('/find-your-case-error-2')
   } else {
       res.redirect('/your-details')
@@ -90,21 +78,53 @@ router.post('/find-your-case-error-2', function (req, res) {
 
 })
 
-
-
 // Your plea
 router.post('/your-plea', function (req, res) {
 
   var howDoYouPlea = req.session.data['how-do-you-plea']
+  var pleaValidation = ""
+  
+  if (howDoYouPlea == "0") {
+      pleaValidation = "1"
+  } else {
+      pleaValidation = "0"
+  }
 
-  if (howDoYouPlea == "1"){
+  if (pleaValidation == "1") {
+    res.redirect('/your-plea-error')
+  } else if (howDoYouPlea == "1" && pleaValidation == "0"){
     req.session.data['how-do-you-plea'] = "Guilty";
     res.redirect('/guilty-plea')
-  } else if (howDoYouPlea == "2") {
+  } else if (howDoYouPlea == "2" && pleaValidation == "0") {
     req.session.data['how-do-you-plea'] = "Not guilty";
     res.redirect('/not-guilty-plea')
   } else {
-      res.redirect('your-plea')
+      res.redirect('/your-plea-error')
+  }
+
+})
+
+router.post('/your-plea-error', function (req, res) {
+
+  var howDoYouPlea = req.session.data['how-do-you-plea']
+  var pleaValidation = ""
+  
+  if (howDoYouPlea == "0") {
+      pleaValidation = "1"
+  } else {
+      pleaValidation = "0"
+  }
+
+  if (pleaValidation == "1") {
+    res.redirect('/your-plea-error')
+  } else if (howDoYouPlea == "1" && pleaValidation == "0"){
+    req.session.data['how-do-you-plea'] = "Guilty";
+    res.redirect('/guilty-plea')
+  } else if (howDoYouPlea == "2" && pleaValidation == "0") {
+    req.session.data['how-do-you-plea'] = "Not guilty";
+    res.redirect('/not-guilty-plea')
+  } else {
+      res.redirect('/your-plea-error')
   }
 
 })
@@ -220,7 +240,19 @@ router.post('/declaration', function (req, res) {
   if (declarationTicked == "1"){
     res.redirect('/confirmation')
   } else {
-      res.redirect('/declaration')
+      res.redirect('/declaration-error')
+  }
+
+})
+
+router.post('/declaration-error', function (req, res) {
+
+  var declarationTicked = req.session.data['confirmation-group']
+
+  if (declarationTicked == "1"){
+    res.redirect('/confirmation')
+  } else {
+      res.redirect('/declaration-error')
   }
 
 })

@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block page_title %}
+  Check your answers
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <a href="#" class="javascript:history.go(-1);">Back</a>
+
+            <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+                <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">
+                Fix the following
+                </h2>
+                <ul class="error-summary-list">
+                    <li><a href="#example-personal-details">Confirm declaration</a></li>
+                </ul>
+            </div>
+
+            <form class="form" action="" method="post">
+                <div class="form-group">
+                  <fieldset>
+
+                    <legend>
+                      <h4 class="heading-xlarge">Declaration</h4>
+                    </legend>
+
+                    <div class="form-group form-group-error">
+                        <p class="bottom_5">I confirm that:</p>
+                        <ul class="list list-bullet">
+                          <li>I’ve read and understand the charges against me</li>
+                          <li>I’m the person named in the Single Justice Procedure notice</li>
+                          <li>the facts I’ve given are correct as far as I know</li>
+                        </ul>
+
+                        <div class="notice top_30 bottom_30">
+                          <i class="icon icon-important">
+                            <span class="visually-hidden">Warning</span>
+                          </i>
+                          <strong class="bold-medium">
+                            You can be fined up to £5,000 if you don’t register.
+                          </strong>
+                        </div>
+                        
+                        <span class="error-message bottom_5">You need to confirm this declaration before you can submit your plea</span>
+
+                        <div class="multiple-choice" class="top_0">
+                          <input id="i-confirm" name="confirmation-group" type="checkbox" value="1">
+                          <label for="i-confirm">I confirm</label>
+                        </div>
+                    </div>
+                      
+                  </fieldset>
+                </div>
+                
+                <div class="form-group top_30">
+                    <input class="button" type="submit" value="Confirm and continue">
+                    <p class="top_15"><a href="javascript:history.go(-1);">Back</a></p>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</main>
+
+{% endblock %}
