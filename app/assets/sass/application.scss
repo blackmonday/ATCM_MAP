@@ -55,6 +55,12 @@ input[type="checkbox"]:checked ~ .reveal-if-active {
   overflow: visible;
 }
 
+// Show more/less
+.charge-detail {
+    display: none;
+}
+
+
 // Spacings
 
 .top_60 {
