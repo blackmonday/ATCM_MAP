@@ -191,10 +191,10 @@
 
                 <div>
                     <dt class="cya-question">
-                        Monthly income (after tax)
+                        Income (after tax)
                     </dt>
                     <dd class="cya-answer">
-                        £ {{ data['average-monthly-income'] }}                       
+                        £ {{ data['average-income'] }} {{ data['frequency-group'] }}                      
                     </dd>
                     <dd class="cya-change">
                         &nbsp;
@@ -230,7 +230,7 @@
                         Claiming benefits?
                     </dt>
                     <dd class="cya-answer">
-                        {{ data['claiming-benefits-group'] }}
+                        {{ data['claiming-benefits-group'] }} &nbsp;&nbsp;&nbsp;&nbsp; {{ data['benefits-claimed'] }}
                     </dd>
                     <dd class="cya-change">
                         &nbsp;
@@ -256,7 +256,7 @@
                         Monthly amount
                     </dt>
                     <dd class="cya-answer">
-                        £ {{ data['accomodation'] | int + data['council-tax'] | int + data['household-bills'] | int + data['travel-expeneses'] | int + data['child-maintenance'] | int + data['other-expenses-amount'] | int }}
+                        £ {{ data['benefits-total'] }}
                     </dd>
                     <dd class="cya-change">
                         &nbsp;

@@ -570,6 +570,8 @@ router.post('/guilty-plea-error', function (req, res) {
 
 })
 
+// ******************
+// Your court hearing
 router.post('/your-court-hearing', function (req, res) {
     
     if (req.session.data['your-court-hearing-interpreter'] !== "1") {
@@ -580,7 +582,6 @@ router.post('/your-court-hearing', function (req, res) {
     res.redirect('/your-finances')
     
 })
-
 
 // ***************
 // Not guilty plea
@@ -629,6 +630,16 @@ router.post('/your-income', function (req, res) {
             }
         }
     }
+    
+    if (req.session.data['frequency-group'] == "1") {
+       req.session.data['frequency-group'] = "2eekly"
+    }
+    if (req.session.data['frequency-group'] == "2") {
+       req.session.data['frequency-group'] = "fortnightly"
+    }
+    if (req.session.data['frequency-group'] == "3") {
+       req.session.data['frequency-group'] = "monthly"
+    }
   
     if (req.session.data['average-income'] == "") {
         res.redirect('/your-income-error-2')
@@ -672,7 +683,7 @@ router.post('/your-income', function (req, res) {
       req.session.data['claiming-benefits-group'] = "No"
        if (employmentStatus == "2"){
            req.session.data['employer-name'] = "–"
-         req.session.data['employment-status-group'] = "Self-eemployed"
+         req.session.data['employment-status-group'] = "Self-employed"
       } else if (employmentStatus == "3"){
           req.session.data['employer-name'] = "–"
           req.session.data['employment-status-group'] = "Unemployed"
@@ -795,7 +806,7 @@ router.post('/your-employer-details', function (req, res) {
 router.post('/your-benefits', function (req, res) {
 
   var deductFromYourBenefits = req.session.data['deduct-from-benefits-group']
-
+  
   if (deductFromYourBenefits == "1"){
     res.redirect('/your-outgoings')
   } else if (deductFromYourBenefits == "2"){
@@ -824,8 +835,16 @@ router.post('/your-benefits-error', function (req, res) {
 router.post('/your-outgoings', function (req, res) {
 
   var yourOutgoings = req.session.data['your-outgoings-group']
+  
+  var accomodationTotal = parseInt(req.session.data['accomodation'])
+  var councilTaxTotal = parseInt(req.session.data['council-tax'])
+  var houseHoldBillsTotal = parseInt(req.session.data['household-bills'])
+  var travelExpensesTotal = parseInt(req.session.data['travel-expeneses'])
+  var childMaintenanceTotal = parseInt(req.session.data['child-maintenance'])
+  var otherExpensesTotal = parseInt(req.session.data['other-expenses-amount'])
 
   if (yourOutgoings == "1"){
+    req.session.data['benefits-total'] = accomodationTotal + councilTaxTotal + houseHoldBillsTotal + travelExpensesTotal + childMaintenanceTotal + otherExpensesTotal
     res.redirect('/check-your-answers')
   } else if (yourOutgoings == "2"){
     res.redirect('/check-your-answers')
