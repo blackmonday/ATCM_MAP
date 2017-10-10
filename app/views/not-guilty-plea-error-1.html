@@ -16,18 +16,28 @@
     <div class="grid-row">
         <div class="column-two-thirds">
  
-            <h1 class="heading-xlarge">Not guilty plea</h1>
+        <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+            <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">Fix the following</h2>
+            <ul class="error-summary-list">
+                <li><a href="#example-personal-details">Why do you believe you're not guilty?</a></li>
+            </ul>
+        </div>
+            
+          <h1 class="heading-xlarge">Not guilty plea</h1>
             <p>Provide information for magistrates ahead of your court hearing.</p>
                                 
             <form class="form" action="" method="post">
                 <div class="form-group">
                     
-                    <fieldset>
-                        <label class="form-label" for="notguilty-textarea">
-                            <p class="heading-small bottom_10">Why do you believe you're not guilty?</p>
-                        </label>
-                        <textarea class="form-control form-control-3-4" name="mitigation-textarea" id="mitigation-textarea" rows="5"></textarea>
-                    </fieldset>
+                    <div class="form-group form-group-error">
+                        <fieldset>
+                            <label class="form-label" for="notguilty-textarea">
+                                <span class="heading-small top_0 bottom_10">Why do you believe you're not guilty?</span>
+                                <span class="error-message">You need to let us knwo why you believe your not guilty</span>
+                            </label>
+                            <textarea class="form-control form-control-3-4" name="mitigation-textarea" id="mitigation-textarea" rows="5"></textarea>
+                        </fieldset>
+                    </div>
                     
                     <fieldset class="inline">
                         <legend>
@@ -47,7 +57,7 @@
                         <div class="panel panel-border-wide">
                             <p class="heading-small">Which language?</p>
                             <span class="form-hint">You can include sign language</span>
-                            <input class="form-control" id="interpreter-language" type="text" name="interpreter-language">
+                            <input class="form-control" id="interpreter" type="text" name="interpreter-language">
                         </div>
                     </div>
                     

@@ -42,8 +42,15 @@ $('input[name="how-do-you-plea"]').on('change', function() {
 }).change();
 
 // ***************
+// Your court hearing interpreter
+$('input[name="your-court-hearing-interpreter"]').on('change', function() {
+  $('.interpreter-fields')
+      .toggle(+this.value === 1 && this.checked);
+}).change();
+
+// ***************
 // Not guilty plea
-$('input[name="interpreter"]').on('change', function() {
+$('input[name="not-guilty-interpreter"]').on('change', function() {
   $('.interpreter-fields')
       .toggle(+this.value === 1 && this.checked);
 }).change();

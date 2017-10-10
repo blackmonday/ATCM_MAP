@@ -16,7 +16,14 @@
     <div class="grid-row">
         <div class="column-two-thirds">
  
-            <h1 class="heading-xlarge">Not guilty plea</h1>
+        <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+            <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">Fix the following</h2>
+            <ul class="error-summary-list">
+                <li><a href="#example-personal-details">Do you need an interpreter in court?</a></li>
+            </ul>
+        </div>
+            
+          <h1 class="heading-xlarge">Not guilty plea</h1>
             <p>Provide information for magistrates ahead of your court hearing.</p>
                                 
             <form class="form" action="" method="post">
@@ -24,30 +31,33 @@
                     
                     <fieldset>
                         <label class="form-label" for="notguilty-textarea">
-                            <p class="heading-small bottom_10">Why do you believe you're not guilty?</p>
+                            <span class="heading-small bottom_10">Why do you believe you're not guilty?</span>
                         </label>
                         <textarea class="form-control form-control-3-4" name="mitigation-textarea" id="mitigation-textarea" rows="5"></textarea>
                     </fieldset>
                     
-                    <fieldset class="inline">
-                        <legend>
-                            <h2 class="heading-small">Do you need an interpreter in court?</h2>
-                        </legend>
-                        <div class="multiple-choice">
-                            <input id="radio-1" type="radio" name="not-guilty-interpreter" value="1">
-                            <label for="radio-1">Yes</label>
-                        </div>
-                        <div class="multiple-choice">
-                            <input id="radio-2" type="radio" name="not-guilty-interpreter" value="2">
-                            <label for="radio-2">No</label>
-                        </div>
-                    </fieldset>
+                    <div class="form-group form-group-error top_15">
+                        <fieldset class="inline">
+                            <legend>
+                                <h2 class="heading-small top_0">Do you need an interpreter in court?</h2>
+                                <span class="error-message">You need to let us knwo why you believe your not guilty</span>
+                            </legend>
+                            <div class="multiple-choice">
+                                <input id="radio-1" type="radio" name="not-guilty-interpreter" value="1">
+                                <label for="radio-1">Yes</label>
+                            </div>
+                            <div class="multiple-choice">
+                                <input id="radio-2" type="radio" name="not-guilty-interpreter" value="2">
+                                <label for="radio-2">No</label>
+                            </div>
+                        </fieldset>
                     
-                    <div class="interpreter-fields top_15">
-                        <div class="panel panel-border-wide">
-                            <p class="heading-small">Which language?</p>
-                            <span class="form-hint">You can include sign language</span>
-                            <input class="form-control" id="interpreter-language" type="text" name="interpreter-language">
+                        <div class="interpreter-fields top_15">
+                            <div class="panel panel-border-wide">
+                                <p class="heading-small">Which language?</p>
+                                <span class="form-hint">You can include sign language</span>
+                                <input class="form-control" id="interpreter" type="text" name="interpreter-language">
+                            </div>
                         </div>
                     </div>
                     

@@ -16,7 +16,14 @@
     <div class="grid-row">
         <div class="column-two-thirds">
  
-            <h1 class="heading-xlarge">Not guilty plea</h1>
+        <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+            <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">Fix the following</h2>
+            <ul class="error-summary-list">
+                <li><a href="#example-personal-details">Enter the name of the witness and what you disagree with</a></li>
+            </ul>
+        </div>
+            
+          <h1 class="heading-xlarge">Not guilty plea</h1>
             <p>Provide information for magistrates ahead of your court hearing.</p>
                                 
             <form class="form" action="" method="post">
@@ -24,14 +31,14 @@
                     
                     <fieldset>
                         <label class="form-label" for="notguilty-textarea">
-                            <p class="heading-small bottom_10">Why do you believe you're not guilty?</p>
+                            <span class="heading-small bottom_10">Why do you believe you're not guilty?</span>
                         </label>
                         <textarea class="form-control form-control-3-4" name="mitigation-textarea" id="mitigation-textarea" rows="5"></textarea>
                     </fieldset>
                     
                     <fieldset class="inline">
                         <legend>
-                            <h2 class="heading-small">Do you need an interpreter in court?</h2>
+                            <h2 class="heading-small top_0">Do you need an interpreter in court?</h2>
                         </legend>
                         <div class="multiple-choice">
                             <input id="radio-1" type="radio" name="not-guilty-interpreter" value="1">
@@ -47,7 +54,7 @@
                         <div class="panel panel-border-wide">
                             <p class="heading-small">Which language?</p>
                             <span class="form-hint">You can include sign language</span>
-                            <input class="form-control" id="interpreter-language" type="text" name="interpreter-language">
+                            <input class="form-control" id="interpreter" type="text" name="interpreter-language">
                         </div>
                     </div>
                     
@@ -55,7 +62,7 @@
                     
                     <fieldset class="inline">
                         <legend>
-                            <h2 class="heading-small">Do you agree with the witness statement sent in your notice?</h2>
+                            <h2 class="heading-small top_0">Do you agree with the witness statement sent in your notice?</h2>
                         </legend>
                         <div class="multiple-choice">
                             <input id="radio-1" type="radio" name="witness-statement-group" value="1">
@@ -67,10 +74,13 @@
                         </div>
                     </fieldset>
                     
-                    <div class="witness-statement-fields top_15">
-                        <div class="panel panel-border-wide">
-                            <p class="bottom_5">Enter the name of the witness and what you disagree with</p>
-                            <textarea class="form-control form-control-3-4" name="witness-statement-textarea" id="witness-statement-textarea" rows="5"></textarea>
+                     <div class="form-group form-group-error top_30">
+                       <div class="witness-statement-fields top_15">
+                            <div>
+                                <p class="bottom_5">Enter the name of the witness and what you disagree with</p>
+                                <span class="error-message">Enter the details for your witness</span>
+                                <textarea class="form-control form-control-3-4" name="witness-statement-textarea" id="witness-statement-textarea" rows="5"></textarea>
+                            </div>
                         </div>
                     </div>
 

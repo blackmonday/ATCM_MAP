@@ -570,17 +570,17 @@ router.post('/guilty-plea-error', function (req, res) {
 
 })
 
-// ******************
-// Your court hearing
 router.post('/your-court-hearing', function (req, res) {
-
-    if ((req.session.data['interpreter'] == "1") || (req.session.data['interpreter'] == "2")) {
-        res.redirect('your-finances')
-    } else {
-        res.redirect('your-court-hearing-error')
-    }
-        
+    
+    if (req.session.data['your-court-hearing-interpreter'] !== "1") {
+        if (req.session.data['your-court-hearing-interpreter'] !== "2") {
+            res.redirect('/your-court-hearing-error')
+        }
+    } 
+    res.redirect('/your-finances')
+    
 })
+
 
 // ***************
 // Not guilty plea
@@ -589,9 +589,29 @@ router.post('/not-guilty-plea', function (req, res) {
     req.session.data['how-do-you-plea-2'] = "Yes - there will be a court hearing when pleading guilty";
     
     if (req.session.data['mitigation-textarea'] == "") {
-        req.session.data['mitigation-textarea'] = "–"
-    }
-        
+        res.redirect('/not-guilty-plea-error-1')
+    }  
+    if (req.session.data['not-guilty-interpreter'] !== "1") {
+            if (req.session.data['not-guilty-interpreter'] !== "2") {
+                res.redirect('/not-guilty-plea-error-2')
+            }
+    }  
+    if (req.session.data['witness-statement-group'] !== "1") {
+            if (req.session.data['witness-statement-group'] !== "2") {
+                res.redirect('/not-guilty-plea-error-3')
+            }
+    }  
+    if (req.session.data['own-witness-group'] !== "1") {
+            if (req.session.data['own-witness-group'] !== "2") {
+                res.redirect('/not-guilty-plea-error-4')
+            }
+    }  
+    if (req.session.data['nogo-dates-group'] !== "1") {
+            if (req.session.data['nogo-dates-group'] !== "2") {
+                res.redirect('/not-guilty-plea-error-5')
+            }
+    }  
+
     res.redirect('/your-finances')
 })
 

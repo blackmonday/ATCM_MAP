@@ -60,6 +60,26 @@ input[type="checkbox"]:checked ~ .reveal-if-active {
     display: none;
 }
 
+// Adding £ to form inputs
+.input-icon {
+  position: relative;
+}
+
+.input-icon > i {
+  position: absolute;
+  display: block;
+  transform: translate(0, -50%);
+  top: 50%;
+  pointer-events: none;
+  width: 25px;
+  text-align: center;
+	font-style: normal;
+}
+
+.input-icon > input {
+  padding-left: 25px;
+	padding-right: 0;
+}
 
 // Spacings
 

@@ -16,7 +16,14 @@
     <div class="grid-row">
         <div class="column-two-thirds">
  
-            <h1 class="heading-xlarge">Not guilty plea</h1>
+        <div class="error-summary" role="alert" aria-labelledby="error-summary-heading-example-1" tabindex="-1">
+            <h2 class="heading-medium error-summary-heading" id="error-summary-heading-example-1">Fix the following</h2>
+            <ul class="error-summary-list">
+                <li><a href="#example-personal-details">Enter the name and address of your witness and their age if under 18</a></li>
+            </ul>
+        </div>
+            
+          <h1 class="heading-xlarge">Not guilty plea</h1>
             <p>Provide information for magistrates ahead of your court hearing.</p>
                                 
             <form class="form" action="" method="post">
@@ -24,14 +31,14 @@
                     
                     <fieldset>
                         <label class="form-label" for="notguilty-textarea">
-                            <p class="heading-small bottom_10">Why do you believe you're not guilty?</p>
+                            <span class="heading-small bottom_10">Why do you believe you're not guilty?</span>
                         </label>
                         <textarea class="form-control form-control-3-4" name="mitigation-textarea" id="mitigation-textarea" rows="5"></textarea>
                     </fieldset>
                     
                     <fieldset class="inline">
                         <legend>
-                            <h2 class="heading-small">Do you need an interpreter in court?</h2>
+                            <h2 class="heading-small top_0">Do you need an interpreter in court?</h2>
                         </legend>
                         <div class="multiple-choice">
                             <input id="radio-1" type="radio" name="not-guilty-interpreter" value="1">
@@ -47,7 +54,7 @@
                         <div class="panel panel-border-wide">
                             <p class="heading-small">Which language?</p>
                             <span class="form-hint">You can include sign language</span>
-                            <input class="form-control" id="interpreter-language" type="text" name="interpreter-language">
+                            <input class="form-control" id="interpreter" type="text" name="interpreter-language">
                         </div>
                     </div>
                     
@@ -89,13 +96,16 @@
                         </div>
                     </fieldset>
                     
-                    <div class="own-witness-fields top_15">
-                        <div class="panel panel-border-wide">
-                            <p class="bottom_5">Enter the name and address of your witness and their age if under 18</p>
-                            <textarea class="form-control form-control-3-4" name="own-witness-textarea" id="own-witness-textarea" rows="5"></textarea>
-                            <p class="top_30 bottom_5">If your witness needs an interpreter, which language? (optional)</p>
-                            <span class="form-hint">You can include sign language</span>
-                            <input class="form-control" id="own-witness-interpreter" type="text" name="own-witness-interpreter-language">
+                     <div class="form-group form-group-error top_15">
+                       <div class="own-witness-fields">
+                            <div>
+                                <p class="bottom_5">Enter the name and address of your witness and their age if under 18</p>
+                                <span class="error-message">You need to give us the details of your witness</span>
+                                <textarea class="form-control form-control-3-4" name="own-witness-textarea" id="own-witness-textarea" rows="5"></textarea>
+                                <p class="top_30 bottom_5">If your witness needs an interpreter, which language? (optional)</p>
+                                <span class="form-hint">You can include sign language</span>
+                                <input class="form-control" id="own-witness-interpreter" type="text" name="own-witness-interpreter-language">
+                            </div>
                         </div>
                     </div>
 
