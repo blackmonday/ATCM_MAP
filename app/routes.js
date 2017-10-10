@@ -610,7 +610,7 @@ router.post('/your-income', function (req, res) {
         }
     }
   
-    if (req.session.data['average-monthly-income'] == "") {
+    if (req.session.data['average-income'] == "") {
         res.redirect('/your-income-error-2')
     }
     
@@ -677,7 +677,7 @@ router.post('/your-income-error', function (req, res) {
         }
     }
   
-    if (req.session.data['average-monthly-income'] == "") {
+    if (req.session.data['average-income'] == "") {
         res.redirect('/your-income-error-2')
     }
     
