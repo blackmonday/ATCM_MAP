@@ -1450,6 +1450,10 @@ router.post('/your-outgoings', function (req, res) {
   var childMaintenanceTotal = parseInt(req.session.data['child-maintenance'])
   var otherExpensesTotal = parseInt(req.session.data['other-expenses-amount'])
   
+  if (req.session.data['other-expenses-list'] !== "") {
+      req.session.data['other-expenses-list'] = " including " + req.session.data['other-expenses-list']
+  }
+  
   if (yourOutgoings == "1"){
     req.session.data['benefits-total'] = accomodationTotal + councilTaxTotal + houseHoldBillsTotal + travelExpensesTotal + childMaintenanceTotal + otherExpensesTotal
     res.redirect('/check-your-answers')
