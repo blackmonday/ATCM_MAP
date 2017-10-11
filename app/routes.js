@@ -574,11 +574,19 @@ router.post('/guilty-plea-error', function (req, res) {
 // Your court hearing
 router.post('/your-court-hearing', function (req, res) {
     
-    if (req.session.data['your-court-hearing-interpreter'] !== "1") {
-        if (req.session.data['your-court-hearing-interpreter'] !== "2") {
+    if (req.session.data['interpreter-required'] !== "1") {
+        if (req.session.data['interpreter-required'] !== "2") {
             res.redirect('/your-court-hearing-error')
         }
     } 
+    
+    if (req.session.data['interpreter-required'] == "1") {
+        req.session.data['interpreter-required'] = "Yes"
+    }
+    if (req.session.data['interpreter-required'] == "2") {
+        req.session.data['interpreter-required'] = "No"
+    }
+    
     res.redirect('/your-finances')
     
 })
@@ -587,13 +595,13 @@ router.post('/your-court-hearing', function (req, res) {
 // Not guilty plea
 router.post('/not-guilty-plea', function (req, res) {
     
-    req.session.data['how-do-you-plea-2'] = "Yes - there will be a court hearing when pleading guilty";
+    req.session.data['how-do-you-plea-2'] = "Yes - there will be a court hearing when pleading not guilty";
     
     if (req.session.data['mitigation-textarea'] == "") {
         res.redirect('/not-guilty-plea-error-1')
     }  
-    if (req.session.data['not-guilty-interpreter'] !== "1") {
-            if (req.session.data['not-guilty-interpreter'] !== "2") {
+    if (req.session.data['interpreter-required'] !== "1") {
+            if (req.session.data['interpreter-required'] !== "2") {
                 res.redirect('/not-guilty-plea-error-2')
             }
     }  
@@ -612,6 +620,566 @@ router.post('/not-guilty-plea', function (req, res) {
                 res.redirect('/not-guilty-plea-error-5')
             }
     }  
+
+    if (req.session.data['interpreter-required'] == "1") {
+            req.session.data['interpreter-required'] = "Yes"
+    }
+    if (req.session.data['interpreter-required'] == "2") {
+            req.session.data['interpreter-required'] = "No"
+    }
+
+    if (req.session.data['witness-statement-group'] == "1") {
+            req.session.data['witness-statement-group'] = "Yes"
+    }  
+    if (req.session.data['witness-statement-group'] == "2") {
+            req.session.data['witness-statement-group'] = "No"
+    }
+    
+    if (req.session.data['own-witness-group'] == "1") {
+            req.session.data['own-witness-group'] = "Yes"
+    }  
+    if (req.session.data['own-witness-group'] == "2") {
+            req.session.data['own-witness-group'] = "No"
+    }  
+
+    if (req.session.data['nogo-dates-group'] == "1") {
+            req.session.data['nogo-dates-group'] = "Yes"
+    }  
+    if (req.session.data['nogo-dates-group'] == "2") {
+            req.session.data['nogo-dates-group'] = "No"
+    }  
+
+
+    res.redirect('/your-finances')
+})
+router.post('/not-guilty-plea-error-1', function (req, res) {
+    
+    req.session.data['how-do-you-plea-2'] = "Yes - there will be a court hearing when pleading not guilty";
+    
+    if (req.session.data['mitigation-textarea'] == "") {
+        res.redirect('/not-guilty-plea-error-1')
+    }  
+    if (req.session.data['interpreter-required'] !== "1") {
+            if (req.session.data['interpreter-required'] !== "2") {
+                res.redirect('/not-guilty-plea-error-2')
+            }
+    }  
+    if (req.session.data['witness-statement-group'] !== "1") {
+            if (req.session.data['witness-statement-group'] !== "2") {
+                res.redirect('/not-guilty-plea-error-3')
+            }
+    }  
+    if (req.session.data['own-witness-group'] !== "1") {
+            if (req.session.data['own-witness-group'] !== "2") {
+                res.redirect('/not-guilty-plea-error-4')
+            }
+    }  
+    if (req.session.data['nogo-dates-group'] !== "1") {
+            if (req.session.data['nogo-dates-group'] !== "2") {
+                res.redirect('/not-guilty-plea-error-5')
+            }
+    }  
+
+    if (req.session.data['interpreter-required'] == "1") {
+            req.session.data['interpreter-required'] = "Yes"
+    }
+    if (req.session.data['interpreter-required'] == "2") {
+            req.session.data['interpreter-required'] = "No"
+    }
+
+    if (req.session.data['witness-statement-group'] == "1") {
+            req.session.data['witness-statement-group'] = "Yes"
+    }  
+    if (req.session.data['witness-statement-group'] == "2") {
+            req.session.data['witness-statement-group'] = "No"
+    }
+    
+    if (req.session.data['own-witness-group'] == "1") {
+            req.session.data['own-witness-group'] = "Yes"
+    }  
+    if (req.session.data['own-witness-group'] == "2") {
+            req.session.data['own-witness-group'] = "No"
+    }  
+
+    if (req.session.data['nogo-dates-group'] == "1") {
+            req.session.data['nogo-dates-group'] = "Yes"
+    }  
+    if (req.session.data['nogo-dates-group'] == "2") {
+            req.session.data['nogo-dates-group'] = "No"
+    }  
+
+
+    res.redirect('/your-finances')
+})
+router.post('/not-guilty-plea-error-2', function (req, res) {
+    
+    req.session.data['how-do-you-plea-2'] = "Yes - there will be a court hearing when pleading not guilty";
+    
+    if (req.session.data['mitigation-textarea'] == "") {
+        res.redirect('/not-guilty-plea-error-1')
+    }  
+    if (req.session.data['interpreter-required'] !== "1") {
+            if (req.session.data['interpreter-required'] !== "2") {
+                res.redirect('/not-guilty-plea-error-2')
+            }
+    }  
+    if (req.session.data['witness-statement-group'] !== "1") {
+            if (req.session.data['witness-statement-group'] !== "2") {
+                res.redirect('/not-guilty-plea-error-3')
+            }
+    }  
+    if (req.session.data['own-witness-group'] !== "1") {
+            if (req.session.data['own-witness-group'] !== "2") {
+                res.redirect('/not-guilty-plea-error-4')
+            }
+    }  
+    if (req.session.data['nogo-dates-group'] !== "1") {
+            if (req.session.data['nogo-dates-group'] !== "2") {
+                res.redirect('/not-guilty-plea-error-5')
+            }
+    }  
+
+    if (req.session.data['interpreter-required'] == "1") {
+            req.session.data['interpreter-required'] = "Yes"
+    }
+    if (req.session.data['interpreter-required'] == "2") {
+            req.session.data['interpreter-required'] = "No"
+    }
+
+    if (req.session.data['witness-statement-group'] == "1") {
+            req.session.data['witness-statement-group'] = "Yes"
+    }  
+    if (req.session.data['witness-statement-group'] == "2") {
+            req.session.data['witness-statement-group'] = "No"
+    }
+    
+    if (req.session.data['own-witness-group'] == "1") {
+            req.session.data['own-witness-group'] = "Yes"
+    }  
+    if (req.session.data['own-witness-group'] == "2") {
+            req.session.data['own-witness-group'] = "No"
+    }  
+
+    if (req.session.data['nogo-dates-group'] == "1") {
+            req.session.data['nogo-dates-group'] = "Yes"
+    }  
+    if (req.session.data['nogo-dates-group'] == "2") {
+            req.session.data['nogo-dates-group'] = "No"
+    }  
+
+
+    res.redirect('/your-finances')
+})
+router.post('/not-guilty-plea-error-2b', function (req, res) {
+    
+    req.session.data['how-do-you-plea-2'] = "Yes - there will be a court hearing when pleading not guilty";
+    
+    if (req.session.data['mitigation-textarea'] == "") {
+        res.redirect('/not-guilty-plea-error-1')
+    }  
+    if (req.session.data['interpreter-required'] !== "1") {
+            if (req.session.data['interpreter-required'] !== "2") {
+                res.redirect('/not-guilty-plea-error-2')
+            }
+    }  
+    if (req.session.data['witness-statement-group'] !== "1") {
+            if (req.session.data['witness-statement-group'] !== "2") {
+                res.redirect('/not-guilty-plea-error-3')
+            }
+    }  
+    if (req.session.data['own-witness-group'] !== "1") {
+            if (req.session.data['own-witness-group'] !== "2") {
+                res.redirect('/not-guilty-plea-error-4')
+            }
+    }  
+    if (req.session.data['nogo-dates-group'] !== "1") {
+            if (req.session.data['nogo-dates-group'] !== "2") {
+                res.redirect('/not-guilty-plea-error-5')
+            }
+    }  
+
+    if (req.session.data['interpreter-required'] == "1") {
+            req.session.data['interpreter-required'] = "Yes"
+    }
+    if (req.session.data['interpreter-required'] == "2") {
+            req.session.data['interpreter-required'] = "No"
+    }
+
+    if (req.session.data['witness-statement-group'] == "1") {
+            req.session.data['witness-statement-group'] = "Yes"
+    }  
+    if (req.session.data['witness-statement-group'] == "2") {
+            req.session.data['witness-statement-group'] = "No"
+    }
+    
+    if (req.session.data['own-witness-group'] == "1") {
+            req.session.data['own-witness-group'] = "Yes"
+    }  
+    if (req.session.data['own-witness-group'] == "2") {
+            req.session.data['own-witness-group'] = "No"
+    }  
+
+    if (req.session.data['nogo-dates-group'] == "1") {
+            req.session.data['nogo-dates-group'] = "Yes"
+    }  
+    if (req.session.data['nogo-dates-group'] == "2") {
+            req.session.data['nogo-dates-group'] = "No"
+    }  
+
+
+    res.redirect('/your-finances')
+})
+router.post('/not-guilty-plea-error-3', function (req, res) {
+    
+    req.session.data['how-do-you-plea-2'] = "Yes - there will be a court hearing when pleading not guilty";
+    
+    if (req.session.data['mitigation-textarea'] == "") {
+        res.redirect('/not-guilty-plea-error-1')
+    }  
+    if (req.session.data['interpreter-required'] !== "1") {
+            if (req.session.data['interpreter-required'] !== "2") {
+                res.redirect('/not-guilty-plea-error-2')
+            }
+    }  
+    if (req.session.data['witness-statement-group'] !== "1") {
+            if (req.session.data['witness-statement-group'] !== "2") {
+                res.redirect('/not-guilty-plea-error-3')
+            }
+    }  
+    if (req.session.data['own-witness-group'] !== "1") {
+            if (req.session.data['own-witness-group'] !== "2") {
+                res.redirect('/not-guilty-plea-error-4')
+            }
+    }  
+    if (req.session.data['nogo-dates-group'] !== "1") {
+            if (req.session.data['nogo-dates-group'] !== "2") {
+                res.redirect('/not-guilty-plea-error-5')
+            }
+    }  
+
+    if (req.session.data['interpreter-required'] == "1") {
+            req.session.data['interpreter-required'] = "Yes"
+    }
+    if (req.session.data['interpreter-required'] == "2") {
+            req.session.data['interpreter-required'] = "No"
+    }
+
+    if (req.session.data['witness-statement-group'] == "1") {
+            req.session.data['witness-statement-group'] = "Yes"
+    }  
+    if (req.session.data['witness-statement-group'] == "2") {
+            req.session.data['witness-statement-group'] = "No"
+    }
+    
+    if (req.session.data['own-witness-group'] == "1") {
+            req.session.data['own-witness-group'] = "Yes"
+    }  
+    if (req.session.data['own-witness-group'] == "2") {
+            req.session.data['own-witness-group'] = "No"
+    }  
+
+    if (req.session.data['nogo-dates-group'] == "1") {
+            req.session.data['nogo-dates-group'] = "Yes"
+    }  
+    if (req.session.data['nogo-dates-group'] == "2") {
+            req.session.data['nogo-dates-group'] = "No"
+    }  
+
+
+    res.redirect('/your-finances')
+})
+router.post('/not-guilty-plea-error-3b', function (req, res) {
+    
+    req.session.data['how-do-you-plea-2'] = "Yes - there will be a court hearing when pleading not guilty";
+    
+    if (req.session.data['mitigation-textarea'] == "") {
+        res.redirect('/not-guilty-plea-error-1')
+    }  
+    if (req.session.data['interpreter-required'] !== "1") {
+            if (req.session.data['interpreter-required'] !== "2") {
+                res.redirect('/not-guilty-plea-error-2')
+            }
+    }  
+    if (req.session.data['witness-statement-group'] !== "1") {
+            if (req.session.data['witness-statement-group'] !== "2") {
+                res.redirect('/not-guilty-plea-error-3')
+            }
+    }  
+    if (req.session.data['own-witness-group'] !== "1") {
+            if (req.session.data['own-witness-group'] !== "2") {
+                res.redirect('/not-guilty-plea-error-4')
+            }
+    }  
+    if (req.session.data['nogo-dates-group'] !== "1") {
+            if (req.session.data['nogo-dates-group'] !== "2") {
+                res.redirect('/not-guilty-plea-error-5')
+            }
+    }  
+
+    if (req.session.data['interpreter-required'] == "1") {
+            req.session.data['interpreter-required'] = "Yes"
+    }
+    if (req.session.data['interpreter-required'] == "2") {
+            req.session.data['interpreter-required'] = "No"
+    }
+
+    if (req.session.data['witness-statement-group'] == "1") {
+            req.session.data['witness-statement-group'] = "Yes"
+    }  
+    if (req.session.data['witness-statement-group'] == "2") {
+            req.session.data['witness-statement-group'] = "No"
+    }
+    
+    if (req.session.data['own-witness-group'] == "1") {
+            req.session.data['own-witness-group'] = "Yes"
+    }  
+    if (req.session.data['own-witness-group'] == "2") {
+            req.session.data['own-witness-group'] = "No"
+    }  
+
+    if (req.session.data['nogo-dates-group'] == "1") {
+            req.session.data['nogo-dates-group'] = "Yes"
+    }  
+    if (req.session.data['nogo-dates-group'] == "2") {
+            req.session.data['nogo-dates-group'] = "No"
+    }  
+
+
+    res.redirect('/your-finances')
+})
+router.post('/not-guilty-plea-error-4', function (req, res) {
+    
+    req.session.data['how-do-you-plea-2'] = "Yes - there will be a court hearing when pleading not guilty";
+    
+    if (req.session.data['mitigation-textarea'] == "") {
+        res.redirect('/not-guilty-plea-error-1')
+    }  
+    if (req.session.data['interpreter-required'] !== "1") {
+            if (req.session.data['interpreter-required'] !== "2") {
+                res.redirect('/not-guilty-plea-error-2')
+            }
+    }  
+    if (req.session.data['witness-statement-group'] !== "1") {
+            if (req.session.data['witness-statement-group'] !== "2") {
+                res.redirect('/not-guilty-plea-error-3')
+            }
+    }  
+    if (req.session.data['own-witness-group'] !== "1") {
+            if (req.session.data['own-witness-group'] !== "2") {
+                res.redirect('/not-guilty-plea-error-4')
+            }
+    }  
+    if (req.session.data['nogo-dates-group'] !== "1") {
+            if (req.session.data['nogo-dates-group'] !== "2") {
+                res.redirect('/not-guilty-plea-error-5')
+            }
+    }  
+
+    if (req.session.data['interpreter-required'] == "1") {
+            req.session.data['interpreter-required'] = "Yes"
+    }
+    if (req.session.data['interpreter-required'] == "2") {
+            req.session.data['interpreter-required'] = "No"
+    }
+
+    if (req.session.data['witness-statement-group'] == "1") {
+            req.session.data['witness-statement-group'] = "Yes"
+    }  
+    if (req.session.data['witness-statement-group'] == "2") {
+            req.session.data['witness-statement-group'] = "No"
+    }
+    
+    if (req.session.data['own-witness-group'] == "1") {
+            req.session.data['own-witness-group'] = "Yes"
+    }  
+    if (req.session.data['own-witness-group'] == "2") {
+            req.session.data['own-witness-group'] = "No"
+    }  
+
+    if (req.session.data['nogo-dates-group'] == "1") {
+            req.session.data['nogo-dates-group'] = "Yes"
+    }  
+    if (req.session.data['nogo-dates-group'] == "2") {
+            req.session.data['nogo-dates-group'] = "No"
+    }  
+
+
+    res.redirect('/your-finances')
+})
+router.post('/not-guilty-plea-error-4b', function (req, res) {
+    
+    req.session.data['how-do-you-plea-2'] = "Yes - there will be a court hearing when pleading not guilty";
+    
+    if (req.session.data['mitigation-textarea'] == "") {
+        res.redirect('/not-guilty-plea-error-1')
+    }  
+    if (req.session.data['interpreter-required'] !== "1") {
+            if (req.session.data['interpreter-required'] !== "2") {
+                res.redirect('/not-guilty-plea-error-2')
+            }
+    }  
+    if (req.session.data['witness-statement-group'] !== "1") {
+            if (req.session.data['witness-statement-group'] !== "2") {
+                res.redirect('/not-guilty-plea-error-3')
+            }
+    }  
+    if (req.session.data['own-witness-group'] !== "1") {
+            if (req.session.data['own-witness-group'] !== "2") {
+                res.redirect('/not-guilty-plea-error-4')
+            }
+    }  
+    if (req.session.data['nogo-dates-group'] !== "1") {
+            if (req.session.data['nogo-dates-group'] !== "2") {
+                res.redirect('/not-guilty-plea-error-5')
+            }
+    }  
+
+    if (req.session.data['interpreter-required'] == "1") {
+            req.session.data['interpreter-required'] = "Yes"
+    }
+    if (req.session.data['interpreter-required'] == "2") {
+            req.session.data['interpreter-required'] = "No"
+    }
+
+    if (req.session.data['witness-statement-group'] == "1") {
+            req.session.data['witness-statement-group'] = "Yes"
+    }  
+    if (req.session.data['witness-statement-group'] == "2") {
+            req.session.data['witness-statement-group'] = "No"
+    }
+    
+    if (req.session.data['own-witness-group'] == "1") {
+            req.session.data['own-witness-group'] = "Yes"
+    }  
+    if (req.session.data['own-witness-group'] == "2") {
+            req.session.data['own-witness-group'] = "No"
+    }  
+
+    if (req.session.data['nogo-dates-group'] == "1") {
+            req.session.data['nogo-dates-group'] = "Yes"
+    }  
+    if (req.session.data['nogo-dates-group'] == "2") {
+            req.session.data['nogo-dates-group'] = "No"
+    }  
+
+
+    res.redirect('/your-finances')
+})
+router.post('/not-guilty-plea-error-5', function (req, res) {
+    
+    req.session.data['how-do-you-plea-2'] = "Yes - there will be a court hearing when pleading not guilty";
+    
+    if (req.session.data['mitigation-textarea'] == "") {
+        res.redirect('/not-guilty-plea-error-1')
+    }  
+    if (req.session.data['interpreter-required'] !== "1") {
+            if (req.session.data['interpreter-required'] !== "2") {
+                res.redirect('/not-guilty-plea-error-2')
+            }
+    }  
+    if (req.session.data['witness-statement-group'] !== "1") {
+            if (req.session.data['witness-statement-group'] !== "2") {
+                res.redirect('/not-guilty-plea-error-3')
+            }
+    }  
+    if (req.session.data['own-witness-group'] !== "1") {
+            if (req.session.data['own-witness-group'] !== "2") {
+                res.redirect('/not-guilty-plea-error-4')
+            }
+    }  
+    if (req.session.data['nogo-dates-group'] !== "1") {
+            if (req.session.data['nogo-dates-group'] !== "2") {
+                res.redirect('/not-guilty-plea-error-5')
+            }
+    }  
+
+    if (req.session.data['interpreter-required'] == "1") {
+            req.session.data['interpreter-required'] = "Yes"
+    }
+    if (req.session.data['interpreter-required'] == "2") {
+            req.session.data['interpreter-required'] = "No"
+    }
+
+    if (req.session.data['witness-statement-group'] == "1") {
+            req.session.data['witness-statement-group'] = "Yes"
+    }  
+    if (req.session.data['witness-statement-group'] == "2") {
+            req.session.data['witness-statement-group'] = "No"
+    }
+    
+    if (req.session.data['own-witness-group'] == "1") {
+            req.session.data['own-witness-group'] = "Yes"
+    }  
+    if (req.session.data['own-witness-group'] == "2") {
+            req.session.data['own-witness-group'] = "No"
+    }  
+
+    if (req.session.data['nogo-dates-group'] == "1") {
+            req.session.data['nogo-dates-group'] = "Yes"
+    }  
+    if (req.session.data['nogo-dates-group'] == "2") {
+            req.session.data['nogo-dates-group'] = "No"
+    }  
+
+
+    res.redirect('/your-finances')
+})
+router.post('/not-guilty-plea-error-5b', function (req, res) {
+    
+    req.session.data['how-do-you-plea-2'] = "Yes - there will be a court hearing when pleading not guilty";
+    
+    if (req.session.data['mitigation-textarea'] == "") {
+        res.redirect('/not-guilty-plea-error-1')
+    }  
+    if (req.session.data['interpreter-required'] !== "1") {
+            if (req.session.data['interpreter-required'] !== "2") {
+                res.redirect('/not-guilty-plea-error-2')
+            }
+    }  
+    if (req.session.data['witness-statement-group'] !== "1") {
+            if (req.session.data['witness-statement-group'] !== "2") {
+                res.redirect('/not-guilty-plea-error-3')
+            }
+    }  
+    if (req.session.data['own-witness-group'] !== "1") {
+            if (req.session.data['own-witness-group'] !== "2") {
+                res.redirect('/not-guilty-plea-error-4')
+            }
+    }  
+    if (req.session.data['nogo-dates-group'] !== "1") {
+            if (req.session.data['nogo-dates-group'] !== "2") {
+                res.redirect('/not-guilty-plea-error-5')
+            }
+    }  
+
+    if (req.session.data['interpreter-required'] == "1") {
+            req.session.data['interpreter-required'] = "Yes"
+    }
+    if (req.session.data['interpreter-required'] == "2") {
+            req.session.data['interpreter-required'] = "No"
+    }
+
+    if (req.session.data['witness-statement-group'] == "1") {
+            req.session.data['witness-statement-group'] = "Yes"
+    }  
+    if (req.session.data['witness-statement-group'] == "2") {
+            req.session.data['witness-statement-group'] = "No"
+    }
+    
+    if (req.session.data['own-witness-group'] == "1") {
+            req.session.data['own-witness-group'] = "Yes"
+    }  
+    if (req.session.data['own-witness-group'] == "2") {
+            req.session.data['own-witness-group'] = "No"
+    }  
+
+    if (req.session.data['nogo-dates-group'] == "1") {
+            req.session.data['nogo-dates-group'] = "Yes"
+    }  
+    if (req.session.data['nogo-dates-group'] == "2") {
+            req.session.data['nogo-dates-group'] = "No"
+    }  
+
 
     res.redirect('/your-finances')
 })
@@ -632,7 +1200,7 @@ router.post('/your-income', function (req, res) {
     }
     
     if (req.session.data['frequency-group'] == "1") {
-       req.session.data['frequency-group'] = "2eekly"
+       req.session.data['frequency-group'] = "weekly"
     }
     if (req.session.data['frequency-group'] == "2") {
        req.session.data['frequency-group'] = "fortnightly"
@@ -660,7 +1228,14 @@ router.post('/your-income', function (req, res) {
             res.redirect('/your-income-error-4')
         }
     }
-  
+ 
+    if (req.session.data['claiming-benefits-group'] == "1") {
+       req.session.data['claiming-benefits-group'] = "Yes"
+    }
+    if (req.session.data['claiming-benefits-group'] == "2") {
+       req.session.data['claiming-benefits-group'] = "No"
+    }
+ 
   if (employmentStatus == "1"){
     req.session.data['employment-status-group'] = "Employed (full or part-time)"
     res.redirect('/your-employer')
@@ -707,6 +1282,16 @@ router.post('/your-income-error', function (req, res) {
             }
         }
     }
+    
+    if (req.session.data['frequency-group'] == "1") {
+       req.session.data['frequency-group'] = "weekly"
+    }
+    if (req.session.data['frequency-group'] == "2") {
+       req.session.data['frequency-group'] = "fortnightly"
+    }
+    if (req.session.data['frequency-group'] == "3") {
+       req.session.data['frequency-group'] = "monthly"
+    }
   
     if (req.session.data['average-income'] == "") {
         res.redirect('/your-income-error-2')
@@ -727,7 +1312,14 @@ router.post('/your-income-error', function (req, res) {
             res.redirect('/your-income-error-4')
         }
     }
-  
+ 
+    if (req.session.data['claiming-benefits-group'] == "1") {
+       req.session.data['claiming-benefits-group'] = "Yes"
+    }
+    if (req.session.data['claiming-benefits-group'] == "2") {
+       req.session.data['claiming-benefits-group'] = "No"
+    }
+ 
   if (employmentStatus == "1"){
     req.session.data['employment-status-group'] = "Employed (full or part-time)"
     res.redirect('/your-employer')
@@ -750,7 +1342,7 @@ router.post('/your-income-error', function (req, res) {
       req.session.data['claiming-benefits-group'] = "No"
        if (employmentStatus == "2"){
            req.session.data['employer-name'] = "–"
-         req.session.data['employment-status-group'] = "Self-eemployed"
+         req.session.data['employment-status-group'] = "Self-employed"
       } else if (employmentStatus == "3"){
           req.session.data['employer-name'] = "–"
           req.session.data['employment-status-group'] = "Unemployed"
@@ -769,16 +1361,19 @@ router.post('/your-employer', function (req, res) {
 
   var areYouEmployed = req.session.data['are-you-employed-group']
   var benefitsStatus = req.session.data['claiming-benefits-group']
+  //var deductFromEarningsStatus = req.session.data['deduct-from-earnings-group']
 
   if (areYouEmployed == "1"){
+    req.session.data['are-you-employed-group'] = "Yes"
     res.redirect('/your-employer-details')
   } else if (benefitsStatus == "1") {
-      req.session.data['claiming-benefits-group'] = "Yes"
-      res.redirect('/your-benefits')
+    req.session.data['claiming-benefits-group'] = "Yes"
+    res.redirect('/your-benefits')
   } else {
-      req.session.data['claiming-benefits-group'] = "No"
-      req.session.data['employer-name'] = "You chose to not give employer details"
-      res.redirect('/your-outgoings')
+    req.session.data['are-you-employed-group'] = "No"
+    req.session.data['claiming-benefits-group'] = "No"
+    req.session.data['employer-name'] = "You chose to not give employer details"
+    res.redirect('/your-outgoings')
   }
 
 })
@@ -791,6 +1386,14 @@ router.post('/your-employer-details', function (req, res) {
   
   if (req.session.data['employer-name'] == "") {
       req.session.data['employer-name'] = "–"
+  }
+
+  if (req.session.data['employer-number'] == "") {
+      req.session.data['employer-number'] = "–"
+  }
+
+  if (req.session.data['employer-address-1'] == "") {
+      req.session.data['employer-address-1'] = "–"
   }
 
   if (benefitsStatus == "1") {
@@ -808,8 +1411,10 @@ router.post('/your-benefits', function (req, res) {
   var deductFromYourBenefits = req.session.data['deduct-from-benefits-group']
   
   if (deductFromYourBenefits == "1"){
+    req.session.data['deduct-from-benefits-group'] = "Yes"
     res.redirect('/your-outgoings')
   } else if (deductFromYourBenefits == "2"){
+    req.session.data['deduct-from-benefits-group'] = "No"
     res.redirect('/your-outgoings')
   } else {
     res.redirect('/your-benefits-error')
@@ -819,10 +1424,12 @@ router.post('/your-benefits', function (req, res) {
 router.post('/your-benefits-error', function (req, res) {
 
   var deductFromYourBenefits = req.session.data['deduct-from-benefits-group']
-
+  
   if (deductFromYourBenefits == "1"){
+    req.session.data['deduct-from-benefits-group'] = "Yes"
     res.redirect('/your-outgoings')
   } else if (deductFromYourBenefits == "2"){
+    req.session.data['deduct-from-benefits-group'] = "No"
     res.redirect('/your-outgoings')
   } else {
     res.redirect('/your-benefits-error')
@@ -842,11 +1449,12 @@ router.post('/your-outgoings', function (req, res) {
   var travelExpensesTotal = parseInt(req.session.data['travel-expeneses'])
   var childMaintenanceTotal = parseInt(req.session.data['child-maintenance'])
   var otherExpensesTotal = parseInt(req.session.data['other-expenses-amount'])
-
+  
   if (yourOutgoings == "1"){
     req.session.data['benefits-total'] = accomodationTotal + councilTaxTotal + houseHoldBillsTotal + travelExpensesTotal + childMaintenanceTotal + otherExpensesTotal
     res.redirect('/check-your-answers')
   } else if (yourOutgoings == "2"){
+    req.session.data['benefits-total'] = 0 + " - you chose to not give details of your monthly outgoings"
     res.redirect('/check-your-answers')
   } else {
     res.redirect('/your-outgoings-error')
@@ -856,10 +1464,19 @@ router.post('/your-outgoings', function (req, res) {
 router.post('/your-outgoings-error', function (req, res) {
 
   var yourOutgoings = req.session.data['your-outgoings-group']
-
+  
+  var accomodationTotal = parseInt(req.session.data['accomodation'])
+  var councilTaxTotal = parseInt(req.session.data['council-tax'])
+  var houseHoldBillsTotal = parseInt(req.session.data['household-bills'])
+  var travelExpensesTotal = parseInt(req.session.data['travel-expeneses'])
+  var childMaintenanceTotal = parseInt(req.session.data['child-maintenance'])
+  var otherExpensesTotal = parseInt(req.session.data['other-expenses-amount'])
+  
   if (yourOutgoings == "1"){
+    req.session.data['benefits-total'] = accomodationTotal + councilTaxTotal + houseHoldBillsTotal + travelExpensesTotal + childMaintenanceTotal + otherExpensesTotal
     res.redirect('/check-your-answers')
   } else if (yourOutgoings == "2"){
+    req.session.data['benefits-total'] = 0 + " - you chose to not give details of your monthly outgoings"
     res.redirect('/check-your-answers')
   } else {
     res.redirect('/your-outgoings-error')
