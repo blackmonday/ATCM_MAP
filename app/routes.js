@@ -28,6 +28,7 @@ router.post('/start-page', function (req, res) {
 // Find your case
 router.post('/find-your-case', function (req, res) {
 
+    /*
     var caseURNValidation  = req.session.data['case-urn-number']
     var yourPostcode  = req.session.data['your-postcode']
 
@@ -44,7 +45,7 @@ router.post('/find-your-case', function (req, res) {
     if (yourPostcode == ""){
         res.redirect('/find-your-case-error-3')
     }
-    
+    */
     res.redirect('/your-details')
     
 })
