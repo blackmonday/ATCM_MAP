@@ -98,10 +98,34 @@ router.post('/find-your-case-error-3', function (req, res) {
 // ************
 // Your details
 router.post('/your-details', function (req, res) {
+        
+    if (req.session.data['first-name'] == "") {
+        req.session.data['first-name'] = "–"
+    }
+    if (req.session.data['last-name'] == "") {
+        req.session.data['last-name'] = "–"
+    }
     
-    res.redirect('/your-plea')
-    
-    if (req.session.data['home-telephone'] == "") {
+    if (req.session.data['address-line-1'] == "") {
+        req.session.data['address-line-1'] = "–"
+    }
+    if (req.session.data['address-line-2'] == "") {
+        req.session.data['address-line-2'] = "–"
+    }
+    if (req.session.data['address-line-3'] == "") {
+        req.session.data['address-line-3'] = "–"
+    }
+    if (req.session.data['town-or-city'] == "") {
+        req.session.data['town-or-city'] = "–"
+    }
+    if (req.session.data['county'] == "") {
+        req.session.data['county'] = "–"
+    }
+    if (req.session.data['postcode'] == "") {
+        req.session.data['postcode'] = "–"
+    }
+
+   if (req.session.data['home-telephone'] == "") {
         req.session.data['home-telephone'] = "–"
     }
     if (req.session.data['mobile'] == "") {
@@ -143,17 +167,23 @@ router.post('/your-details', function (req, res) {
     if (req.session.data['dob-year'] == "") {
         req.session.data['dob-year'] = "–"
     }
+    
+    if (req.session.data['NIN-radio-inline-group'] !== "1") {
+        if (req.session.data['NIN-radio-inline-group'] !== "2") {               req.session.data['NIN'] = "–"
+        }
+    }
     if (req.session.data['NIN-radio-inline-group'] == "1") {
-        req.session.data['NIN'] = "–"
+        if (req.session.data['NIN'] == "") {
+            req.session.data['NIN'] = "–"
+        }
     }
     if (req.session.data['NIN-radio-inline-group'] == "2") {
         req.session.data['NIN'] = "Does not have a National Insurance number"
     }
 
+    res.redirect('/your-plea')
 
-    
-    
-    
+
     /**************
     /* Validation is hidden as it doens't work with Heroku
     var yourDetails = "1"
