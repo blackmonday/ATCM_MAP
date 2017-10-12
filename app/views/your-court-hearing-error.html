@@ -21,7 +21,7 @@
                 Fix the following
                 </h2>
                 <ul class="error-summary-list">
-                    <li><a href="#example-personal-details">Do you need an interpreter in court?</a></li>
+                    <li><a href="#error">Do you need an interpreter in court?</a></li>
                 </ul>
             </div>
 
@@ -30,29 +30,29 @@
             <form class="form" action="/your-finances" method="post">
                 <div class="form-group">
                     
-                    <div class="form-group form-group-error top_30">
-                    <fieldset class="inline">
-                        <legend>
-                            <h2 class="heading-small top_0">Do you need an interpreter in court?</h2>
-                            <span class="error-message bottom_5">You need to tell us if you ned an interpreter in court</span>
-                        </legend>
-                        <div class="multiple-choice">
-                            <input id="radio-1" type="radio" name="interpreter-required" value="1">
-                            <label for="radio-1">Yes</label>
+                    <div class="form-group form-group-error top_30" id="error">
+                        <fieldset class="inline">
+                            <legend>
+                                <h2 class="heading-small top_0">Do you need an interpreter in court?</h2>
+                                <span class="error-message bottom_5">Choose an answer</span>
+                            </legend>
+                            <div class="multiple-choice">
+                                <input id="radio-1" type="radio" name="interpreter-required" value="1">
+                                <label for="radio-1">Yes</label>
+                            </div>
+                            <div class="multiple-choice">
+                                <input id="radio-2" type="radio" name="interpreter-required" value="2">
+                                <label for="radio-2">No</label>
+                            </div>
+                        </fieldset>
+
+                        <div class="interpreter-fields top_15">
+                            <div class="panel panel-border-wide">
+                                <p class="heading-small">Which language?</p>
+                                <span class="form-hint">You can include sign language</span>
+                                <input class="form-control" id="NIN" type="text" name="interpreter-language">
+                            </div>
                         </div>
-                        <div class="multiple-choice">
-                            <input id="radio-2" type="radio" name="interpreter-required" value="2">
-                            <label for="radio-2">No</label>
-                        </div>
-                    </fieldset>
-                    
-                    <div class="interpreter-fields top_15">
-                        <div class="panel panel-border-wide">
-                            <p class="heading-small">Which language?</p>
-                            <span class="form-hint">You can include sign language</span>
-                            <input class="form-control" id="NIN" type="text" name="interpreter-language">
-                        </div>
-                    </div>
                     </div>
                     
                 </div>

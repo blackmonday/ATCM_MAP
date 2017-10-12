@@ -21,7 +21,7 @@
                 Fix the following
                 </h2>
                 <ul class="error-summary-list">
-                    <li><a href="#example-personal-details">Your employment status</a></li>
+                    <li><a href="#error">Your employment status</a></li>
                 </ul>
             </div>
 
@@ -56,14 +56,17 @@
                                 Include earnings, pension, benefits and any other income
                             </span>
                         </label>
-                        £ <input class="form-control" id="average-income" type="text" name="average-income">
+                        <div class="input-icon">
+                            <i>£</i>
+                            <input class="form-control" id="average-income" type="text" name="average-income">
+                        </div>
                     </fieldset>
                     
-                    <div class="form-group form-group-error top_30 bottom_10">
+                    <div class="form-group form-group-error top_30 bottom_10" id="error">
                         <fieldset class="your-employment-status">
                             <legend>
                                 <h2 class="heading-small top_0">Your employment status</h2>
-                                <span class="error-message bottom_5">You need to let us know your employment status.</span>
+                                <span class="error-message bottom_5">Choose an answer</span>
                             </legend>
                             <div class="multiple-choice">
                                 <input id="radio-1" type="radio" name="employment-status-group" value="1">

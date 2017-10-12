@@ -21,7 +21,7 @@
                 Fix the following
                 </h2>
                 <ul class="error-summary-list">
-                    <li><a href="#example-personal-details">Are you claiming any benefits?</a></li>
+                    <li><a href="#error">Are you claiming any benefits?</a></li>
                 </ul>
             </div>
             
@@ -56,7 +56,10 @@
                                 Include earnings, pension, benefits and any other income
                             </span>
                         </label>
-                        £ <input class="form-control" id="average-income" type="text" name="average-income">
+                        <div class="input-icon">
+                            <i>£</i>
+                            <input class="form-control" id="average-income" type="text" name="average-income">
+                        </div>
                     </fieldset>
                     
                     <fieldset class="your-employment-status stop_15">
@@ -89,32 +92,32 @@
 
                     </fieldset>
 
-                    <div class="form-group form-group-error top_30">
-                    <fieldset class="claiming-benefits-group inline">
-                        <legend>
-                            <h2 class="heading-small top_0">Are you claiming any benefits?</h2>
-                            <span class="error-message bottom_5">You need to let us know if you are claiming benefits.</span>
-                        </legend>
-                        <div class="multiple-choice">
-                            <input id="radio-1" type="radio" name="claiming-benefits-group" value="1">
-                            <label for="radio-1">Yes</label>
-                        </div>
+                    <div class="form-group form-group-error top_30" id="error">
+                        <fieldset class="claiming-benefits-group inline">
+                            <legend>
+                                <h2 class="heading-small top_0">Are you claiming any benefits?</h2>
+                                <span class="error-message bottom_5">Choose an answer</span>
+                            </legend>
                             <div class="multiple-choice">
-                            <input id="radio-2" type="radio" name="claiming-benefits-group" value="2">
-                            <label for="radio-2">No</label>
-                        </div>
-                    </fieldset>
-                    
-                    <fieldset>
-                        <div class="claiming-benefits-status top_15">
-                            <div class="panel panel-border-wide bottom_0">
-                                <label class="form-label top_0 bottom_5" for="textarea">
-                                    <p class="heading-small">Which benefits are you claiming?</p>
-                                </label>
-                                <textarea class="form-control form-control-3-4" name="textarea" id="benefits-claimed" rows="5"></textarea>
+                                <input id="radio-1" type="radio" name="claiming-benefits-group" value="1">
+                                <label for="radio-1">Yes</label>
                             </div>
-                        </div>
-                    </fieldset>
+                                <div class="multiple-choice">
+                                <input id="radio-2" type="radio" name="claiming-benefits-group" value="2">
+                                <label for="radio-2">No</label>
+                            </div>
+                        </fieldset>
+
+                        <fieldset>
+                            <div class="claiming-benefits-status top_15">
+                                <div class="panel panel-border-wide bottom_0">
+                                    <label class="form-label top_0 bottom_5" for="textarea">
+                                        <p class="heading-small">Which benefits are you claiming?</p>
+                                    </label>
+                                    <textarea class="form-control form-control-3-4" name="textarea" id="benefits-claimed" rows="5"></textarea>
+                                </div>
+                            </div>
+                        </fieldset>
                     </div>
                     
                 </div>

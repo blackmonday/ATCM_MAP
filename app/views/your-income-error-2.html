@@ -21,7 +21,7 @@
                 Fix the following
                 </h2>
                 <ul class="error-summary-list">
-                    <li><a href="#example-personal-details">Enter your average income (after tax)</a></li>
+                    <li><a href="#error">Enter your average income (after tax)</a></li>
                 </ul>
             </div>
             
@@ -49,14 +49,17 @@
                         </div>
                     </fieldset>
 
-                    <div class="form-group form-group-error top_30">
+                    <div class="form-group form-group-error top_30" id="error">
                         <fieldset>
                             <label class="form-label" for="average-income">
                                 <h2 class="heading-small top_0">Enter your average income (after tax)</h2>
                                 <span class="form-hint">Include earnings, pension, benefits and any other income</span>
-                                <span class="error-message bottom_5">You need to enter your average monthly income in british pounds sterling.</span>
+                                <span class="error-message bottom_5">Provide this information - for example 1357.48</span>
                             </label>
-                            £ <input class="form-control" id="average-income" type="text" name="average-income">
+                            <div class="input-icon">
+                                <i>£</i>
+                                <input class="form-control" id="average-income" type="text" name="average-income">
+                            </div>
                         </fieldset>
                     </div>
                     

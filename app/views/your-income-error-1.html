@@ -21,7 +21,7 @@
                 Fix the following
                 </h2>
                 <ul class="error-summary-list">
-                    <li><a href="#example-personal-details">What is the frequency of your income?</a></li>
+                    <li><a href="#error">What is the frequency of your income?</a></li>
                 </ul>
             </div>
             
@@ -30,11 +30,11 @@
             <form  action="" method="post">
                 <div class="form-group">
                     
-                    <div class="form-group form-group-error">
+                    <div class="form-group form-group-error" id="error">
                         <fieldset class="inline">
                             <legend>
                                 <span class="heading-small top_0 bottom_15">What is the frequency of your income?</span>
-                                <span class="error-message bottom_5">You need to let us know the frequency of your income.</span>
+                                <span class="error-message bottom_5">Choose an answer</span>
                             </legend>
 
                             <div class="multiple-choice">
@@ -59,7 +59,10 @@
                                 Include earnings, pension, benefits and any other income
                             </span>
                         </label>
-                        £ <input class="form-control" id="average-income" type="text" name="average-income">
+                        <div class="input-icon">
+                            <i>£</i>
+                            <input class="form-control" id="average-income" type="text" name="average-income">
+                        </div>
                     </fieldset>
                     
                     <fieldset class="your-employment-status stop_15">

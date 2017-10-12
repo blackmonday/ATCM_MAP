@@ -22,7 +22,7 @@
                 Fix the following
                 </h2>
                 <ul class="error-summary-list">
-                    <li><a href="#example-personal-details">Are these details correct?</a></li>
+                    <li><a href="#error">Are these details correct?</a></li>
                 </ul>
             </div>
 
@@ -40,21 +40,21 @@
             <form class="form" action="" method="post">
                 <div class="form-group">
                     
-                    <div class="form-group form-group-error top_30">
-                    <fieldset class="inline">
-                        <legend>
-                            <span class="heading-small">Are these details correct?</span>
-                            <span class="error-message bottom_5">You need to confirm if these details are correct</span>
-                        </legend>
-                        <div class="multiple-choice">
-                            <input id="name-address-1" type="radio" name="name-address-group" value="1">
-                            <label for="name-address-1">Yes</label>
-                        </div>
-                        <div class="multiple-choice">
-                            <input id="name-address-2" type="radio" name="name-address-group" value="2">
-                            <label for="name-address-2">No</label>
-                        </div>
-                    </fieldset>
+                    <div class="form-group form-group-error top_30" id="error">
+                        <fieldset class="inline">
+                            <legend>
+                                <span class="heading-small">Are these details correct?</span>
+                                <span class="error-message bottom_5">Choose an answer</span>
+                            </legend>
+                            <div class="multiple-choice">
+                                <input id="name-address-1" type="radio" name="name-address-group" value="1">
+                                <label for="name-address-1">Yes</label>
+                            </div>
+                            <div class="multiple-choice">
+                                <input id="name-address-2" type="radio" name="name-address-group" value="2">
+                                <label for="name-address-2">No</label>
+                            </div>
+                        </fieldset>
                     </div>
                     
                     <div class="name-address-fields">
