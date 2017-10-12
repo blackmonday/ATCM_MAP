@@ -31,11 +31,9 @@ router.post('/find-your-case', function (req, res) {
     var caseURNValidation  = req.session.data['case-urn-number']
     var yourPostcode  = req.session.data['your-postcode']
 
-    /*
     if (caseURNValidation == ""){
         res.redirect('/find-your-case-error-0')
     }
-    */
     
     if (caseURNValidation == "123"){
         res.redirect('/find-your-case-error-1')
@@ -50,7 +48,6 @@ router.post('/find-your-case', function (req, res) {
     res.redirect('/your-details')
     
 })
-
     
 // ************
 // Your details
