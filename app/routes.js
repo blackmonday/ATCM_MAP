@@ -10,7 +10,7 @@ router.get('/', function (req, res) {
 
 module.exports = router
 
-// ***********
+// **********
 // Start page
 router.post('/start-page', function (req, res) {
 
