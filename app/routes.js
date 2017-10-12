@@ -12,6 +12,7 @@ module.exports = router
 
 // **********
 // Start page
+/*
 router.post('/start-page', function (req, res) {
 
   var startGroup = req.session.data['start-group']
@@ -1757,3 +1758,4 @@ router.post('/declaration-error', function (req, res) {
   }
 
 })
+*/
