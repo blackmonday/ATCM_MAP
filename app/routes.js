@@ -560,6 +560,24 @@ router.post('/your-court-hearing', function (req, res) {
     res.redirect('/your-finances')
     
 })
+router.post('/your-court-hearing-error', function (req, res) {
+    
+    if (req.session.data['interpreter-required'] !== "1") {
+        if (req.session.data['interpreter-required'] !== "2") {
+            res.redirect('/your-court-hearing-error')
+        }
+    } 
+    
+    if (req.session.data['interpreter-required'] == "1") {
+        req.session.data['interpreter-required'] = "Yes"
+    }
+    if (req.session.data['interpreter-required'] == "2") {
+        req.session.data['interpreter-required'] = "No"
+    }
+    
+    res.redirect('/your-finances')
+    
+})
 
 // ***************
 // Not guilty plea
@@ -1240,7 +1258,259 @@ router.post('/your-income', function (req, res) {
   }
 
 })
-router.post('/your-income-error', function (req, res) {
+router.post('/your-income-error-1', function (req, res) {
+
+  var employmentStatus = req.session.data['employment-status-group']
+  var benefitsStatus = req.session.data['claiming-benefits-group']
+  
+    if (req.session.data['frequency-group'] !== "1") {
+        if (req.session.data['frequency-group'] !== "2") {
+            if (req.session.data['frequency-group'] !== "3") {
+                res.redirect('/your-income-error-1')
+            }
+        }
+    }
+    
+    if (req.session.data['frequency-group'] == "1") {
+       req.session.data['frequency-group'] = "weekly"
+    }
+    if (req.session.data['frequency-group'] == "2") {
+       req.session.data['frequency-group'] = "fortnightly"
+    }
+    if (req.session.data['frequency-group'] == "3") {
+       req.session.data['frequency-group'] = "monthly"
+    }
+  
+    if (req.session.data['average-income'] == "") {
+        res.redirect('/your-income-error-2')
+    }
+    
+    if (employmentStatus !== "1") {
+        if (employmentStatus !== "2") {
+            if (employmentStatus !== "3") {
+                if (employmentStatus !== "4") {
+                    res.redirect('/your-income-error-3')
+                }
+            }
+        }
+    }
+    
+    if (benefitsStatus !== "1") {
+        if (benefitsStatus !== "2") {
+            res.redirect('/your-income-error-4')
+        }
+    }
+ 
+    if (req.session.data['claiming-benefits-group'] == "1") {
+       req.session.data['claiming-benefits-group'] = "Yes"
+    }
+    if (req.session.data['claiming-benefits-group'] == "2") {
+       req.session.data['claiming-benefits-group'] = "No"
+    }
+ 
+  if (employmentStatus == "1"){
+    req.session.data['employment-status-group'] = "Employed (full or part-time)"
+    res.redirect('/your-employer')
+  } else if (benefitsStatus == "1") {
+      req.session.data['claiming-benefits-group'] = "Yes"
+      if (employmentStatus == "1"){
+          req.session.data['employment-status-group'] = "Employed (full or part-time)"
+      } else if (employmentStatus == "2"){
+          req.session.data['employer-name'] = "–"
+          req.session.data['employment-status-group'] = "Self-employed"
+      } else if (employmentStatus == "3"){
+          req.session.data['employer-name'] = "–"
+          req.session.data['employment-status-group'] = "Unemployed"
+       } else if (employmentStatus == "4"){
+          req.session.data['employer-name'] = "–"
+          req.session.data['employment-status-group'] = "Other"
+     }
+    res.redirect('/your-benefits')
+  } else {
+      req.session.data['claiming-benefits-group'] = "No"
+       if (employmentStatus == "2"){
+           req.session.data['employer-name'] = "–"
+         req.session.data['employment-status-group'] = "Self-employed"
+      } else if (employmentStatus == "3"){
+          req.session.data['employer-name'] = "–"
+          req.session.data['employment-status-group'] = "Unemployed"
+       } else if (employmentStatus == "4"){
+          req.session.data['employer-name'] = "–"
+          req.session.data['employment-status-group'] = "Other"
+     }
+     res.redirect('/your-outgoings')
+  }
+
+})
+router.post('/your-income-error-2', function (req, res) {
+
+  var employmentStatus = req.session.data['employment-status-group']
+  var benefitsStatus = req.session.data['claiming-benefits-group']
+  
+    if (req.session.data['frequency-group'] !== "1") {
+        if (req.session.data['frequency-group'] !== "2") {
+            if (req.session.data['frequency-group'] !== "3") {
+                res.redirect('/your-income-error-1')
+            }
+        }
+    }
+    
+    if (req.session.data['frequency-group'] == "1") {
+       req.session.data['frequency-group'] = "weekly"
+    }
+    if (req.session.data['frequency-group'] == "2") {
+       req.session.data['frequency-group'] = "fortnightly"
+    }
+    if (req.session.data['frequency-group'] == "3") {
+       req.session.data['frequency-group'] = "monthly"
+    }
+  
+    if (req.session.data['average-income'] == "") {
+        res.redirect('/your-income-error-2')
+    }
+    
+    if (employmentStatus !== "1") {
+        if (employmentStatus !== "2") {
+            if (employmentStatus !== "3") {
+                if (employmentStatus !== "4") {
+                    res.redirect('/your-income-error-3')
+                }
+            }
+        }
+    }
+    
+    if (benefitsStatus !== "1") {
+        if (benefitsStatus !== "2") {
+            res.redirect('/your-income-error-4')
+        }
+    }
+ 
+    if (req.session.data['claiming-benefits-group'] == "1") {
+       req.session.data['claiming-benefits-group'] = "Yes"
+    }
+    if (req.session.data['claiming-benefits-group'] == "2") {
+       req.session.data['claiming-benefits-group'] = "No"
+    }
+ 
+  if (employmentStatus == "1"){
+    req.session.data['employment-status-group'] = "Employed (full or part-time)"
+    res.redirect('/your-employer')
+  } else if (benefitsStatus == "1") {
+      req.session.data['claiming-benefits-group'] = "Yes"
+      if (employmentStatus == "1"){
+          req.session.data['employment-status-group'] = "Employed (full or part-time)"
+      } else if (employmentStatus == "2"){
+          req.session.data['employer-name'] = "–"
+          req.session.data['employment-status-group'] = "Self-employed"
+      } else if (employmentStatus == "3"){
+          req.session.data['employer-name'] = "–"
+          req.session.data['employment-status-group'] = "Unemployed"
+       } else if (employmentStatus == "4"){
+          req.session.data['employer-name'] = "–"
+          req.session.data['employment-status-group'] = "Other"
+     }
+    res.redirect('/your-benefits')
+  } else {
+      req.session.data['claiming-benefits-group'] = "No"
+       if (employmentStatus == "2"){
+           req.session.data['employer-name'] = "–"
+         req.session.data['employment-status-group'] = "Self-employed"
+      } else if (employmentStatus == "3"){
+          req.session.data['employer-name'] = "–"
+          req.session.data['employment-status-group'] = "Unemployed"
+       } else if (employmentStatus == "4"){
+          req.session.data['employer-name'] = "–"
+          req.session.data['employment-status-group'] = "Other"
+     }
+     res.redirect('/your-outgoings')
+  }
+
+})
+router.post('/your-income-error-3', function (req, res) {
+
+  var employmentStatus = req.session.data['employment-status-group']
+  var benefitsStatus = req.session.data['claiming-benefits-group']
+  
+    if (req.session.data['frequency-group'] !== "1") {
+        if (req.session.data['frequency-group'] !== "2") {
+            if (req.session.data['frequency-group'] !== "3") {
+                res.redirect('/your-income-error-1')
+            }
+        }
+    }
+    
+    if (req.session.data['frequency-group'] == "1") {
+       req.session.data['frequency-group'] = "weekly"
+    }
+    if (req.session.data['frequency-group'] == "2") {
+       req.session.data['frequency-group'] = "fortnightly"
+    }
+    if (req.session.data['frequency-group'] == "3") {
+       req.session.data['frequency-group'] = "monthly"
+    }
+  
+    if (req.session.data['average-income'] == "") {
+        res.redirect('/your-income-error-2')
+    }
+    
+    if (employmentStatus !== "1") {
+        if (employmentStatus !== "2") {
+            if (employmentStatus !== "3") {
+                if (employmentStatus !== "4") {
+                    res.redirect('/your-income-error-3')
+                }
+            }
+        }
+    }
+    
+    if (benefitsStatus !== "1") {
+        if (benefitsStatus !== "2") {
+            res.redirect('/your-income-error-4')
+        }
+    }
+ 
+    if (req.session.data['claiming-benefits-group'] == "1") {
+       req.session.data['claiming-benefits-group'] = "Yes"
+    }
+    if (req.session.data['claiming-benefits-group'] == "2") {
+       req.session.data['claiming-benefits-group'] = "No"
+    }
+ 
+  if (employmentStatus == "1"){
+    req.session.data['employment-status-group'] = "Employed (full or part-time)"
+    res.redirect('/your-employer')
+  } else if (benefitsStatus == "1") {
+      req.session.data['claiming-benefits-group'] = "Yes"
+      if (employmentStatus == "1"){
+          req.session.data['employment-status-group'] = "Employed (full or part-time)"
+      } else if (employmentStatus == "2"){
+          req.session.data['employer-name'] = "–"
+          req.session.data['employment-status-group'] = "Self-employed"
+      } else if (employmentStatus == "3"){
+          req.session.data['employer-name'] = "–"
+          req.session.data['employment-status-group'] = "Unemployed"
+       } else if (employmentStatus == "4"){
+          req.session.data['employer-name'] = "–"
+          req.session.data['employment-status-group'] = "Other"
+     }
+    res.redirect('/your-benefits')
+  } else {
+      req.session.data['claiming-benefits-group'] = "No"
+       if (employmentStatus == "2"){
+           req.session.data['employer-name'] = "–"
+         req.session.data['employment-status-group'] = "Self-employed"
+      } else if (employmentStatus == "3"){
+          req.session.data['employer-name'] = "–"
+          req.session.data['employment-status-group'] = "Unemployed"
+       } else if (employmentStatus == "4"){
+          req.session.data['employer-name'] = "–"
+          req.session.data['employment-status-group'] = "Other"
+     }
+     res.redirect('/your-outgoings')
+  }
+
+})
+router.post('/your-income-error-4', function (req, res) {
 
   var employmentStatus = req.session.data['employment-status-group']
   var benefitsStatus = req.session.data['claiming-benefits-group']
