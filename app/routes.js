@@ -163,7 +163,7 @@ router.post('/your-details', function (req, res) {
         req.session.data['NIN'] = "Does not have a National Insurance number"
     }
 
-  if (youDetails == "1"){
+  if (yourDetails == "1"){
     res.redirect('/your-plea')
   }
 })
