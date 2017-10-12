@@ -28,73 +28,115 @@ router.post('/start-page', function (req, res) {
 // Find your case
 router.post('/find-your-case', function (req, res) {
 
-  //var caseFound = "1"
-  var caseURNValidation  = req.session.data['case-urn-number']
-  var yourPostcode  = req.session.data['your-postcode']
-  
-  if (caseURNValidation == "123"){
-      res.redirect('/find-your-case-error-1')
-  } else if (caseURNValidation == "456"){
-      res.redirect('/find-your-case-error-2')
-  } else if (yourPostcode == ""){
-      res.redirect('/find-your-case-error-3')
-  } else {
-      res.redirect('/your-details')
-  }
+    var caseURNValidation  = req.session.data['case-urn-number']
+    var yourPostcode  = req.session.data['your-postcode']
+
+    if (caseURNValidation == ""){
+        res.redirect('/find-your-case-error-0')
+    }
+
+    if (caseURNValidation == "123"){
+        res.redirect('/find-your-case-error-1')
+    } else if (caseURNValidation == "456"){
+        res.redirect('/find-your-case-error-2')
+    }
+
+    if (yourPostcode == ""){
+        res.redirect('/find-your-case-error-3')
+    }
+    
+    res.redirect('/your-details')
+    
+})
+router.post('/find-your-case-error-0', function (req, res) {
+
+    var caseURNValidation  = req.session.data['case-urn-number']
+    var yourPostcode  = req.session.data['your-postcode']
+
+    if (caseURNValidation == ""){
+        res.redirect('/find-your-case-error-0')
+    }
+
+    if (caseURNValidation == "123"){
+        res.redirect('/find-your-case-error-1')
+    } else if (caseURNValidation == "456"){
+        res.redirect('/find-your-case-error-2')
+    }
+
+    if (yourPostcode == ""){
+        res.redirect('/find-your-case-error-3')
+    }
+    
+    res.redirect('/your-details')
     
 })
 router.post('/find-your-case-error-1', function (req, res) {
 
-  //var caseFound = "1"
-  var caseURNValidation  = req.session.data['case-urn-number']
-  var yourPostcode  = req.session.data['your-postcode']
-  
-  if (caseURNValidation == "123"){
-      res.redirect('/find-your-case-error-1')
-  } else if (caseURNValidation == "456"){
-      res.redirect('/find-your-case-error-2')
-  } else if (yourPostcode == ""){
-      res.redirect('/find-your-case-error-3')
-  } else {
-      res.redirect('/your-details')
-  }
+    var caseURNValidation  = req.session.data['case-urn-number']
+    var yourPostcode  = req.session.data['your-postcode']
+
+    if (caseURNValidation == ""){
+        res.redirect('/find-your-case-error-0')
+    }
+
+    if (caseURNValidation == "123"){
+        res.redirect('/find-your-case-error-1')
+    } else if (caseURNValidation == "456"){
+        res.redirect('/find-your-case-error-2')
+    }
+
+    if (yourPostcode == ""){
+        res.redirect('/find-your-case-error-3')
+    }
+    
+    res.redirect('/your-details')
     
 })
 router.post('/find-your-case-error-2', function (req, res) {
 
-  //var caseFound = "1"
-  var caseURNValidation  = req.session.data['case-urn-number']
-  var yourPostcode  = req.session.data['your-postcode']
-  
-  if (caseURNValidation == "123"){
-      res.redirect('/find-your-case-error-1')
-  } else if (caseURNValidation == "456"){
-      res.redirect('/find-your-case-error-2')
-  } else if (yourPostcode == ""){
-      res.redirect('/find-your-case-error-3')
-  } else {
-      res.redirect('/your-details')
-  }
+    var caseURNValidation  = req.session.data['case-urn-number']
+    var yourPostcode  = req.session.data['your-postcode']
+
+    if (caseURNValidation == ""){
+        res.redirect('/find-your-case-error-0')
+    }
+
+    if (caseURNValidation == "123"){
+        res.redirect('/find-your-case-error-1')
+    } else if (caseURNValidation == "456"){
+        res.redirect('/find-your-case-error-2')
+    }
+
+    if (yourPostcode == ""){
+        res.redirect('/find-your-case-error-3')
+    }
+    
+    res.redirect('/your-details')
     
 })
 router.post('/find-your-case-error-3', function (req, res) {
 
-  //var caseFound = "1"
-  var caseURNValidation  = req.session.data['case-urn-number']
-  var yourPostcode  = req.session.data['your-postcode']
-  
-  if (caseURNValidation == "123"){
-      res.redirect('/find-your-case-error-1')
-  } else if (caseURNValidation == "456"){
-      res.redirect('/find-your-case-error-2')
-  } else if (yourPostcode == ""){
-      res.redirect('/find-your-case-error-3')
-  } else {
-      res.redirect('/your-details')
-  }
+    var caseURNValidation  = req.session.data['case-urn-number']
+    var yourPostcode  = req.session.data['your-postcode']
+
+    if (caseURNValidation == ""){
+        res.redirect('/find-your-case-error-0')
+    }
+
+    if (caseURNValidation == "123"){
+        res.redirect('/find-your-case-error-1')
+    } else if (caseURNValidation == "456"){
+        res.redirect('/find-your-case-error-2')
+    }
+
+    if (yourPostcode == ""){
+        res.redirect('/find-your-case-error-3')
+    }
+    
+    res.redirect('/your-details')
     
 })
-
+    
 // ************
 // Your details
 router.post('/your-details', function (req, res) {
