@@ -100,7 +100,61 @@ router.post('/find-your-case-error-3', function (req, res) {
 router.post('/your-details', function (req, res) {
     
     res.redirect('/your-plea')
+    
+    if (req.session.data['home-telephone'] == "") {
+        req.session.data['home-telephone'] = "–"
+    }
+    if (req.session.data['mobile'] == "") {
+        req.session.data['mobile'] = "–"
+    }
+    if (req.session.data['email'] == "") {
+        req.session.data['email'] = "–"
+    }
+    if (req.session.data['dob-day'] == "") {
+        req.session.data['dob-day'] = "–"
+    }
+    if (req.session.data['dob-month'] == "") {
+        req.session.data['dob-month'] = "–"
+    } else if ((req.session.data['dob-month'] == "1") || (req.session.data['dob-month'] == "01")) {
+        req.session.data['dob-month'] = "January"
+    } else if ((req.session.data['dob-month'] == "2") || (req.session.data['dob-month'] == "02")) {
+        req.session.data['dob-month'] = "Februrary"
+    } else if ((req.session.data['dob-month'] == "3") || (req.session.data['dob-month'] == "03")) {
+        req.session.data['dob-month'] = "March"
+    } else if ((req.session.data['dob-month'] == "4") || (req.session.data['dob-month'] == "04")) {
+        req.session.data['dob-month'] = "April"
+    } else if ((req.session.data['dob-month'] == "5") || (req.session.data['dob-month'] == "05")) {
+        req.session.data['dob-month'] = "May"
+    } else if ((req.session.data['dob-month'] == "6") || (req.session.data['dob-month'] == "06")) {
+        req.session.data['dob-month'] = "June"
+    } else if ((req.session.data['dob-month'] == "7") || (req.session.data['dob-month'] == "07")) {
+        req.session.data['dob-month'] = "July"
+    } else if ((req.session.data['dob-month'] == "8") || (req.session.data['dob-month'] == "08")) {
+        req.session.data['dob-month'] = "August"
+    } else if ((req.session.data['dob-month'] == "9") || (req.session.data['dob-month'] == "09")) {
+        req.session.data['dob-month'] = "September"
+    } else if (req.session.data['dob-month'] == "10") {
+        req.session.data['dob-month'] = "October"
+    } else if (req.session.data['dob-month'] == "11") {
+        req.session.data['dob-month'] = "November"
+    } else if (req.session.data['dob-month'] == "12") {
+        req.session.data['dob-month'] = "December"
+    }
+    if (req.session.data['dob-year'] == "") {
+        req.session.data['dob-year'] = "–"
+    }
+    if (req.session.data['NIN-radio-inline-group'] == "1") {
+        req.session.data['NIN'] = "–"
+    }
+    if (req.session.data['NIN-radio-inline-group'] == "2") {
+        req.session.data['NIN'] = "Does not have a National Insurance number"
+    }
 
+
+    
+    
+    
+    /**************
     /* Validation is hidden as it doens't work with Heroku
     var yourDetails = "1"
     var nameAddressGroup = req.session.data['name-address-group']
