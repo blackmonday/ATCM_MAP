@@ -152,11 +152,16 @@ router.post('/your-details', function (req, res) {
   if (req.session.data['dob-year'] == "") {
       res.redirect('/your-details-error-2')
   }
-if (req.session.data['NIN-radio-inline-group'] == "1") {
-    if (req.session.data['NIN'] == "") {
-        res.redirect('/your-details-error-3')
+    
+    if (req.session.data['NIN-radio-inline-group'] == "1") {
+        if (req.session.data['NIN'] == "") {
+            res.redirect('/your-details-error-3')
+        }
     }
-}
+
+    if (req.session.data['NIN-radio-inline-group'] == "2") {
+        req.session.data['NIN'] = "Does not have a National Insurance number"
+    }
 
   if (youDetails == "1"){
     res.redirect('/your-plea')
@@ -166,7 +171,7 @@ router.post('/your-details-error-0', function (req, res) {
 
   var youDetails = "1"
   var nameAddressGroup = req.session.data['name-address-group']
-
+    
   if (nameAddressGroup !== "1") {
     if (nameAddressGroup !== "2") {
         res.redirect('/your-details-error-0')
@@ -217,9 +222,16 @@ router.post('/your-details-error-0', function (req, res) {
   if (req.session.data['dob-year'] == "") {
       res.redirect('/your-details-error-2')
   }
-  if ((req.session.data['NIN-radio-inline-group'] == "1") && (req.session.data['NIN'] == "")) {
-      res.redirect('/your-details-error-3')
-  }
+    
+    if (req.session.data['NIN-radio-inline-group'] == "1") {
+        if (req.session.data['NIN'] == "") {
+            res.redirect('/your-details-error-3')
+        }
+    }
+
+    if (req.session.data['NIN-radio-inline-group'] == "2") {
+        req.session.data['NIN'] = "Does not have a National Insurance number"
+    }
 
   if (youDetails == "1"){
     res.redirect('/your-plea')
@@ -229,7 +241,7 @@ router.post('/your-details-error-1', function (req, res) {
 
   var youDetails = "1"
   var nameAddressGroup = req.session.data['name-address-group']
-
+    
   if (nameAddressGroup !== "1") {
     if (nameAddressGroup !== "2") {
         res.redirect('/your-details-error-0')
@@ -280,9 +292,16 @@ router.post('/your-details-error-1', function (req, res) {
   if (req.session.data['dob-year'] == "") {
       res.redirect('/your-details-error-2')
   }
-  if ((req.session.data['NIN-radio-inline-group'] == "1") && (req.session.data['NIN'] == "")) {
-      res.redirect('/your-details-error-3')
-  }
+    
+    if (req.session.data['NIN-radio-inline-group'] == "1") {
+        if (req.session.data['NIN'] == "") {
+            res.redirect('/your-details-error-3')
+        }
+    }
+
+    if (req.session.data['NIN-radio-inline-group'] == "2") {
+        req.session.data['NIN'] = "Does not have a National Insurance number"
+    }
 
   if (youDetails == "1"){
     res.redirect('/your-plea')
@@ -292,7 +311,7 @@ router.post('/your-details-error-2', function (req, res) {
 
   var youDetails = "1"
   var nameAddressGroup = req.session.data['name-address-group']
-
+    
   if (nameAddressGroup !== "1") {
     if (nameAddressGroup !== "2") {
         res.redirect('/your-details-error-0')
@@ -343,9 +362,16 @@ router.post('/your-details-error-2', function (req, res) {
   if (req.session.data['dob-year'] == "") {
       res.redirect('/your-details-error-2')
   }
-  if ((req.session.data['NIN-radio-inline-group'] == "1") && (req.session.data['NIN'] == "")) {
-      res.redirect('/your-details-error-3')
-  }
+    
+    if (req.session.data['NIN-radio-inline-group'] == "1") {
+        if (req.session.data['NIN'] == "") {
+            res.redirect('/your-details-error-3')
+        }
+    }
+
+    if (req.session.data['NIN-radio-inline-group'] == "2") {
+        req.session.data['NIN'] = "Does not have a National Insurance number"
+    }
 
   if (youDetails == "1"){
     res.redirect('/your-plea')
@@ -355,7 +381,7 @@ router.post('/your-details-error-3', function (req, res) {
 
   var youDetails = "1"
   var nameAddressGroup = req.session.data['name-address-group']
-
+    
   if (nameAddressGroup !== "1") {
     if (nameAddressGroup !== "2") {
         res.redirect('/your-details-error-0')
@@ -406,72 +432,16 @@ router.post('/your-details-error-3', function (req, res) {
   if (req.session.data['dob-year'] == "") {
       res.redirect('/your-details-error-2')
   }
-  if ((req.session.data['NIN-radio-inline-group'] == "1") && (req.session.data['NIN'] == "")) {
-      res.redirect('/your-details-error-3')
-  }
-
-  if (youDetails == "1"){
-    res.redirect('/your-plea')
-  }
-})
-router.post('/your-details-error-4', function (req, res) {
-
-  var youDetails = "1"
-  var nameAddressGroup = req.session.data['name-address-group']
-
-  if (nameAddressGroup !== "1") {
-    if (nameAddressGroup !== "2") {
-        res.redirect('/your-details-error-0')
+    
+    if (req.session.data['NIN-radio-inline-group'] == "1") {
+        if (req.session.data['NIN'] == "") {
+            res.redirect('/your-details-error-3')
+        }
     }
-  }
-    
-  if (req.session.data['home-telephone'] == "") {
-      req.session.data['home-telephone'] = "–"
-  }
-  if (req.session.data['mobile'] == "") {
-      req.session.data['mobile'] = "–"
-  }
-  if (req.session.data['email'] == "") {
-      res.redirect('/your-details-error-1')
-  }
-  if (req.session.data['dob-day'] == "") {
-      res.redirect('/your-details-error-2')
-  }
-    
-  if (req.session.data['dob-month'] == "") {
-      res.redirect('/your-details-error-2')
-  } else if ((req.session.data['dob-month'] == "1") || (req.session.data['dob-month'] == "01")) {
-      req.session.data['dob-month'] = "January"
-  } else if ((req.session.data['dob-month'] == "2") || (req.session.data['dob-month'] == "02")) {
-      req.session.data['dob-month'] = "Februrary"
-  } else if ((req.session.data['dob-month'] == "3") || (req.session.data['dob-month'] == "03")) {
-      req.session.data['dob-month'] = "March"
-  } else if ((req.session.data['dob-month'] == "4") || (req.session.data['dob-month'] == "04")) {
-      req.session.data['dob-month'] = "April"
-  } else if ((req.session.data['dob-month'] == "5") || (req.session.data['dob-month'] == "05")) {
-      req.session.data['dob-month'] = "May"
-  } else if ((req.session.data['dob-month'] == "6") || (req.session.data['dob-month'] == "06")) {
-      req.session.data['dob-month'] = "June"
-  } else if ((req.session.data['dob-month'] == "7") || (req.session.data['dob-month'] == "07")) {
-      req.session.data['dob-month'] = "July"
-  } else if ((req.session.data['dob-month'] == "8") || (req.session.data['dob-month'] == "08")) {
-      req.session.data['dob-month'] = "August"
-  } else if ((req.session.data['dob-month'] == "9") || (req.session.data['dob-month'] == "09")) {
-      req.session.data['dob-month'] = "September"
-  } else if (req.session.data['dob-month'] == "10") {
-      req.session.data['dob-month'] = "October"
-  } else if (req.session.data['dob-month'] == "11") {
-      req.session.data['dob-month'] = "November"
-  } else if (req.session.data['dob-month'] == "12") {
-      req.session.data['dob-month'] = "December"
- }
-    
-  if (req.session.data['dob-year'] == "") {
-      res.redirect('/your-details-error-2')
-  }
-  if ((req.session.data['NIN-radio-inline-group'] == "1") && (req.session.data['NIN'] == "")) {
-      res.redirect('/your-details-error-3')
-  }
+
+    if (req.session.data['NIN-radio-inline-group'] == "2") {
+        req.session.data['NIN'] = "Does not have a National Insurance number"
+    }
 
   if (youDetails == "1"){
     res.redirect('/your-plea')
