@@ -99,7 +99,7 @@ router.post('/find-your-case-error-3', function (req, res) {
 // Your details
 router.post('/your-details', function (req, res) {
 
-  var youDetails = "1"
+  var yourDetails = "1"
   var nameAddressGroup = req.session.data['name-address-group']
     
   if (nameAddressGroup !== "1") {
@@ -169,7 +169,7 @@ router.post('/your-details', function (req, res) {
 })
 router.post('/your-details-error-0', function (req, res) {
 
-  var youDetails = "1"
+  var yourDetails = "1"
   var nameAddressGroup = req.session.data['name-address-group']
     
   if (nameAddressGroup !== "1") {
@@ -233,13 +233,13 @@ router.post('/your-details-error-0', function (req, res) {
         req.session.data['NIN'] = "Does not have a National Insurance number"
     }
 
-  if (youDetails == "1"){
+  if (yourDetails == "1"){
     res.redirect('/your-plea')
   }
 })
 router.post('/your-details-error-1', function (req, res) {
 
-  var youDetails = "1"
+  var yourDetails = "1"
   var nameAddressGroup = req.session.data['name-address-group']
     
   if (nameAddressGroup !== "1") {
@@ -303,13 +303,13 @@ router.post('/your-details-error-1', function (req, res) {
         req.session.data['NIN'] = "Does not have a National Insurance number"
     }
 
-  if (youDetails == "1"){
+  if (yourDetails == "1"){
     res.redirect('/your-plea')
   }
 })
 router.post('/your-details-error-2', function (req, res) {
 
-  var youDetails = "1"
+  var yourDetails = "1"
   var nameAddressGroup = req.session.data['name-address-group']
     
   if (nameAddressGroup !== "1") {
@@ -373,13 +373,13 @@ router.post('/your-details-error-2', function (req, res) {
         req.session.data['NIN'] = "Does not have a National Insurance number"
     }
 
-  if (youDetails == "1"){
+  if (yourDetails == "1"){
     res.redirect('/your-plea')
   }
 })
 router.post('/your-details-error-3', function (req, res) {
 
-  var youDetails = "1"
+  var yourDetails = "1"
   var nameAddressGroup = req.session.data['name-address-group']
     
   if (nameAddressGroup !== "1") {
@@ -443,7 +443,7 @@ router.post('/your-details-error-3', function (req, res) {
         req.session.data['NIN'] = "Does not have a National Insurance number"
     }
 
-  if (youDetails == "1"){
+  if (yourDetails == "1"){
     res.redirect('/your-plea')
   }
 })
