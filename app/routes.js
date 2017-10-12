@@ -99,7 +99,6 @@ router.post('/find-your-case-error-3', function (req, res) {
 // Your details
 router.post('/your-details', function (req, res) {
     
-    /*
     var yourDetails = "1"
     var nameAddressGroup = req.session.data['name-address-group']
     
@@ -108,9 +107,7 @@ router.post('/your-details', function (req, res) {
             res.redirect('/your-details-error-0')
         }
     }
-    */
     
-    /*
     if (req.session.data['home-telephone'] == "") {
         req.session.data['home-telephone'] = "–"
     }
@@ -123,7 +120,6 @@ router.post('/your-details', function (req, res) {
     if (req.session.data['dob-day'] == "") {
         res.redirect('/your-details-error-2')
     }
-    */
     
     if (req.session.data['dob-month'] == "") {
         res.redirect('/your-details-error-2')
@@ -153,29 +149,23 @@ router.post('/your-details', function (req, res) {
         req.session.data['dob-month'] = "December"
     }
     
-    /*
     if (req.session.data['dob-year'] == "") {
         res.redirect('/your-details-error-2')
     }
-    */
     
-    /*
     if (req.session.data['NIN-radio-inline-group'] == "1") {
         if (req.session.data['NIN'] == "") {
             res.redirect('/your-details-error-3')
         }
     }
-    */
 
     if (req.session.data['NIN-radio-inline-group'] == "2") {
         req.session.data['NIN'] = "Does not have a National Insurance number"
     }
 
-    /*
     if (yourDetails == "1"){
         res.redirect('/your-plea')
     }
-    */
     
     res.redirect('/your-plea')
     
