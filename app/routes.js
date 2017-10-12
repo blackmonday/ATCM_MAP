@@ -101,7 +101,7 @@ router.post('/your-details', function (req, res) {
 
   var youDetails = "1"
   var nameAddressGroup = req.session.data['name-address-group']
-
+    
   if (nameAddressGroup !== "1") {
     if (nameAddressGroup !== "2") {
         res.redirect('/your-details-error-0')
